@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Skyblock Damage Calculator`,
+    description: `This application calculates the amount of damage your character does, and how to optimise your talismans to deal more damage.`,
+    author: `Reese Gunardi`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
