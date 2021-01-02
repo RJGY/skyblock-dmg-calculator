@@ -3,6 +3,8 @@ module.exports = {
     title: `Skyblock Damage Calculator`,
     description: `This application calculates the amount of damage your character does, and how to optimise your talismans to deal more damage.`,
     author: `Reese Gunardi`,
+    image: "/preview-image.jpg", // Path to your image you placed in the 'static' folder
+    url: "", // No trailing slash allowed!
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
