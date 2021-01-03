@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import PreviewImage from "../../static/image"
+import PreviewImage from "../images/diamond-sword.png"
 import SEO from "../components/seo"
 import Description from "../components/description" 
 const IndexPage = () => (

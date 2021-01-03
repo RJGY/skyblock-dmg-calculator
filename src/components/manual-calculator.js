@@ -1,8 +1,6 @@
 import React from "react"
 
 const Calculator = () => {
-    
-
     return (
         <div>
             <form onSubmit={this.handleSubmit}>
