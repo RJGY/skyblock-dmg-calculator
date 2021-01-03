@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Link } from 'react-router-dom'
 
 const Nav = ({activeArticle}) => {
     return (
@@ -8,7 +9,6 @@ const Nav = ({activeArticle}) => {
                 <ul>
                 <Link
                     to={`/`}
-                    getProps={props => setActive(props, 2)}
                 > 
                     Home 
                 </Link>
@@ -16,7 +16,6 @@ const Nav = ({activeArticle}) => {
                 <ul>
                     <Link
                         to={`/manual/`}
-                        getProps={props => setActive(props, 2)}
                     > 
                         Manual Calculator 
                     </Link>
