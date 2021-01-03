@@ -1,18 +1,21 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-import Description from "../components/description" 
-const manual = () => (
+import ManualDescription from "../components/manual-description" 
+import Nav from "../components/nav"
+
+const Manual = () => (
   <Layout>
-    <SEO title="Skyblock Damage Calculator | Manual Calculator"
+    <SEO title="Manual Calculator"
       description=""
       image={Image}
       article 
     />
-    <Description/>
+    <Nav/>
+    <ManualDescription/>
+    <ManualCalculator/>
   </Layout>
 )
 
-export default manual
+export default Manual
