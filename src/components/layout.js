@@ -29,7 +29,8 @@ const Layout = ({ children }) => {
 
         <main>{children}</main>
         <footer style={{
-          
+          padding: "1rem 1rem",
+          textAlign: "center",
         }}>
           © {new Date().getFullYear()}, Made by Reese Gunardi, with Gatsby & React.
         </footer>
