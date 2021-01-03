@@ -3,10 +3,10 @@ import React from "react"
 const Calculator = () => {
     return (
         <div>
-            <form onSubmit={this.handleSubmit}>
+            <form>
                 <label>
                     Name:
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    <input type="text"/>
                 </label>
                 <input type="submit" value="Submit" />
             </form>
