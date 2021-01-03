@@ -4,7 +4,8 @@ module.exports = {
     description: `This application calculates the amount of damage your character does, and how to optimise your talismans to deal more damage.`,
     author: `Reese Gunardi`,
     image: "/preview-image.jpg", // Path to your image you placed in the 'static' folder
-    url: "", // No trailing slash allowed!
+    url: "https://skyblock-dmg-calculator.vercel.app", // No trailing slash allowed!
+    titleTemplate: "Skyblock Damage Calculator | %s",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

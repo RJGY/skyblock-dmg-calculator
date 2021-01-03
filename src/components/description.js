@@ -1,7 +1,9 @@
+import React from "react"
+
 const description = () => {
     return (
         <div>
-            lmfao
+            This program takes your stats and tells you what to build to deal more damage.
         </div>
     )
 }

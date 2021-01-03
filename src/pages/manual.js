@@ -1,18 +1,18 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import PreviewImage from "../../static/image"
+import Image from "../components/image"
 import SEO from "../components/seo"
 import Description from "../components/description" 
-const IndexPage = () => (
+const manual = () => (
   <Layout>
-    <SEO title="Home"
+    <SEO title="Skyblock Damage Calculator | Manual Calculator"
       description=""
-      image={PreviewImage}
+      image={Image}
       article 
     />
     <Description/>
   </Layout>
 )
 
-export default IndexPage
+export default manual
