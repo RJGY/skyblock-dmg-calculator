@@ -5,10 +5,30 @@ const Calculator = () => {
         <div>
             <form>
                 <label>
-                    Name:
-                    <input type="text"/>
+                    Strength:
+                    <input type="number"/>
                 </label>
-                <input type="submit" value="Submit" />
+                <label>
+                    Critical Chance:
+                    <input type="number"/>
+                </label>
+                <label>
+                    Critical Damage:
+                    <input type="number"/>
+                </label>
+                
+                <label>
+                    Attack Speed:
+                    <input type="number"/>
+                </label>
+                <label>
+                    Attack Speed:
+                    <input type="number"/>
+                </label>
+                <label>
+                    Attack Speed:
+                    <input type="number"/>
+                </label>
             </form>
         </div>
     )
