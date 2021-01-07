@@ -1,26 +1,40 @@
 import React from "react"
 
-const Enchants = () => {
+class Enchants extends React.Component {
     constructor() {
-        super();
+        super()
+  
         this.state = {
-          name: "React"
-        };
-        this.onChangeValue = this.onChangeValue.bind(this);
+            gender: 'None',
+        }
+  
+        this.handleKeywordsChange = this.handleKeywordsChange.bind(this);
+       }
+
+    handleInputChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
     }
 
-    onChangeValue(event) {;
-        console.log(event.target.value);
-    }
-    return (
-        <div>
-            <div onChange={this.onChangeValue}>
-                <input type="radio" value="Male" name="gender" /> Male
-                <input type="radio" value="Female" name="gender" /> Female
-                <input type="radio" value="Other" name="gender" /> Other
+    render() {
+        return (
+            <div>
+                <div onChange={this.handleInputChange}>
+                    <input type="radio" name="gender" value="Male"/> Male
+                    <input type="radio" name="gender" value="Female"/> Female
+                    <input type="radio" name="gender" value="Other"/> Other
+                </div>
+
+                <div>
+                    Selected option is : {this.state.gender}
+                </div>
             </div>
-        </div>
-    )
+
+            
+        )
+    }
+    
 }
 
 export default Enchants
