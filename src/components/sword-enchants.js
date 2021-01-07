@@ -7,8 +7,7 @@ class Enchants extends React.Component {
         this.state = {
             gender: 'None',
         }
-  
-        this.handleKeywordsChange = this.handleKeywordsChange.bind(this);
+        
        }
 
     handleInputChange(e) {
