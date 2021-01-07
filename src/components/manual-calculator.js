@@ -1,4 +1,5 @@
 import React from "react"
+import Enchants from "./sword-enchants"
 
 const Calculator = () => {
     return (
@@ -28,6 +29,9 @@ const Calculator = () => {
                 <label>
                     Attack Speed:
                     <input type="number"/>
+                </label>
+                <label>
+                    <Enchants/>
                 </label>
             </form>
         </div>
