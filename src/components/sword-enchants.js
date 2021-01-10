@@ -7,14 +7,15 @@ class Enchants extends React.Component {
         this.state = {
             gender: 'None',
         }
-
-       }
+        
+        this.handleInputChange = this.handleInputChange.bind(this)
+    }
 
     handleInputChange(e) {
         this.setState({
-            [e.target.name]: e.target.value
-        });
-        console.log(this.state.gender);
+            [e.target.name] : e.target.value
+        }); 
+        this.forceUpdate()
     }
 
     render() {
@@ -27,7 +28,7 @@ class Enchants extends React.Component {
                 </div>
 
                 <div>
-                    Selected option is : {this.state.gender}
+                    Selected option is: {this.state.gender}
                 </div>
             </div>
 
