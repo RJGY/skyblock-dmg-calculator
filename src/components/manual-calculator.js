@@ -22,14 +22,7 @@ const Calculator = () => {
                     Attack Speed:
                     <input type="number"/>
                 </label>
-                <label>
-                    Attack Speed:
-                    <input type="number"/>
-                </label>
-                <label>
-                    Attack Speed:
-                    <input type="number"/>
-                </label>
+
                 <label>
                     <Enchants/>
                 </label>

@@ -7,22 +7,23 @@ class Enchants extends React.Component {
         this.state = {
             gender: 'None',
         }
-        
+
        }
 
     handleInputChange(e) {
         this.setState({
             [e.target.name]: e.target.value
         });
+        console.log(this.state.gender);
     }
 
     render() {
         return (
             <div>
-                <div onChange={this.handleInputChange}>
-                    <input type="radio" name="gender" value="Male"/> Male
-                    <input type="radio" name="gender" value="Female"/> Female
-                    <input type="radio" name="gender" value="Other"/> Other
+                <div>
+                    <input type="radio" name="gender" value="Male" onChange={this.handleInputChange}/> Male
+                    <input type="radio" name="gender" value="Female" onChange={this.handleInputChange}/> Female
+                    <input type="radio" name="gender" value="Other" onChange={this.handleInputChange}/> Other
                 </div>
 
                 <div>
