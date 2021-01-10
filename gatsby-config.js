@@ -5,7 +5,7 @@ module.exports = {
     author: `Reese Gunardi`,
     image: "/preview-image.jpg", // Path to your image you placed in the 'static' folder
     url: "https://skyblock-dmg-calculator.vercel.app", // No trailing slash allowed!
-    titleTemplate: "Skyblock Damage Calculator | %s",
+    titleTemplate: "Skyblock | %s",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

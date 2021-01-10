@@ -8,7 +8,7 @@ import Nav from "../components/nav"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home"
+    <SEO title="Skyblock Damage Calculator"
       description=""
       image={PreviewImage}
       article 
