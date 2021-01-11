@@ -1,41 +1,46 @@
 import React from "react"
 import PropTypes from 'prop-types';
 
+const maxEnchants = {
+    Sharpness: 5,
+    FirstStrike: 4,
+    GiantKiller: 5,
+
+}
+
 class Enchants extends React.Component {
     constructor() {
         super()
   
         this.state = {
-            "Sharpness": 0,
-            "First Strike": 0,
-            "Giant Killer": 0,
+            Sharpness: 0,
+            FirstStrike: 0,
+            GiantKiller: 0,
         }
         
-        this.handleInputChange = this.handleInputChange.bind(this)
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     handleInputChange(e) {
         this.setState({
             [e.target.name] : e.target.value
-        }); 
-        this.forceUpdate()
-        this.props.onInputChange(this.state); //This is where you call the function.
+        });
+        this.forceUpdate();
+        const timer = setTimeout(() => {
+            this.props.onInputChange(this.state);
+        }, 50);
+        
     }
 
     render() {
         return (
             <div>
                 <div>
-                    <input type="number" name="Sharpness" onChange={this.handleInputChange}/> Sharpness
+                    <input type="number" name="Sharpness" onChange={this.handleInputChange} defaultValue="0"/> Sharpness
                     <br/>
-                    <input type="number" name="First Strike" onChange={this.handleInputChange}/> First Strike
+                    <input type="number" name="FirstStrike" onChange={this.handleInputChange} defaultValue="0"/> First Strike
                     <br/>
-                    <input type="number" name="Giant Killer" onChange={this.handleInputChange}/> Giant Killer
-                    <br/>
-                </div>
-
-                <div>
-                    Selected option is: {this.state.gender}
+                    <input type="number" name="GiantKiller" onChange={this.handleInputChange} defaultValue="0"/> Giant Killer
                 </div>
             </div>
 

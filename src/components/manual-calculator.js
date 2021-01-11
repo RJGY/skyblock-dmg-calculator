@@ -1,6 +1,12 @@
 import React from "react"
 import Enchants from "./sword-enchants"
 
+let swordEnchants = {
+    Sharpness: 0,
+    FirstStrike: 0,
+    GiantKiller: 0,
+};
+
 class Calculator extends React.Component {
     constructor() {
         super()
@@ -9,7 +15,8 @@ class Calculator extends React.Component {
     }
 
     getSwordEnchants(enchants) {
-        let { swordEnchants } = enchants;
+        swordEnchants = enchants;
+        console.log(swordEnchants);
         this.forceUpdate();
     }
 
@@ -37,7 +44,12 @@ class Calculator extends React.Component {
 
                     <label>
                         <Enchants onInputChange={this.getSwordEnchants}/>
-                        current sharpness: {this.swordEnchants.sharpness}
+                    </label>
+
+                    <label>
+                        From enchants, {Object.entries(swordEnchants)
+                            .map(([key, value]) => 
+                            <div key={key}>{key}: {value}</div>)}
                     </label>
                 </form>
             </div>
