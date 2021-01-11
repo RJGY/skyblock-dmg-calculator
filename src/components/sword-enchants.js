@@ -1,11 +1,14 @@
 import React from "react"
+import PropTypes from 'prop-types';
 
 class Enchants extends React.Component {
     constructor() {
         super()
   
         this.state = {
-            gender: 'None',
+            "Sharpness": 0,
+            "First Strike": 0,
+            "Giant Killer": 0,
         }
         
         this.handleInputChange = this.handleInputChange.bind(this)
@@ -16,15 +19,19 @@ class Enchants extends React.Component {
             [e.target.name] : e.target.value
         }); 
         this.forceUpdate()
+        this.props.onInputChange(this.state); //This is where you call the function.
     }
 
     render() {
         return (
             <div>
                 <div>
-                    <input type="radio" name="gender" value="Male" onChange={this.handleInputChange}/> Male
-                    <input type="radio" name="gender" value="Female" onChange={this.handleInputChange}/> Female
-                    <input type="radio" name="gender" value="Other" onChange={this.handleInputChange}/> Other
+                    <input type="number" name="Sharpness" onChange={this.handleInputChange}/> Sharpness
+                    <br/>
+                    <input type="number" name="First Strike" onChange={this.handleInputChange}/> First Strike
+                    <br/>
+                    <input type="number" name="Giant Killer" onChange={this.handleInputChange}/> Giant Killer
+                    <br/>
                 </div>
 
                 <div>
@@ -36,6 +43,14 @@ class Enchants extends React.Component {
         )
     }
     
+}
+
+Enchants.propTypes = {
+    onInputChange: PropTypes.func,
+}
+  
+Enchants.defaultProps = {
+    onInputChange: null,
 }
 
 export default Enchants
