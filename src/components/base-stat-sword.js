@@ -6,10 +6,10 @@ class Stats extends React.Component {
         super()
   
         this.state = {
-            Strength: 0,
-            CriticalChance: 0,
-            CriticalDamage: 0,
-            AttackSpeed: 0,
+            "Strength": 0,
+            "Critical Chance": 0,
+            "Critical Damage": 0,
+            "Attack Speed": 0,
         }
         
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -29,15 +29,13 @@ class Stats extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    <input type="number" name="Strength" onChange={this.handleInputChange} defaultValue="0" min="0"/> Strength
-                    <br/>
-                    <input type="number" name="CriticalChance" onChange={this.handleInputChange} defaultValue="0" min="0"/> Critical Chance
-                    <br/>
-                    <input type="number" name="CriticalDamage" onChange={this.handleInputChange} defaultValue="0" min="0"/> Critical Damage
-                    <br/>
-                    <input type="number" name="AttackSpeed" onChange={this.handleInputChange} defaultValue="0" min="0"/> AttackSpeed
-                </div>
+                {Object.entries(this.state)
+                    .map(([key, value]) => 
+                    <div key={key}>
+                        <input type="number" name={key} onChange={this.handleInputChange} defaultValue={value} min={value}/> {key}
+                    </div>
+                    )
+                }
             </div>
         )
     }
