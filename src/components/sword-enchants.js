@@ -1,6 +1,9 @@
 import React from "react"
 import PropTypes from 'prop-types';
 
+// TODO: Add more enchants.
+// TODO: Add limit to enchants.
+
 const maxEnchants = {
     Sharpness: 5,
     FirstStrike: 4,
@@ -36,15 +39,13 @@ class Enchants extends React.Component {
         return (
             <div>
                 <div>
-                    <input type="number" name="Sharpness" onChange={this.handleInputChange} defaultValue="0"/> Sharpness
+                    <input type="number" name="Sharpness" onChange={this.handleInputChange} defaultValue="0" min="0" max={maxEnchants[Sharpness]}/> Sharpness
                     <br/>
-                    <input type="number" name="FirstStrike" onChange={this.handleInputChange} defaultValue="0"/> First Strike
+                    <input type="number" name="FirstStrike" onChange={this.handleInputChange} defaultValue="0" min="0" max={maxEnchants[FirstStrike]}/> First Strike
                     <br/>
-                    <input type="number" name="GiantKiller" onChange={this.handleInputChange} defaultValue="0"/> Giant Killer
+                    <input type="number" name="GiantKiller" onChange={this.handleInputChange} defaultValue="0" min="0" max={maxEnchants[GiantKiller]}/> Giant Killer
                 </div>
             </div>
-
-            
         )
     }
     

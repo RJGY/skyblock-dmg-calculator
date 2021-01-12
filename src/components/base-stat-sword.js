@@ -30,13 +30,13 @@ class Stats extends React.Component {
         return (
             <div>
                 <div>
-                    <input type="number" name="Strength" onChange={this.handleInputChange} defaultValue="0"/> Strength
+                    <input type="number" name="Strength" onChange={this.handleInputChange} defaultValue="0" min="0"/> Strength
                     <br/>
-                    <input type="number" name="CriticalChance" onChange={this.handleInputChange} defaultValue="0"/> Critical Chance
+                    <input type="number" name="CriticalChance" onChange={this.handleInputChange} defaultValue="0" min="0"/> Critical Chance
                     <br/>
-                    <input type="number" name="CriticalDamage" onChange={this.handleInputChange} defaultValue="0"/> Critical Damage
+                    <input type="number" name="CriticalDamage" onChange={this.handleInputChange} defaultValue="0" min="0"/> Critical Damage
                     <br/>
-                    <input type="number" name="AttackSpeed" onChange={this.handleInputChange} defaultValue="0"/> AttackSpeed
+                    <input type="number" name="AttackSpeed" onChange={this.handleInputChange} defaultValue="0" min="0"/> AttackSpeed
                 </div>
             </div>
         )

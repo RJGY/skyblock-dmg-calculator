@@ -46,6 +46,14 @@ class Calculator extends React.Component {
                     </label>
 
                     <label>
+                        From stats in manual, 
+                        {Object.entries(swordStats)
+                            .map(([key, value]) => 
+                            <div key={key}>{key}: {value}</div>)
+                        }
+                    </label>
+
+                    <label>
                         From enchants in manual, 
                         {Object.entries(swordEnchants)
                             .map(([key, value]) => 
