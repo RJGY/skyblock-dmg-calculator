@@ -31,9 +31,9 @@ class Stats extends React.Component {
             <div>
                 {Object.entries(this.state)
                     .map(([key, value]) => 
-                    <div key={key}>
-                        <input type="number" name={key} onChange={this.handleInputChange} defaultValue={value} min={value}/> {key}
-                    </div>
+                        <div key={key}>
+                            <input type="number" name={key} onChange={this.handleInputChange} defaultValue={value} min={value}/> {key}
+                        </div>
                     )
                 }
             </div>

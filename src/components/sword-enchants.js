@@ -5,9 +5,11 @@ import PropTypes from 'prop-types';
 // TODO: Add limit to enchants.
 
 const maxEnchants = {
-    "Sharpness": 5,
+    "Sharpness": 7,
     "First Strike": 4,
     "Giant Killer": 5,
+    "Bane of Arthopods": 7,
+    "Cleave": 6,
 }
 
 class Enchants extends React.Component {
@@ -18,6 +20,8 @@ class Enchants extends React.Component {
             "Sharpness": 0,
             "First Strike": 0,
             "Giant Killer": 0,
+            "Bane of Arthopods": 0,
+            "Cleave": 0,
         }
         
         this.handleInputChange = this.handleInputChange.bind(this);
