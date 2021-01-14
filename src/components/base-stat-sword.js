@@ -9,7 +9,8 @@ class Stats extends React.Component {
             "Strength": 0,
             "Critical Chance": 0,
             "Critical Damage": 0,
-            "Attack Speed": 0,
+            "Bonus Attack Speed": 0,
+            "Ferocity": 0,
         }
         
         this.handleInputChange = this.handleInputChange.bind(this);
