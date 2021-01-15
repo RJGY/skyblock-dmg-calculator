@@ -5,36 +5,56 @@ import PropTypes from 'prop-types';
 // TODO: Add limit to enchants.
 
 const maxBaseEnchants = {
-    "Bane of Arthopods": 7,
-    "Cleave": 6,
-    "Critical": 7,
-    "Cubism": 6,
-    "Dragon Hunter": 5,
-    "Ender Slayer": 7,
-    "Execute": 6,
-    "Experience": 4,
-    "Fire Aspect": 2,
-    "First Strike": 5,
-    "Giant Killer": 7,
-    "Impaling": 3,
-    "Knockback": 2,
-    "Lethality": 6,
-    "Life Steal": 5,
-    "Looting": 5,
-    "Luck": 7,
-    "Prosecute": 6,
-    "Scavenger": 5,
-    "Sharpness": 7,
-    "Smite": 7,
-    "Syphon": 5,
-    "Telekinesis": 1,
-    "Thunderbolt": 6,
-    "Thunderlord": 6,
-    "Titan Killer": 7,
-    "Triple-Strike": 5,
-    "Vampirism": 6,
-    "Venemous": 6,
-    "Vicious": 5,
+    baseSwordDamageEnchantment = {
+        "Bane of Arthopods": 7,
+        "Sharpness": 7,
+        "Smite": 7,
+    },
+    
+    strikeEnchantment = {
+        "First Strike": 5,
+        "Triple-Strike": 5,
+    },
+
+    highHealthEnchantment = {
+        "Giant Killer": 7,
+        "Titan Killer": 7,
+    },
+
+    healingEnchantment = {
+        "Life Steal": 5,
+        "Syphon": 5,
+    },
+
+    lowHealthEnchantment = {
+        "Execute": 6,
+        "Prosecute": 6,
+    },
+
+    thunderEnchantment = {
+        "Thunderbolt": 6,
+        "Thunderlord": 6,
+    },
+
+    mutuallyInclusiveEnchants = {
+        "Cleave": 6,
+        "Critical": 7,
+        "Cubism": 6,
+        "Dragon Hunter": 5,
+        "Ender Slayer": 7,
+        "Experience": 4,
+        "Fire Aspect": 2,
+        "Impaling": 3,
+        "Knockback": 2,
+        "Lethality": 6,
+        "Looting": 5,
+        "Luck": 7,
+        "Scavenger": 5,
+        "Telekinesis": 1,
+        "Vampirism": 6,
+        "Venemous": 6,
+        "Vicious": 5,
+    },
 }
 
 const maxUltimateEnchants = {
@@ -52,38 +72,57 @@ class Enchants extends React.Component {
         super()
   
         this.state = {
-
             baseEnchants = {
-                "Bane of Arthopods": 0,
-                "Cleave": 0,
-                "Critical": 0,
-                "Cubism": 0,
-                "Dragon Hunter": 0,
-                "Ender Slayer": 0,
-                "Execute": 0,
-                "Experience": 0,
-                "Fire Aspect": 0,
-                "First Strike": 0,
-                "Giant Killer": 0,
-                "Impaling": 0,
-                "Knockback": 0,
-                "Lethality": 0,
-                "Life Steal": 0,
-                "Looting": 0,
-                "Luck": 0,
-                "Prosecute": 0,
-                "Scavenger": 0,
-                "Sharpness": 0,
-                "Smite": 0,
-                "Syphon": 0,
-                "Telekinesis": 0,
-                "Thunderbolt": 0,
-                "Thunderlord": 0,
-                "Titan Killer": 0,
-                "Triple-Strike": 0,
-                "Vampirism": 0,
-                "Venemous": 0,
-                "Vicious": 0,
+                baseSwordDamageEnchantment = {
+                    "Bane of Arthopods": 0,
+                    "Sharpness": 0,
+                    "Smite": 0,
+                },
+
+                strikeEnchantment = {
+                    "First Strike": 0,
+                    "Triple-Strike": 0,
+                },
+
+                highHealthEnchantment = {
+                    "Giant Killer": 0,
+                    "Titan Killer": 0,
+                },
+
+                healingEnchantment = {
+                    "Life Steal": 0,
+                    "Syphon": 0,
+                },
+
+                lowHealthEnchantment = {
+                    "Execute": 0,
+                    "Prosecute": 0,
+                },
+
+                thunderEnchantment = {
+                    "Thunderbolt": 0,
+                    "Thunderlord": 0,
+                },
+
+                mutuallyInclusiveEnchants = {
+                    "Cleave": 0,
+                    "Critical": 0,
+                    "Cubism": 0,
+                    "Dragon Hunter": 0,
+                    "Ender Slayer": 0,
+                    "Experience": 0,
+                    "Fire Aspect": 0,
+                    "Impaling": 0,
+                    "Knockback": 0,
+                    "Lethality": 0,
+                    "Looting": 0,
+                    "Luck": 0,
+                    "Scavenger": 0,
+                    "Telekinesis": 0,
+                    "Vampirism": 0,
+                    "Venemous": 0,
+                    "Vicious": 0,
+                },
             },
             
             ultimateEnchants = {
@@ -116,7 +155,7 @@ class Enchants extends React.Component {
             <div>
                 <div>
                     Base Enchants
-                    {Object.entries(maxBaseEnchants)
+                    {Object.entries(maxBaseEnchants.mutuallyInclusiveEnchants)
                         .map(([key, value]) => 
                         <div key={key}>
                             <input type="number" name={key} onChange={this.handleInputChange} defaultValue="0" min="0" max={value}/> {key}
