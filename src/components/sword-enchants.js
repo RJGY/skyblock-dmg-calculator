@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // TODO: Add more enchants.
 // TODO: Add limit to enchants.
 
-const maxBaseEnchants = {
+const maxEnchants = [
     baseSwordDamageEnchantment = {
         "Bane of Arthopods": 7,
         "Sharpness": 7,
@@ -55,24 +55,24 @@ const maxBaseEnchants = {
         "Venemous": 6,
         "Vicious": 5,
     },
-}
 
-const maxUltimateEnchants = {
-    "Chimera": 5,
-    "Combo": 5,
-    "One For All": 1,
-    "Soul Eater": 5,
-    "Swarm": 5,
-    "Ultimate Jerry": 5,
-    "Ultimate Wise": 5,
-}
+    maxUltimateEnchants = {
+        "Chimera": 5,
+        "Combo": 5,
+        "One For All": 1,
+        "Soul Eater": 5,
+        "Swarm": 5,
+        "Ultimate Jerry": 5,
+        "Ultimate Wise": 5,
+    },
+]
 
 class Enchants extends React.Component {
     constructor() {
         super()
   
         this.state = {
-            baseEnchants = {
+            enchantments: [
                 baseSwordDamageEnchantment = {
                     "Bane of Arthopods": 0,
                     "Sharpness": 0,
@@ -123,17 +123,17 @@ class Enchants extends React.Component {
                     "Venemous": 0,
                     "Vicious": 0,
                 },
-            },
-            
-            ultimateEnchants = {
-                "Chimera": 0,
-                "Combo": 0,
-                "One For All": 0,
-                "Soul Eater": 0,
-                "Swarm": 0,
-                "Ultimate Jerry": 0,
-                "Ultimate Wise": 0,
-            }
+
+                ultimateEnchants = {
+                    "Chimera": 0,
+                    "Combo": 0,
+                    "One For All": 0,
+                    "Soul Eater": 0,
+                    "Swarm": 0,
+                    "Ultimate Jerry": 0,
+                    "Ultimate Wise": 0,
+                },
+            ],
         }
         
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -155,7 +155,7 @@ class Enchants extends React.Component {
             <div>
                 <div>
                     Base Enchants
-                    {Object.entries(maxBaseEnchants.mutuallyInclusiveEnchants)
+                    {Object.entries()
                         .map(([key, value]) => 
                         <div key={key}>
                             <input type="number" name={key} onChange={this.handleInputChange} defaultValue="0" min="0" max={value}/> {key}
@@ -165,7 +165,7 @@ class Enchants extends React.Component {
                 </div>
                 <div>
                     Ultimate Enchants
-                    {Object.entries(maxUltimateEnchants)
+                    {Object.entries()
                         .map(([key, value]) => 
                         <div key={key}>
                             <input type="number" name={key} onChange={this.handleInputChange} defaultValue="0" min="0" max={value}/> {key}
