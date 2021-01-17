@@ -2,68 +2,68 @@ import React from "react"
 import Enchants from "./sword-enchants"
 import BaseStats from "./base-stat-sword"
 
-let swordEnchants = [
-    baseSwordDamageEnchantment = {
-        "Bane of Arthopods": 0,
-        "Sharpness": 0,
-        "Smite": 0,
-    },
-    
-    strikeEnchantment = {
-        "First Strike": 0,
-        "Triple-Strike": 0,
-    },
 
-    highHealthEnchantment = {
-        "Giant Killer": 0,
-        "Titan Killer": 0,
-    },
+let baseSwordDamageEnchantment = {
+    "Bane of Arthopods": 0,
+    "Sharpness": 0,
+    "Smite": 0,
+}
 
-    healingEnchantment = {
-        "Life Steal": 0,
-        "Syphon": 0,
-    },
+let strikeEnchantment = {
+    "First Strike": 0,
+    "Triple-Strike": 0,
+}
 
-    lowHealthEnchantment = {
-        "Execute": 0,
-        "Prosecute": 0,
-    },
+let highHealthEnchantment = {
+    "Giant Killer": 0,
+    "Titan Killer": 0,
+}
 
-    thunderEnchantment = {
-        "Thunderbolt": 0,
-        "Thunderlord": 0,
-    },
+let healingEnchantment = {
+    "Life Steal": 0,
+    "Syphon": 0,
+}
 
-    mutuallyInclusiveEnchants = {
-        "Cleave": 0,
-        "Critical": 0,
-        "Cubism": 0,
-        "Dragon Hunter": 0,
-        "Ender Slayer": 0,
-        "Experience": 0,
-        "Fire Aspect": 0,
-        "Impaling": 0,
-        "Knockback": 0,
-        "Lethality": 0,
-        "Looting": 0,
-        "Luck": 0,
-        "Scavenger": 0,
-        "Telekinesis": 0,
-        "Vampirism": 0,
-        "Venemous": 0,
-        "Vicious": 0,
-    },
+let lowHealthEnchantment = {
+    "Execute": 0,
+    "Prosecute": 0,
+}
 
-    maxUltimateEnchants = {
-        "Chimera": 0,
-        "Combo": 0,
-        "One For All": 0,
-        "Soul Eater": 0,
-        "Swarm": 0,
-        "Ultimate Jerry": 0,
-        "Ultimate Wise": 0,
-    },
-]
+let thunderEnchantment = {
+    "Thunderbolt": 0,
+    "Thunderlord": 0,
+}
+
+let mutuallyInclusiveEnchants = {
+    "Cleave": 0,
+    "Critical": 0,
+    "Cubism": 0,
+    "Dragon Hunter": 0,
+    "Ender Slayer": 0,
+    "Experience": 0,
+    "Fire Aspect": 0,
+    "Impaling": 0,
+    "Knockback": 0,
+    "Lethality": 0,
+    "Looting": 0,
+    "Luck": 0,
+    "Scavenger": 0,
+    "Telekinesis": 0,
+    "Vampirism": 0,
+    "Venemous": 0,
+    "Vicious": 0,
+}
+
+let maxUltimateEnchants = {
+    "Chimera": 0,
+    "Combo": 0,
+    "One For All": 0,
+    "Soul Eater": 0,
+    "Swarm": 0,
+    "Ultimate Jerry": 0,
+    "Ultimate Wise": 0,
+}
+
 
 let characterStats = {
     "Strength": 0,
@@ -82,7 +82,14 @@ class Calculator extends React.Component {
     }
 
     getSwordEnchants(enchants) {
-        swordEnchants = enchants;
+        baseSwordDamageEnchantment = enchants.baseSwordDamageEnchantment;
+        strikeEnchantment = enchants.strikeEnchantment;
+        highHealthEnchantment = enchants.highHealthEnchantment;
+        healingEnchantment = enchants.healingEnchantment;
+        lowHealthEnchantment = enchants.lowHealthEnchantment;
+        thunderEnchantment = enchants.thunderEnchantment;
+        mutuallyInclusiveEnchants = enchants.mutuallyInclusiveEnchants;
+        maxUltimateEnchants = enchants.maxUltimateEnchants;
         this.forceUpdate();
     }
 
@@ -115,7 +122,7 @@ class Calculator extends React.Component {
                         <br/><hr/>
                     <label>
                         From enchants in manual, 
-                        {Object.entries(swordEnchants)
+                        {Object.entries(maxUltimateEnchants)
                             .map(([key, value]) => 
                             <div key={key}>{key}: {value}</div>)
                         }

@@ -21,7 +21,7 @@ class Stats extends React.Component {
             [e.target.name] : e.target.value
         });
         this.forceUpdate();
-        const timer = setTimeout(() => {
+        setTimeout(() => {
             this.props.onInputChange(this.state);
         }, 50);
         
