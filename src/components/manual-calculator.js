@@ -54,7 +54,7 @@ let mutuallyInclusiveEnchants = {
     "Vicious": 0,
 }
 
-let maxUltimateEnchants = {
+let ultimateEnchants = {
     "Chimera": 0,
     "Combo": 0,
     "One For All": 0,
@@ -89,7 +89,7 @@ class Calculator extends React.Component {
         lowHealthEnchantment = enchants.lowHealthEnchantment;
         thunderEnchantment = enchants.thunderEnchantment;
         mutuallyInclusiveEnchants = enchants.mutuallyInclusiveEnchants;
-        maxUltimateEnchants = enchants.maxUltimateEnchants;
+        ultimateEnchants = enchants.ultimateEnchants;
         this.forceUpdate();
     }
 
@@ -121,8 +121,8 @@ class Calculator extends React.Component {
                     </label>
                         <br/><hr/>
                     <label>
-                        From enchants in manual, 
-                        {Object.entries(maxUltimateEnchants)
+                        From base enchants in manual, 
+                        {Object.entries(baseSwordDamageEnchantment)
                             .map(([key, value]) => 
                             <div key={key}>{key}: {value}</div>)
                         }

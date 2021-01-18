@@ -5,38 +5,41 @@ import PropTypes from 'prop-types';
 // TODO: Add limit to enchants.
 
 
-const baseSwordDamageEnchantment = {
+const maxBaseSwordDamageEnchantment = {
     "Bane of Arthopods": 7,
     "Sharpness": 7,
     "Smite": 7,
 }
+
+let selectedBaseSwordDamageEnchantment = "Sharpness";
+let maxSelectedBase = 7;
     
-const strikeEnchantment = {
+const maxStrikeEnchantment = {
     "First Strike": 5,
     "Triple-Strike": 5,
 }
 
-const highHealthEnchantment = {
+const maxHighHealthEnchantment = {
     "Giant Killer": 7,
     "Titan Killer": 7,
 }
 
-const healingEnchantment = {
+const maxHealingEnchantment = {
     "Life Steal": 5,
     "Syphon": 5,
 }
 
-const lowHealthEnchantment = {
+const maxLowHealthEnchantment = {
     "Execute": 6,
     "Prosecute": 6,
 }
 
-const thunderEnchantment = {
+const maxThunderEnchantment = {
     "Thunderbolt": 6,
     "Thunderlord": 6,
 }
 
-const mutuallyInclusiveEnchants = {
+const maxMutuallyInclusiveEnchants = {
     "Cleave": 6,
     "Critical": 7,
     "Cubism": 6,
@@ -65,7 +68,6 @@ const maxUltimateEnchants = {
     "Ultimate Jerry": 5,
     "Ultimate Wise": 5,
 }
-
 
 class Enchants extends React.Component {
     constructor() {
@@ -134,12 +136,14 @@ class Enchants extends React.Component {
             },
         }
         
+        this.handleSelectChange = this.handleSelectChange.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     handleInputChange(e) {
         this.setState({
-            [e.target.name] : e.target.value
+
+            [e.target.name.split("-")[1]] : {[e.target.name.split("-")[0]] : e.target.value}
         });
         this.forceUpdate();
         setTimeout(() => {
@@ -149,34 +153,48 @@ class Enchants extends React.Component {
         
     }
 
+    handleSelectChange(e) {
+        selectedBaseSwordDamageEnchantment = e.target.value.split("-")[0];
+        maxSelectedBase = e.target.value.split("-")[1];
+        this.forceUpdate();
+    }
+
     render() {
         return (
             <div>
                 <div>
                     Base Enchants
-                    {Object.entries(baseSwordDamageEnchantment)
-                        .map(([key, value]) => 
-                        <div key={key}>
-                            <input type="number" name={key} onChange={this.handleInputChange} defaultValue="0" min="0" max={value}/> {key}
-                        </div>
-                        )
-                    }
-                </div>
-                <div>
-                    Ultimate Enchants
-                    {Object.entries(maxUltimateEnchants)
-                        .map(([key, value]) => 
-                        <div key={key}>
-                            <input type="number" name={key} onChange={this.handleInputChange} defaultValue="0" min="0" max={value}/> {key}
-                        </div>
-                        )
-                    }
+                    <div>
+                        <select onChange={this.handleSelectChange} >
+                        {Object.entries(maxBaseSwordDamageEnchantment)
+                            .map(([key, value]) => 
+                            
+                                <option value={`${key}` + "-" + `${value}`} key={key}>{key}</option>
+                            
+                            )
+                        }
+                        </select>
+                        <input type="number" name={`${selectedBaseSwordDamageEnchantment}` + "-" + "baseSwordDamageEnchantment"} onChange={this.handleInputChange} defaultValue="0" min="0" max={maxSelectedBase}/> 
+                    </div>
                 </div>
             </div>
         )
     }
     
 }
+
+/*
+                <div>
+                    Ultimate Enchants
+                    {Object.entries(maxUltimateEnchants)
+                        .map(([key, value]) => 
+                        <div key={key}>
+                            <input type="number" name={`${key}` + "-" + "ultimateEnchants"} onChange={this.handleInputChange} defaultValue="0" min="0" max={value}/> {key}
+                        </div>
+                        )
+                    }
+                </div>
+*/
 
 Enchants.propTypes = {
     onInputChange: PropTypes.func,
