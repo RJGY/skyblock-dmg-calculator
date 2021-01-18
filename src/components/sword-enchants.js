@@ -141,9 +141,18 @@ class Enchants extends React.Component {
     }
 
     handleInputChange(e) {
+        let dict = {};
+        for (const [key, value] of Object.entries(this.state[e.target.name.split("-")[1]])) {
+            if (key == [e.target.name.split("-")[0]]) {
+                dict[key] = e.target.value
+            }
+            else {
+                dict[key] = value
+            }
+        }
+        console.log(dict);
         this.setState({
-
-            [e.target.name.split("-")[1]] : {[e.target.name.split("-")[0]] : e.target.value}
+            [e.target.name.split("-")[1]] : dict
         });
         this.forceUpdate();
         setTimeout(() => {
@@ -154,9 +163,28 @@ class Enchants extends React.Component {
     }
 
     handleSelectChange(e) {
+        
+        let dict = {};
+        for (const [key, value] of Object.entries(this.state[e.target.value.split("-")[2]])) {
+            if (key == e.target.value.split("-")[0]) {
+                dict[key] = this.state[e.target.value.split("-")[2]][selectedBaseSwordDamageEnchantment];
+            }
+            else {
+                dict[key] = value;
+            }
+            
+        }
+        console.log(dict);
         selectedBaseSwordDamageEnchantment = e.target.value.split("-")[0];
         maxSelectedBase = e.target.value.split("-")[1];
+        this.setState({
+            [e.target.value.split("-")[2]] : dict
+        });
         this.forceUpdate();
+        setTimeout(() => {
+            this.props.onInputChange(this.state);
+        }, 50);
+        
     }
 
     render() {
@@ -169,7 +197,7 @@ class Enchants extends React.Component {
                         {Object.entries(maxBaseSwordDamageEnchantment)
                             .map(([key, value]) => 
                             
-                                <option value={`${key}` + "-" + `${value}`} key={key}>{key}</option>
+                                <option value={`${key}` + "-" + `${value}` + "-" + "baseSwordDamageEnchantment"} key={key}>{key}</option>
                             
                             )
                         }
