@@ -19,6 +19,9 @@ const maxStrikeEnchantment = {
     "Triple-Strike": 5,
 }
 
+let selectedStrikeEnchantment = "First Strike";
+let maxSelectedStrike = 5;
+
 const maxHighHealthEnchantment = {
     "Giant Killer": 7,
     "Titan Killer": 7,
@@ -193,7 +196,7 @@ class Enchants extends React.Component {
                 <div>
                     Base Enchants
                     <div>
-                        <select onChange={this.handleSelectChange} >
+                        <select onChange={this.handleSelectChange} defaultValue={'Sharpness-7-baseSwordDamageEnchantment'}>
                         {Object.entries(maxBaseSwordDamageEnchantment)
                             .map(([key, value]) => 
                             
