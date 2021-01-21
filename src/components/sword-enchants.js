@@ -1,32 +1,37 @@
 import React from "react"
 import PropTypes from 'prop-types';
 
-// TODO: make selected enchant dictionary for name & number.
+// TODO: Expand selected enchant dictionaries
+// TODO: Add all enchants to list
+// TODO: Test all added enchants. bound to be bugs.
+
+let selectedEnchantments = {
+    baseSwordDamageEnchantment: "Sharpness",
+    strikeEnchantment: "First Strike",
+    highHealthEnchantment: "Giant Killer",
+}
+
+let selectedMax = {
+    baseSwordDamageEnchantment: 7,
+    strikeEnchantment: 5,
+    highHealthEnchantment: 7,
+}
 
 const maxBaseSwordDamageEnchantment = {
     "Bane of Arthopods": 7,
     "Sharpness": 7,
     "Smite": 7,
 }
-
-let selectedBaseSwordDamageEnchantment = "Sharpness";
-let maxSelectedBase = 7;
     
 const maxStrikeEnchantment = {
     "First Strike": 5,
     "Triple Strike": 5,
 }
 
-let selectedStrikeEnchantment = "First Strike";
-let maxSelectedStrike = 5;
-
 const maxHighHealthEnchantment = {
     "Giant Killer": 7,
     "Titan Killer": 7,
 }
-
-let selectedHighHealthEnchantment = "Syphon";
-let maxSelectedHighHealth = 5;
 
 const maxHealingEnchantment = {
     "Life Steal": 5,
@@ -171,16 +176,15 @@ class Enchants extends React.Component {
         let dict = {};
         for (const [key, value] of Object.entries(this.state[e.target.value.split("-")[2]])) {
             if (key == e.target.value.split("-")[0]) {
-                dict[key] = this.state[e.target.value.split("-")[2]][selectedBaseSwordDamageEnchantment];
+                dict[key] = this.state[e.target.value.split("-")[2]][selectedEnchantments[e.target.value.split("-")[2]]];
             }
             else {
                 dict[key] = 0;
             }
             
         }
-        console.log(dict);
-        selectedBaseSwordDamageEnchantment = e.target.value.split("-")[0];
-        maxSelectedBase = e.target.value.split("-")[1];
+        selectedEnchantments[e.target.value.split("-")[2]] = e.target.value.split("-")[0];
+        selectedMax[e.target.value.split("-")[2]] = e.target.value.split("-")[1];
         this.setState({
             [e.target.value.split("-")[2]] : dict
         });
@@ -204,35 +208,7 @@ class Enchants extends React.Component {
                             )
                         }
                         </select>
-                        <input type="number" name={`${selectedBaseSwordDamageEnchantment}` + "-" + "baseSwordDamageEnchantment"} onChange={this.handleInputChange} defaultValue="0" min="0" max={maxSelectedBase}/> 
-                    </div>
-                </div>
-
-                <div>
-                    Strike Enchants
-                    <div>
-                        <select onChange={this.handleSelectChange} defaultValue={'First Strike-5-strikeEnchantment'}>
-                        {Object.entries(maxStrikeEnchantment)
-                            .map(([key, value]) => 
-                                <option value={`${key}` + "-" + `${value}` + "-" + "strikeEnchantment"} key={key}>{key}</option>
-                            )
-                        }
-                        </select>
-                        <input type="number" name={`${selectedStrikeEnchantment}` + "-" + "strikeEnchantment"} onChange={this.handleInputChange} defaultValue="0" min="0" max={maxSelectedStrike}/> 
-                    </div>
-                </div>
-
-                <div>
-                    Strike Enchants
-                    <div>
-                        <select onChange={this.handleSelectChange} defaultValue={'Giant Killer-7-highHealth'}>
-                        {Object.entries(maxHighHealthEnchantment)
-                            .map(([key, value]) => 
-                                <option value={`${key}` + "-" + `${value}` + "-" + "highHealth"} key={key}>{key}</option>
-                            )
-                        }
-                        </select>
-                        <input type="number" name={`${selectedHighHealthEnchantment}` + "-" + "highHealth"} onChange={this.handleInputChange} defaultValue="0" min="0" max={maxSelectedHighHealth}/> 
+                        <input type="number" name={`${selectedEnchantments.baseSwordDamageEnchantment}` + "-" + "baseSwordDamageEnchantment"} onChange={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.baseSwordDamageEnchantment}/> 
                     </div>
                 </div>
             </div>

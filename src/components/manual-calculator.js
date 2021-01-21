@@ -103,12 +103,12 @@ class Calculator extends React.Component {
             <div>
                 <form>
                     <label>
-                        Base Stats
+                        <h1>Base Stats</h1>
                         <BaseStats onInputChange={this.getSwordStats}/>
                     </label>
                         <br/><hr/>
                     <label>
-                        Sword Enchants
+                        <h1>Sword Enchants</h1>
                         <Enchants onInputChange={this.getSwordEnchants}/>
                     </label>
                     <br/><hr/>
