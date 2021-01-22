@@ -54,7 +54,7 @@ let mutuallyInclusiveEnchants = {
     "Vicious": 0,
 }
 
-let ultimateEnchants = {
+let ultimateEnchantment = {
     "Chimera": 0,
     "Combo": 0,
     "One For All": 0,
@@ -89,7 +89,7 @@ class Calculator extends React.Component {
         lowHealthEnchantment = enchants.lowHealthEnchantment;
         thunderEnchantment = enchants.thunderEnchantment;
         mutuallyInclusiveEnchants = enchants.mutuallyInclusiveEnchants;
-        ultimateEnchants = enchants.ultimateEnchants;
+        ultimateEnchantment = enchants.ultimateEnchantment;
         this.forceUpdate();
     }
 
@@ -123,6 +123,13 @@ class Calculator extends React.Component {
                     <label>
                         From base enchants in manual, 
                         {Object.entries(baseSwordDamageEnchantment)
+                            .map(([key, value]) => 
+                            <div key={key}>{key}: {value}</div>)
+                        }
+                    </label>
+                    <label>
+                        All other enchants in manual, 
+                        {Object.entries(mutuallyInclusiveEnchants)
                             .map(([key, value]) => 
                             <div key={key}>{key}: {value}</div>)
                         }
