@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from 'prop-types';
 
-// TODO: Test all added enchants. bound to be bugs.
 // TODO: Raise error if value is greater than max.
 
 let selectedEnchantments = {
@@ -157,31 +156,24 @@ class Enchants extends React.Component {
     }
 
     handleInputChange(e) {
+        let inputValue = (e.target.value <= e.target.max) ? e.target.value : e.target.max;
         
-        /*
-        if (e.target.value > e.target.max)
-        {
-            e.targe.value = e.target.max;
-        }
-        */
-        console.log(e.target.max);
-
+        console.log(inputValue + " " + e.target.max);
         let dict = {};
         for (const [key, value] of Object.entries(this.state[e.target.name.split("-")[1]])) {
             if (key == [e.target.name.split("-")[0]]) {
-                dict[key] = e.target.value
+                dict[key] = inputValue
             }
             else {
                 dict[key] = value
             }
         }
-        console.log(dict);
+
         this.setState({
             [e.target.name.split("-")[1]] : dict
         });
         this.forceUpdate();
         setTimeout(() => {
-            console.log(this.state);
             this.props.onInputChange(this.state);
         }, 50);
         
@@ -329,19 +321,6 @@ class Enchants extends React.Component {
     }
     
 }
-
-/*
-                <div>
-                    Ultimate Enchants
-                    {Object.entries(maxUltimateEnchants)
-                        .map(([key, value]) => 
-                        <div key={key}>
-                            <input type="number" name={`${key}` + "-" + "ultimateEnchants"} onChange={this.handleInputChange} defaultValue="0" min="0" max={value}/> {key}
-                        </div>
-                        )
-                    }
-                </div>
-*/
 
 Enchants.propTypes = {
     onInputChange: PropTypes.func,
