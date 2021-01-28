@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from 'prop-types';
 
-// TODO: Raise error if value is greater than max.
+// TODO: Add buttons to auto select enchant levels. One button for moderate levels, one for busted amounts of money
+//      and one for reset. 
 
 let selectedEnchantments = {
     baseSwordDamageEnchantment: "Sharpness",
