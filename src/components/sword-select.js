@@ -1,10 +1,11 @@
 import React from "react"
 import PropTypes from 'prop-types';
-import Sword from "sword";
-import Ability from "ability";
-// damage, strength, critChance, critDamage, intelligence, ability
+import Sword from "./sword";
+import Ability from "./ability";
+// Sword -> damage, strength, critChance, critDamage, intelligence, ability
+// Ability -> name, description, cooldowm, manacost
 const listOfWeapons = {
-    "Aspect of the Jerry" : new Sword(1,0,0,0,0,null)
+    "Aspect of the Jerry" : new Sword(1,0,0,0,0, new Ability("Parley", "Channel your inner Jerry", 5, 0))
 }
 
 

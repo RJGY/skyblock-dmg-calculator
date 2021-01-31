@@ -1,7 +1,13 @@
 import React from "react"
 import Enchants from "./sword-enchants"
 import BaseStats from "./base-stat-sword"
+import SwordSelect from "./sword-select"
+import Sword from "./sword";
+import Ability from "./ability";
 
+let currentSword = {
+    "Aspect of the Jerry" : new Sword(1,0,0,0,0, new Ability("Jerry Sword","Meme"))
+};
 
 let baseSwordDamageEnchantment = {
     "Bane of Arthopods": 0,
@@ -78,7 +84,8 @@ class Calculator extends React.Component {
         super()
         
         this.getSwordEnchants = this.getSwordEnchants.bind(this);
-        this.getSwordStats = this.getSwordStats.bind(this)
+        this.getSwordStats = this.getSwordStats.bind(this);
+        this.getSwordSelect = this.getSwordSelect.bind(this);
     }
 
     getSwordEnchants(enchants) {
@@ -98,6 +105,11 @@ class Calculator extends React.Component {
         this.forceUpdate();
     }
 
+    getSwordSelect(newSword) {
+        sword = newSword;
+        this.forceUpdate();
+    }
+
     render() {
         return (
             <div>
@@ -105,11 +117,6 @@ class Calculator extends React.Component {
                     <label>
                         <h1>Base Stats</h1>
                         <BaseStats onInputChange={this.getSwordStats}/>
-                    </label>
-                        <br/><hr/>
-                    <label>
-                        <h1>Sword Enchants</h1>
-                        <Enchants onInputChange={this.getSwordEnchants}/>
                     </label>
                     <br/><hr/>
                     <label>
@@ -119,7 +126,12 @@ class Calculator extends React.Component {
                             <div key={key}>{key}: {value}</div>)
                         }
                     </label>
-                        <br/><hr/>
+                    <br/><hr/>
+                    <label>
+                        <h1>Sword Enchants</h1>
+                        <Enchants onInputChange={this.getSwordEnchants}/>
+                    </label>
+                    <br/><hr/>
                     <label>
                         From base enchants in manual, 
                         {Object.entries(baseSwordDamageEnchantment)
@@ -127,12 +139,24 @@ class Calculator extends React.Component {
                             <div key={key}>{key}: {value}</div>)
                         }
                     </label>
+                    <br/><hr/>
                     <label>
                         All other enchants in manual, 
                         {Object.entries(mutuallyInclusiveEnchants)
                             .map(([key, value]) => 
                             <div key={key}>{key}: {value}</div>)
                         }
+                    </label>
+                    <br/><hr/>
+                    <label>
+                        <SwordSelect onInputChange={this.getSwordSelect}/>
+                    </label>
+
+                    <br/><hr/>
+
+                    <label>
+                        Sword in Manual: 
+                        {}
                     </label>
                 </form>
             </div>
