@@ -9,4 +9,4 @@ class Ability extends React.Component {
     }
 }
 
-export default Sword
+export default Ability

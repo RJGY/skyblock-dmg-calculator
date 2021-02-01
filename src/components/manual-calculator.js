@@ -106,7 +106,7 @@ class Calculator extends React.Component {
     }
 
     getSwordSelect(newSword) {
-        sword = newSword;
+        currentSword = newSword;
         this.forceUpdate();
     }
 
@@ -156,7 +156,10 @@ class Calculator extends React.Component {
 
                     <label>
                         Sword in Manual: 
-                        {}
+                        {Object.entries(currentSword)
+                            .map(([key, value]) => 
+                            <div key={value}>{key}</div>)
+                        }
                     </label>
                 </form>
             </div>

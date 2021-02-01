@@ -2,6 +2,7 @@ import React from "react"
 
 class Sword extends React.Component {
     constructor(damage, strength, critChance, critDamage, intelligence, ability) {
+        super();
         this.damage = damage;
         this.strength = strength;
         this.critChance = critChance;
