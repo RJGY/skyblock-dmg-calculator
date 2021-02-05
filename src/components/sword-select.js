@@ -24,6 +24,9 @@ class SwordSelect extends React.Component {
     }
 
     handleSelectChange(e) {
+        this.setState({
+            [e.target.key] : e.target.value
+        })
         setTimeout(() => {
             this.props.onInputChange(this.state);
         }, 50);
@@ -38,7 +41,7 @@ class SwordSelect extends React.Component {
                             <p className="literal">
                                 {key}
                                 <br/>
-                                {value.ability.toString()}
+                                {value.toString()}
                             </p>
                         </div>
                     )

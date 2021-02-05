@@ -10,6 +10,10 @@ class Sword extends React.Component {
         this.intelligence = intelligence;
         this.ability = ability;
     }
+
+    toString() {
+        return `Sword:\n\tDamage: ${this.damage}\n\tStrength: ${this.strength}\n\tCritical Chance: ${this.critChance}\n\tCritical Damage: ${this.critDamage}\n\tIntelligence: ${this.intelligence}\n\tAbility: ${this.ability.toString()}`;
+    }
 }
 
 export default Sword
