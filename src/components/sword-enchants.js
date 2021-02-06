@@ -152,7 +152,7 @@ class Enchants extends React.Component {
             },
         }
         
-        this.handleSelectChange = this.handleSelectChange.bind(this)
+        this.handleSelectChange = this.handleSelectChange.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 

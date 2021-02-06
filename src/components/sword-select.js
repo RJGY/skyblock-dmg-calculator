@@ -21,6 +21,13 @@ class SwordSelect extends React.Component {
         this.state = {
             "Aspect of the Jerry" : new Sword(1,0,0,0,0, new Ability("Parley", "Channel your inner Jerry", 5, 0))
         }
+
+        this.handleSelectChange = this.handleSelectChange.bind(this);
+
+        Object.entries(listOfWeapons)
+            .map(([key, value]) =>
+            console.log(`Key: ${key}\nValue:${value}`)
+        )
     }
 
     handleSelectChange(e) {
@@ -35,17 +42,13 @@ class SwordSelect extends React.Component {
     render() {
         return (
             <div>
-                {Object.entries(listOfWeapons)
-                    .map(([key, value]) =>
-                        <div key={key}>
-                            <p className="literal">
-                                {key}
-                                <br/>
-                                {value.toString()}
-                            </p>
-                        </div>
-                    )
-                }
+                <select onChange={this.handleSelectChange}>
+                    {Object.entries(listOfWeapons)
+                        .map(([key, value]) =>
+                            <option value={`${value}`} key={key}>{key}</option>
+                        )
+                    }
+                </select>
             </div>
         )
     }
