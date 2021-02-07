@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from 'prop-types';
 import Sword from "./sword";
-import Ability from "./ability";
+import SwordAbility from "./ability";
 
 // Sword -> damage, strength, critChance, critDamage, intelligence, ability
-// Ability -> name, description, cooldown, manacost
-const listOfAbilities = {
-    "Aspect of the Jerry Ability" : new Ability("Parley", "Channel your inner Jerry", 5, 0)
+// SwordAbility -> name, description, cooldown, manacost
+const listOfSwordAbilities = {
+    "Aspect of the Jerry Ability" : new SwordAbility("Parley", "Channel your inner Jerry", 5, 0)
 }
 
 const listOfWeapons = {

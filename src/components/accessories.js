@@ -2,9 +2,9 @@
 
 import React from "react"
 
-// Reforge -> Strength, Damage, Crit Chance, Crit Damage, Attack Speed, Ferocity, Intelligence, Ability
-class Reforge extends React.Component {
-    constructor(strength, damage, critChance, critDamage, attackSpeed, ferocity, intelligence, reforgeAbility) {
+// Accessory -> Strength, Damage, Crit Chance, Crit Damage, Attack Speed, Ferocity, Intelligence, moveSpeed
+class Accessory extends React.Component {
+    constructor(strength, damage, critChance, critDamage, attackSpeed, ferocity, intelligence, moveSpeed) {
         super();
         this.strength = strength;
         this.damage = damage;
@@ -13,8 +13,8 @@ class Reforge extends React.Component {
         this.attackSpeed = attackSpeed;
         this.ferocity = ferocity;
         this.intelligence = intelligence;
-        this.reforgeAbility = reforgeAbility;
+        this.moveSpeed = moveSpeed;
     }
 }
 
-export default Reforge
+export default Accessory
