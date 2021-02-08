@@ -4,4 +4,4 @@ NEED:
     armour-reforges.js
     ability to add all stats together. This will be in manual.
     ability to add extra damage for weapon bonus (percentages). This will be in manual.
-    
+    caluclate damage to different mobs
