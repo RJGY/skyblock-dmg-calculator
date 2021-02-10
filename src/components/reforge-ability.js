@@ -11,6 +11,10 @@ class ReforgeAbility extends React.Component {
         this.criticalDamageBonus = criticalDamageBonus;
         this.description = description;
     }
+
+    toString() {
+        return `Reforge Ability: \n\tExtra Strength: ${this.strength}\n\tDamage Bonus: ${this.damageBonus}\n\tCritical Damage Bonus ${this.criticalDamageBonus}\n\tDescription ${this.description}\n`
+    }
 }
 
 export default ReforgeAbility

@@ -12,7 +12,8 @@ const listOfSwordAbilities = {
 }
 
 const listOfWeapons = {
-    "Aspect of the Jerry" : new Sword(1,0,0,0,0, listOfAbilities["Aspect of the Jerry Ability"])
+    "Wooden Sword" : new Sword(20,0,0,0,0,null,"Common"),
+    "Aspect of the Jerry" : new Sword(1,0,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"],"Common"),
 }
 
 const listOfReforges = {
@@ -25,7 +26,7 @@ class SwordSelect extends React.Component {
   
         this.state = {
             currentSword: {
-                "Aspect of the Jerry" : new Sword(1,0,0,0,0, new Ability("Parley", "Channel your inner Jerry", 5, 0))
+                "Aspect of the Jerry" : new Sword(1,0,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"])
             },
             
             swordReforge: {

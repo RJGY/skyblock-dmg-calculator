@@ -1,13 +1,19 @@
-import React from "react"
-import Enchants from "./sword-enchants"
-import BaseStats from "./base-stat-sword"
-import SwordSelect from "./sword-select"
+import React from "react";
+import Enchants from "./sword-enchants";
+import BaseStats from "./base-stat-sword";
+import SwordSelect from "./sword-select";
 import Sword from "./sword";
-import Ability from "./ability";
+import SwordAbility from "./ability";
+import SwordReforge from "./sword-reforge";
+import ReforgeAbility from "./reforge-ability";
 
 let currentSword = {
-    "Aspect of the Jerry" : new Sword(1,0,0,0,0, new Ability("Jerry Sword","Meme"))
-};
+    "Aspect of the Jerry" : new Sword(1, 0, 0, 0, 0, new SwordAbility("Parley", "Channel your inner Jerry", 5, 0), "Common"),
+}
+
+let swordReforge = {
+    "Gentle" : new SwordReforge(3,0,0,0,8,0,0,"Common",null),
+}
 
 let baseSwordDamageEnchantment = {
     "Bane of Arthopods": 0,
@@ -158,7 +164,15 @@ class Calculator extends React.Component {
                         Sword in Manual: 
                         {Object.entries(currentSword)
                             .map(([key, value]) => 
-                            <div key={value}>{key}</div>)
+                                <div key={value}>{key}</div>)
+                        }
+
+                        Sword Reforge in Manual
+                        {Object.entries(swordReforge)
+                            .map(([key, value]) =>
+                                <div key={value}>{key}</div>
+                            )
+                            
                         }
                     </label>
                 </form>
