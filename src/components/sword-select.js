@@ -8,16 +8,27 @@ import SwordReforge from "./sword-reforge";
 // SwordAbility -> name, description, cooldown, manacost
 // Reforge -> Strength, Damage, Crit Chance, Crit Damage, Attack Speed, Ferocity, Intelligence, rarity, Reforge Ability
 const listOfSwordAbilities = {
-    "Aspect of the Jerry Ability" : new SwordAbility("Parley", "Channel your inner Jerry", 5, 0)
+    "Aspect of the Jerry Ability" : new SwordAbility("Parley", "Channel your inner Jerry", 5, 0),
+    "Rogue Sword Ability" : new SwordAbility("Speed Boost","Increases your movement Speed icon.png Speed by +20% for 30 seconds - only +10 if ability already active.", 0, 50),
+
 }
 
 const listOfWeapons = {
     "Wooden Sword" : new Sword(20,0,0,0,0,null,"Common"),
+    "Thick Wooden Sword" : new Sword(20,0,0,0,0,null,"Uncommon"),
+    "Golden Sword" : new Sword(20,0,0,0,0,null,"Common"),
+    "Stone Sword" : new Sword(25,0,0,0,0,null,"Common"),
+    "Iron Sword" : new Sword(30,0,0,0,0,null,"Common"),
+    "Diamond Sword" : new Sword(20,0,0,0,0,null,"Common"),
     "Aspect of the Jerry" : new Sword(1,0,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"],"Common"),
+    "Thick Aspect of the Jerry" : new Sword(1,100,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"],"Uncommon"),
+    "Fancy Sword" : new Sword(20,0,0,0,0,null,"Common"),
+    "Rogue Sword" : new Sword(20,0,0,0,0,listOfSwordAbilities["Rogue Sword Ability"],"Common"),
 }
 
-const listOfReforges = {
-    "Gentle" : new SwordReforge(3,0,0,0,8,0,0,"Common",null)
+const listOfCommonReforges = {
+    "Gentle" : new SwordReforge(3,0,0,0,8,0,0,"Common",null),
+    "Odd" : new SwordReforge(0,0,12,10,0,0,-5,"Common",null),
 }
 
 class SwordSelect extends React.Component {
@@ -54,6 +65,14 @@ class SwordSelect extends React.Component {
     render() {
         return (
             <div>
+                <select onChange={this.handleSelectChange}>
+                    {Object.entries(listOfReforges)
+                        .map(([key, value]) =>
+                            <option value={`${value}`} key={key}>{key}</option>
+                        )
+                    }
+                </select>
+                 
                 <select onChange={this.handleSelectChange}>
                     {Object.entries(listOfWeapons)
                         .map(([key, value]) =>
