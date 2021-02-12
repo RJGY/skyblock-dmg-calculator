@@ -46,40 +46,67 @@ class SwordSelect extends React.Component {
         }
 
         this.handleSelectChange = this.handleSelectChange.bind(this);
-
-        Object.entries(listOfWeapons)
-            .map(([key, value]) =>
-            console.log(`Key: ${key}\nValue:${value}`)
-        )
+        this.handleWeaponChange = this.handleWeaponChange.bind(this);
+        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
     }
 
     handleSelectChange(e) {
         this.setState({
-            [e.target.key] : e.target.value
-        })
+            swordReforge: {
+                [e.target.key] : e.target.value
+            }
+        });
         setTimeout(() => {
             this.props.onInputChange(this.state);
         }, 50);
+    }
+
+    handleWeaponChange(e) {
+        this.setState({
+            currentSword: {    
+                [e.target.value.split("-")[1]] : e.target.value.split("-")[0]
+            }
+        });
+
+        
+
+        setTimeout(() => {
+            this.props.onInputChange(this.state);
+            let currentSwordRarity = Object.keys(this.state.currentSword)[0]
+            console.log(currentSwordRarity);
+        }, 50);
+
+        
+    }
+
+    handleCheckboxChange(e) {
+
     }
 
     render() {
         return (
             <div>
                 <select onChange={this.handleSelectChange}>
-                    {Object.entries(listOfReforges)
+                    {Object.entries(listOfCommonReforges)
                         .map(([key, value]) =>
-                            <option value={`${value}`} key={key}>{key}</option>
+                            <option value={`${value}-${key}`} key={key}>{key}</option>
                         )
                     }
                 </select>
                  
-                <select onChange={this.handleSelectChange}>
+                <select onChange={this.handleWeaponChange}>
                     {Object.entries(listOfWeapons)
                         .map(([key, value]) =>
-                            <option value={`${value}`} key={key}>{key}</option>
+                            <option value={`${value}-${key}`} key={key}>{key}</option>
                         )
                     }
                 </select>
+                    \t
+                <input
+                    name="isGoing"
+                    type="checkbox"
+                    onChange={this.handleCheckboxChange} 
+                />
             </div>
         )
     }
