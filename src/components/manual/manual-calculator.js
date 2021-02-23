@@ -8,7 +8,7 @@ import SwordReforge from "./sword-reforge";
 import ReforgeAbility from "./reforge-ability";
 
 let currentSword = {
-    "Aspect of the Jerry" : new Sword(1, 0, 0, 0, 0, new SwordAbility("Parley", "Channel your inner Jerry", 5, 0), "Common"),
+    "Wooden Sword" : new Sword(20,0,0,0,0,null,"Common"),
 }
 
 let swordReforge = {
