@@ -5,7 +5,8 @@
   "version": "0.1.0",
   "author": "Reese Gunardi",
   "dependencies": {
-    "gatsby": "^2.26.1",
+    "eslint": "^7.20.0",
+    "gatsby": "^2.32.4",
     "gatsby-image": "^2.5.0",
     "gatsby-plugin-manifest": "^2.6.1",
     "gatsby-plugin-offline": "^3.4.0",

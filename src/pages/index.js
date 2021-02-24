@@ -1,10 +1,9 @@
-import React from "react"
-
-import Layout from "../components/layout"
-import PreviewImage from "../images/diamond-sword.png"
-import SEO from "../components/seo"
-import Description from "../components/descriptions/description" 
-import Nav from "../components/nav"
+import React from "react";
+import Layout from "../components/layout";
+import PreviewImage from "../images/diamond-sword.png";
+import SEO from "../components/seo";
+import Description from "../components/descriptions/index-description";
+import Nav from "../components/nav";
 
 const IndexPage = () => (
   <Layout>

@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from 'prop-types';
-import Sword from "./sword";
-import SwordAbility from "./ability";
-import SwordReforge from "./sword-reforge";
+import Sword from "../objects/sword";
+import SwordAbility from "../objects/sword-ability";
+import SwordReforge from "../objects/sword-reforge";
 
 // Sword -> damage, strength, critChance, critDamage, intelligence, ability
 // SwordAbility -> name, description, cooldown, manacost
@@ -80,13 +80,13 @@ class SwordSelect extends React.Component {
     }
 
     handleCheckboxChange(e) {
-
+        console.log(e.target.checked);
     }
 
     render() {
         return (
             <div>
-                <select onChange={this.handleSelectChange}>
+                <select onBlur={this.handleSelectChange}>
                     {Object.entries(listOfCommonReforges)
                         .map(([key, value]) =>
                             <option value={`${value}-${key}`} key={key}>{key}</option>
@@ -94,19 +94,21 @@ class SwordSelect extends React.Component {
                     }
                 </select>
                  
-                <select onChange={this.handleWeaponChange}>
+                <select onBlur={this.handleWeaponChange}>
                     {Object.entries(listOfWeapons)
                         .map(([key, value]) =>
                             <option value={`${value}-${key}`} key={key}>{key}</option>
                         )
                     }
                 </select>
-                    \t
+                Recombobulated 
                 <input
                     name="isGoing"
                     type="checkbox"
                     onChange={this.handleCheckboxChange} 
                 />
+                    
+                
             </div>
         )
     }

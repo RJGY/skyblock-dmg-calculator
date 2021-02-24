@@ -2,10 +2,8 @@ import React from "react";
 import Enchants from "./sword-enchants";
 import BaseStats from "./base-stat-sword";
 import SwordSelect from "./sword-select";
-import Sword from "./sword";
-import SwordAbility from "./ability";
-import SwordReforge from "./sword-reforge";
-import ReforgeAbility from "./reforge-ability";
+import Sword from "../objects/sword";
+import SwordReforge from "../objects/sword-reforge";
 
 let currentSword = {
     "Wooden Sword" : new Sword(20,0,0,0,0,null,"Common"),
@@ -120,33 +118,81 @@ class Calculator extends React.Component {
         return (
             <div>
                 <form>
-                    <label>
+                    <label htmlFor="base-stats">
                         <h1>Base Stats</h1>
                         <BaseStats onInputChange={this.getSwordStats}/>
                     </label>
                     <br/><hr/>
-                    <label>
-                        From base stats in manual, 
+                    <label htmlFor="base-stats-manual">
+                        From base stats in manual:
                         {Object.entries(characterStats)
                             .map(([key, value]) => 
                             <div key={key}>{key}: {value}</div>)
                         }
                     </label>
                     <br/><hr/>
-                    <label>
+                    <label htmlFor="sword-enchants">
                         <h1>Sword Enchants</h1>
                         <Enchants onInputChange={this.getSwordEnchants}/>
                     </label>
                     <br/><hr/>
-                    <label>
-                        From base enchants in manual, 
+                    <label htmlFor="base-sword-enchants-manual">
+                        Base Damage Enchants in manual:
                         {Object.entries(baseSwordDamageEnchantment)
                             .map(([key, value]) => 
                             <div key={key}>{key}: {value}</div>)
                         }
                     </label>
                     <br/><hr/>
-                    <label>
+                    <label htmlFor="strike-enchants-manual">
+                        Strike Enchants in manual:
+                        {Object.entries(strikeEnchantment)
+                            .map(([key, value]) => 
+                            <div key={key}>{key}: {value}</div>)
+                        }
+                    </label>
+                    <br/><hr/>
+                    <label htmlFor="high-health-enchants-manual">
+                        High Health Enchants in manual:
+                        {Object.entries(highHealthEnchantment)
+                            .map(([key, value]) => 
+                            <div key={key}>{key}: {value}</div>)
+                        }
+                    </label>
+                    <br/><hr/>
+                    <label htmlFor="healing-enchants-manual">
+                        Healing Enchants in manual:
+                        {Object.entries(healingEnchantment)
+                            .map(([key, value]) => 
+                            <div key={key}>{key}: {value}</div>)
+                        }
+                    </label>
+                    <br/><hr/>
+                    <label htmlFor="low-health-enchants-manual">
+                        Low Health Enchants in manual:
+                        {Object.entries(lowHealthEnchantment)
+                            .map(([key, value]) => 
+                            <div key={key}>{key}: {value}</div>)
+                        }
+                    </label>
+                    <br/><hr/>
+                    <label htmlFor="thunder-enchants-manual">
+                        Thunder Enchants in manual:
+                        {Object.entries(thunderEnchantment)
+                            .map(([key, value]) => 
+                            <div key={key}>{key}: {value}</div>)
+                        }
+                    </label>
+                    <br/><hr/>
+                    <label htmlFor="ultimate-enchants-manual">
+                        Ultimate Enchants in manual:
+                        {Object.entries(ultimateEnchantment)
+                            .map(([key, value]) => 
+                            <div key={key}>{key}: {value}</div>)
+                        }
+                    </label>
+                    <br/><hr/>
+                    <label htmlFor="other-enchants-manual">
                         All other enchants in manual, 
                         {Object.entries(mutuallyInclusiveEnchants)
                             .map(([key, value]) => 
@@ -154,20 +200,22 @@ class Calculator extends React.Component {
                         }
                     </label>
                     <br/><hr/>
-                    <label>
+                    <label htmlFor="sword-select">
                         <SwordSelect onInputChange={this.getSwordSelect}/>
                     </label>
 
                     <br/><hr/>
 
-                    <label>
+                    <label htmlFor="sword-select-manual">
                         Sword in Manual: 
                         {Object.entries(currentSword)
                             .map(([key, value]) => 
                                 <div key={value}>{key}</div>)
                         }
 
-                        Sword Reforge in Manual
+                        <br/>
+
+                        Sword Reforge in Manual:
                         {Object.entries(swordReforge)
                             .map(([key, value]) =>
                                 <div key={value}>{key}</div>

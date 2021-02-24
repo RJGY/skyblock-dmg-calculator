@@ -162,7 +162,7 @@ class Enchants extends React.Component {
         console.log(inputValue + " " + e.target.max);
         let dict = {};
         for (const [key, value] of Object.entries(this.state[e.target.name.split("-")[1]])) {
-            if (key == [e.target.name.split("-")[0]]) {
+            if (key === [e.target.name.split("-")[0]]) {
                 dict[key] = inputValue
             }
             else {
@@ -185,8 +185,8 @@ class Enchants extends React.Component {
         //      Change the value which was selected to the previous value.
         //      Change all other values to 0. 
         let dict = {};
-        for (const [key, value] of Object.entries(this.state[e.target.value.split("-")[2]])) {
-            if (key == e.target.value.split("-")[0]) {
+        for (const [key] of Object.entries(this.state[e.target.value.split("-")[2]])) {
+            if (key === e.target.value.split("-")[0]) {
                 dict[key] = this.state[e.target.value.split("-")[2]][selectedEnchantments[e.target.value.split("-")[2]]];
             }
             else {
@@ -212,98 +212,98 @@ class Enchants extends React.Component {
                 <div>
                     Base Enchants
                     <div>
-                        <select onChange={this.handleSelectChange} defaultValue={'Sharpness-7-baseSwordDamageEnchantment'}>
+                        <select onBlur={this.handleSelectChange} defaultValue={'Sharpness-7-baseSwordDamageEnchantment'}>
                         {Object.entries(maxBaseSwordDamageEnchantment)
                             .map(([key, value]) => 
-                                <option value={`${key}` + "-" + `${value}` + "-" + "baseSwordDamageEnchantment"} key={key}>{key}</option>
+                                <option value={`${key}-${value}-baseSwordDamageEnchantment`} key={key}>{key}</option>
                             )
                         }
                         </select>
-                        <input type="number" name={`${selectedEnchantments.baseSwordDamageEnchantment}` + "-" + "baseSwordDamageEnchantment"} onChange={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.baseSwordDamageEnchantment}/> 
+                        <input type="number" name={`${selectedEnchantments.baseSwordDamageEnchantment}-baseSwordDamageEnchantment`} onBlur={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.baseSwordDamageEnchantment}/> 
                     </div>
                 </div>
 
                 <div>
                     Strike Enchants
                     <div>
-                        <select onChange={this.handleSelectChange} defaultValue={'First Strike-5-strikeEnchantment'}>
+                        <select onBlur={this.handleSelectChange} defaultValue={'First Strike-5-strikeEnchantment'}>
                         {Object.entries(maxStrikeEnchantment)
                             .map(([key, value]) => 
-                                <option value={`${key}` + "-" + `${value}` + "-" + "strikeEnchantment"} key={key}>{key}</option>
+                                <option value={`${key}-${value}--strikeEnchantment`} key={key}>{key}</option>
                             )
                         }
                         </select>
-                        <input type="number" name={`${selectedEnchantments.strikeEnchantment}` + "-" + "strikeEnchantment"} onChange={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.strikeEnchantment}/> 
+                        <input type="number" name={`${selectedEnchantments.strikeEnchantment}-strikeEnchantment`} onBlur={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.strikeEnchantment}/> 
                     </div>
                 </div>
 
                 <div>
                     High Health Enchants
                     <div>
-                        <select onChange={this.handleSelectChange} defaultValue={'Giant Killer-7-highHealthEnchantment'}>
+                        <select onBlur={this.handleSelectChange} defaultValue={'Giant Killer-7-highHealthEnchantment'}>
                         {Object.entries(maxHighHealthEnchantment)
                             .map(([key, value]) => 
-                                <option value={`${key}` + "-" + `${value}` + "-" + "highHealthEnchantment"} key={key}>{key}</option>
+                                <option value={`${key}-${value}-highHealthEnchantment`} key={key}>{key}</option>
                             )
                         }
                         </select>
-                        <input type="number" name={`${selectedEnchantments.highHealthEnchantment}` + "-" + "highHealthEnchantment"} onChange={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.highHealthEnchantment}/> 
+                        <input type="number" name={`${selectedEnchantments.highHealthEnchantment}-highHealthEnchantment`} onBlur={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.highHealthEnchantment}/> 
                     </div>
                 </div>
 
                 <div>
                     Healing Enchants
                     <div>
-                        <select onChange={this.handleSelectChange} defaultValue={'Syphon-5-healingEnchantment'}>
+                        <select onBlur={this.handleSelectChange} defaultValue={'Syphon-5-healingEnchantment'}>
                         {Object.entries(maxHealingEnchantment)
                             .map(([key, value]) => 
-                                <option value={`${key}` + "-" + `${value}` + "-" + "healingEnchantment"} key={key}>{key}</option>
+                                <option value={`${key}-${value}-healingEnchantment`} key={key}>{key}</option>
                             )
                         }
                         </select>
-                        <input type="number" name={`${selectedEnchantments.healingEnchantment}` + "-" + "healingEnchantment"} onChange={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.healingEnchantment}/> 
+                        <input type="number" name={`${selectedEnchantments.healingEnchantment}-healingEnchantment`} onBlur={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.healingEnchantment}/> 
                     </div>
                 </div>
 
                 <div>
                     Low Health Enchantment
                     <div>
-                        <select onChange={this.handleSelectChange} defaultValue={'Execute-6-lowHealthEnchantment'}>
+                        <select onBlur={this.handleSelectChange} defaultValue={'Execute-6-lowHealthEnchantment'}>
                         {Object.entries(maxLowHealthEnchantment)
                             .map(([key, value]) => 
-                                <option value={`${key}` + "-" + `${value}` + "-" + "lowHealthEnchantment"} key={key}>{key}</option>
+                                <option value={`${key}-${value}-lowHealthEnchantment`} key={key}>{key}</option>
                             )
                         }
                         </select>
-                        <input type="number" name={`${selectedEnchantments.lowHealthEnchantment}` + "-" + "lowHealthEnchantment"} onChange={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.lowHealthEnchantment}/> 
+                        <input type="number" name={`${selectedEnchantments.lowHealthEnchantment}-lowHealthEnchantment`} onBlur={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.lowHealthEnchantment}/> 
                     </div>
                 </div>
 
                 <div>
                     Thunder Enchantment
                     <div>
-                        <select onChange={this.handleSelectChange} defaultValue={'Thunderlord-6-thunderEnchantment'}>
+                        <select onBlur={this.handleSelectChange} defaultValue={'Thunderlord-6-thunderEnchantment'}>
                         {Object.entries(maxThunderEnchantment)
                             .map(([key, value]) => 
-                                <option value={`${key}` + "-" + `${value}` + "-" + "thunderEnchantment"} key={key}>{key}</option>
+                                <option value={`${key}-${value}-thunderEnchantment`} key={key}>{key}</option>
                             )
                         }
                         </select>
-                        <input type="number" name={`${selectedEnchantments.thunderEnchantment}` + "-" + "thunderEnchantment"} onChange={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.thunderEnchantment}/> 
+                        <input type="number" name={`${selectedEnchantments.thunderEnchantment}-thunderEnchantment`} onBlur={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.thunderEnchantment}/> 
                     </div>
                 </div>
 
                 <div>
                     Ultimate Enchantment
                     <div>
-                        <select onChange={this.handleSelectChange} defaultValue={'Chimera-5-ultimateEnchantment'}>
+                        <select onBlur={this.handleSelectChange} defaultValue={'Chimera-5-ultimateEnchantment'}>
                         {Object.entries(maxUltimateEnchantment)
                             .map(([key, value]) => 
-                                <option value={`${key}` + "-" + `${value}` + "-" + "ultimateEnchantment"} key={key}>{key}</option>
+                                <option value={`${key}-${value}-ultimateEnchantment`} key={key}>{key}</option>
                             )
                         }
                         </select>
-                        <input type="number" name={`${selectedEnchantments.ultimateEnchantment}` + "-" + "ultimateEnchantment"} onChange={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.ultimateEnchantment}/> 
+                        <input type="number" name={`${selectedEnchantments.ultimateEnchantment}-ultimateEnchantment`} onBlur={this.handleInputChange} defaultValue="0" min="0" max={selectedMax.ultimateEnchantment}/> 
                     </div>
                 </div>
 
@@ -312,7 +312,7 @@ class Enchants extends React.Component {
                     {Object.entries(maxMutuallyInclusiveEnchants)
                         .map(([key, value]) => 
                         <div key={key}>
-                            <input type="number" name={`${key}` + "-" + "mutuallyInclusiveEnchants"} onChange={this.handleInputChange} defaultValue="0" min="0" max={value}/> {key}
+                            <input type="number" name={`${key}-mutuallyInclusiveEnchants`} onBlur={this.handleInputChange} defaultValue="0" min="0" max={value}/> {key}
                         </div>
                         )
                     }
