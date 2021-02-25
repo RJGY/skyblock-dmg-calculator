@@ -31,6 +31,18 @@ const listOfCommonReforges = {
     "Odd" : new SwordReforge(0,0,12,10,0,0,-5,"Common",null),
 }
 
+const listOfRarities = [
+    "Common",
+    "Uncommon",
+    "Rare",
+    "Epic",
+    "Legendary",
+    "Mythic",
+    "Supreme",
+    "Special",
+    "Very Special"
+]
+
 class SwordSelect extends React.Component {
     constructor() {
         super();
@@ -42,7 +54,9 @@ class SwordSelect extends React.Component {
             
             swordReforge: {
                 "Gentle" : new SwordReforge(3,0,0,0,8,0,0,"Common",null)
-            }
+            },
+
+            "Recombobulated" : false
         }
 
         this.handleSelectChange = this.handleSelectChange.bind(this);
@@ -68,11 +82,14 @@ class SwordSelect extends React.Component {
             }
         });
 
-        
+        // increase rarity if recombobulated.
+        if (this.state.Recombobulated === true) {
+
+        }
 
         setTimeout(() => {
             this.props.onInputChange(this.state);
-            let currentSwordRarity = Object.keys(this.state.currentSword)[0]
+            let currentSwordRarity = Object.keys(this.state.currentSword)[0].rarity;
             console.log(currentSwordRarity);
         }, 50);
 
@@ -81,6 +98,20 @@ class SwordSelect extends React.Component {
 
     handleCheckboxChange(e) {
         console.log(e.target.checked);
+        if (e.target.checked)
+        {
+            // Increase rarity of item by one.
+            this.setState({
+                [Object.keys(this.state.currentSword)[0]] : [this.state.currentSword]
+            })
+        }
+        else {
+            // Decrease rarity of item by one.
+        }
+
+        this.setState({
+            "Recombobulated" : e.target.checked
+        });
     }
 
     render() {

@@ -1,6 +1,5 @@
 Currently working on:
-    sword-select.js - problems with two children and same key
-    fixing eslint errors
+    sword-select.js - problems with two children and same key for the reforge.
 
 NEED LIST: 
     sort/add more folders so everything is organized
