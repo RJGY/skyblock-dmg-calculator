@@ -84,34 +84,49 @@ class SwordSelect extends React.Component {
 
         // increase rarity if recombobulated.
         if (this.state.Recombobulated === true) {
-
+            
         }
 
         setTimeout(() => {
             this.props.onInputChange(this.state);
-            let currentSwordRarity = Object.keys(this.state.currentSword)[0].rarity;
-            console.log(currentSwordRarity);
+                // increase rarity if recombobulated.
+            if (this.state.Recombobulated === true) {
+                let currentSwordRarity = Object.keys(this.state.currentSword)[0].rarity;
+                console.log(currentSwordRarity);
+            }
         }, 50);
 
         
     }
 
     handleCheckboxChange(e) {
-        console.log(e.target.checked);
         if (e.target.checked)
         {
             // Increase rarity of item by one.
+            let currentSwordRarity = Object.keys(this.state.currentSword)[0].rarity;
+            let newIndex = listOfRarities.indexOf(currentSwordRarity) + 1;
+            let newSword = Object.values(this.state.currentSword[0]);
+            newSword.setRarity(listOfRarities[newIndex]);
             this.setState({
-                [Object.keys(this.state.currentSword)[0]] : [this.state.currentSword]
+                currentSword: {    
+                    [Object.keys(this.state.currentSword)[0]] : [newSword]
+                },
+                "Recombobulated" : e.target.checked
             })
         }
         else {
             // Decrease rarity of item by one.
+            let currentSwordRarity = Object.keys(this.state.currentSword)[0].rarity;
+            let newIndex = listOfRarities.indexOf(currentSwordRarity) - 1;
+            let newSword = Object.values(this.state.currentSword[0]);
+            newSword.setRarity(listOfRarities[newIndex]);
+            this.setState({
+                currentSword: {    
+                    [Object.keys(this.state.currentSword)[0]] : [newSword]
+                },
+                "Recombobulated" : e.target.checked
+            })
         }
-
-        this.setState({
-            "Recombobulated" : e.target.checked
-        });
     }
 
     render() {
