@@ -49,7 +49,7 @@ class SwordSelect extends React.Component {
   
         this.state = {
             currentSword: {
-                "Aspect of the Jerry" : new Sword(1,0,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"])
+                "Aspect of the Jerry" : new Sword(1,0,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"],"Common")
             },
             
             swordReforge: {
@@ -103,26 +103,38 @@ class SwordSelect extends React.Component {
         if (e.target.checked)
         {
             // Increase rarity of item by one.
-            let currentSwordRarity = Object.keys(this.state.currentSword)[0].rarity;
+            let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
+            console.log(`Current Rarity: ${currentSwordRarity}`);
+            console.log(`Current Index: ${listOfRarities.indexOf(currentSwordRarity)}`);
             let newIndex = listOfRarities.indexOf(currentSwordRarity) + 1;
-            let newSword = Object.values(this.state.currentSword[0]);
-            newSword.setRarity(listOfRarities[newIndex]);
+            if (newIndex === -1) {
+                
+            }
+            let oldSword = Object.values(this.state.currentSword)[0];
+            let newRarity = listOfRarities[newIndex];
+            console.log(`Increase: ${newRarity}`);
             this.setState({
                 currentSword: {    
-                    [Object.keys(this.state.currentSword)[0]] : [newSword]
+                    [Object.keys(this.state.currentSword)[0]] : new Sword(oldSword.damage, oldSword.strength,
+                        oldSword.critChance, oldSword.critDamage, oldSword.intelligence, oldSword.ability, newRarity)
                 },
                 "Recombobulated" : e.target.checked
             })
         }
         else {
             // Decrease rarity of item by one.
-            let currentSwordRarity = Object.keys(this.state.currentSword)[0].rarity;
+            let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
+            console.log(`Current Value: ${Object.values(this.state.currentSword)[0]}`);
+            console.log(`Current Rarity: ${currentSwordRarity}`);
+            console.log(`Current Index: ${listOfRarities.indexOf(currentSwordRarity)}`);
             let newIndex = listOfRarities.indexOf(currentSwordRarity) - 1;
-            let newSword = Object.values(this.state.currentSword[0]);
-            newSword.setRarity(listOfRarities[newIndex]);
+            let oldSword = Object.values(this.state.currentSword)[0];
+            let newRarity = listOfRarities[newIndex];
+            console.log(`Increase: ${newRarity}`);
             this.setState({
                 currentSword: {    
-                    [Object.keys(this.state.currentSword)[0]] : [newSword]
+                    [Object.keys(this.state.currentSword)[0]] : new Sword(oldSword.damage, oldSword.strength,
+                        oldSword.critChance, oldSword.critDamage, oldSword.intelligence, oldSword.ability, newRarity)
                 },
                 "Recombobulated" : e.target.checked
             })

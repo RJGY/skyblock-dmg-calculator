@@ -5,23 +5,23 @@ import { Link } from "gatsby"
 const Nav = ({activeArticle}) => {
     return (
         <div>
-            <li>
-                <ul>
+            
+            <ul>
+            <Link
+                to={`/`}
+            > 
+                Home 
+            </Link>
+            </ul>
+            <ul>
                 <Link
-                    to={`/`}
+                    to={`/manual/`}
                 > 
-                    Home 
+                    Manual Calculator 
                 </Link>
-                </ul>
-                <ul>
-                    <Link
-                        to={`/manual/`}
-                    > 
-                        Manual Calculator 
-                    </Link>
-                    
-                </ul>
-            </li>
+                
+            </ul>
+            
         </div>
     )
 }
