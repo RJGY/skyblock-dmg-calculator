@@ -104,15 +104,12 @@ class SwordSelect extends React.Component {
         {
             // Increase rarity of item by one.
             let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
-            console.log(`Current Rarity: ${currentSwordRarity}`);
-            console.log(`Current Index: ${listOfRarities.indexOf(currentSwordRarity)}`);
-            let newIndex = listOfRarities.indexOf(currentSwordRarity) + 1;
-            if (newIndex === -1) {
-                
+            if (listOfRarities.indexOf(currentSwordRarity) === -1) {
+                console.error(`Couldn't find rarity. Something went wrong.`);
             }
+            let newIndex = listOfRarities.indexOf(currentSwordRarity) + 1;
             let oldSword = Object.values(this.state.currentSword)[0];
             let newRarity = listOfRarities[newIndex];
-            console.log(`Increase: ${newRarity}`);
             this.setState({
                 currentSword: {    
                     [Object.keys(this.state.currentSword)[0]] : new Sword(oldSword.damage, oldSword.strength,
@@ -124,13 +121,12 @@ class SwordSelect extends React.Component {
         else {
             // Decrease rarity of item by one.
             let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
-            console.log(`Current Value: ${Object.values(this.state.currentSword)[0]}`);
-            console.log(`Current Rarity: ${currentSwordRarity}`);
-            console.log(`Current Index: ${listOfRarities.indexOf(currentSwordRarity)}`);
+            if (listOfRarities.indexOf(currentSwordRarity) === -1) {
+                console.error(`Couldn't find rarity. Something went wrong.`);
+            }
             let newIndex = listOfRarities.indexOf(currentSwordRarity) - 1;
             let oldSword = Object.values(this.state.currentSword)[0];
             let newRarity = listOfRarities[newIndex];
-            console.log(`Increase: ${newRarity}`);
             this.setState({
                 currentSword: {    
                     [Object.keys(this.state.currentSword)[0]] : new Sword(oldSword.damage, oldSword.strength,
