@@ -49,7 +49,7 @@ class SwordSelect extends React.Component {
   
         this.state = {
             currentSword: {
-                "Aspect of the Jerry" : new Sword(1,0,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"],"Common")
+                "Wooden Sword" : new Sword(20,0,0,0,0,null,"Common")
             },
             
             swordReforge: {
@@ -110,10 +110,30 @@ class SwordSelect extends React.Component {
             let newIndex = listOfRarities.indexOf(currentSwordRarity) + 1;
             let oldSword = Object.values(this.state.currentSword)[0];
             let newRarity = listOfRarities[newIndex];
+
+            newReforge = listOfCommonReforges[Object.keys(this.state.swordReforge)[0]]
+            console.log(newReforge);
+
+            // Get correct rarity of reforge.
+            let newReforge;
+            switch (newRarity) {
+                case "Common":
+                    newReforge = listOfCommonReforges[Object.keys(this.state.swordReforge)[0]]
+                    break;
+            
+                default:
+                    break;
+            }
+            
             this.setState({
                 currentSword: {    
                     [Object.keys(this.state.currentSword)[0]] : new Sword(oldSword.damage, oldSword.strength,
                         oldSword.critChance, oldSword.critDamage, oldSword.intelligence, oldSword.ability, newRarity)
+                },
+                swordReforge: {
+                    [Object.keys(this.state.swordReforge)[0]] : new SwordReforge(newReforge.strength, newReforge.damage,
+                        newReforge.critChance, newReforge.critDamage, newReforge.attackSpeed, newReforge.ferocity, newReforge.intelligence,
+                        newReforge.rarity, newReforge.reforgeAbility)
                 },
                 "Recombobulated" : e.target.checked
             })
@@ -127,10 +147,27 @@ class SwordSelect extends React.Component {
             let newIndex = listOfRarities.indexOf(currentSwordRarity) - 1;
             let oldSword = Object.values(this.state.currentSword)[0];
             let newRarity = listOfRarities[newIndex];
+
+            // Get correct rarity of reforge.
+            let newReforge;
+            switch (newRarity) {
+                case "Common":
+                    newReforge = listOfCommonReforges[Object.keys(this.state.swordReforge)[0]]
+                    break;
+            
+                default:
+                    break;
+            }
+
             this.setState({
                 currentSword: {    
                     [Object.keys(this.state.currentSword)[0]] : new Sword(oldSword.damage, oldSword.strength,
                         oldSword.critChance, oldSword.critDamage, oldSword.intelligence, oldSword.ability, newRarity)
+                },
+                swordReforge: {
+                    [Object.keys(this.state.swordReforge)[0]] : new SwordReforge(newReforge.strength, newReforge.damage,
+                        newReforge.critChance, newReforge.critDamage, newReforge.attackSpeed, newReforge.ferocity, newReforge.intelligence,
+                        newReforge.rarity, newReforge.reforgeAbility)
                 },
                 "Recombobulated" : e.target.checked
             })
