@@ -9,7 +9,7 @@ import SwordReforge from "../objects/sword-reforge";
 // Reforge -> Strength, Damage, Crit Chance, Crit Damage, Attack Speed, Ferocity, Intelligence, rarity, Reforge Ability
 const listOfSwordAbilities = {
     "Aspect of the Jerry Ability" : new SwordAbility("Parley", "Channel your inner Jerry", 5, 0),
-    "Rogue Sword Ability" : new SwordAbility("Speed Boost","Increases your movement Speed icon.png Speed by +20% for 30 seconds - only +10 if ability already active.", 0, 50),
+    "Rogue Sword Ability" : new SwordAbility("Speed Boost","Increases your movement Speed by +20% for 30 seconds - only +10 if ability already active.", 0, 50),
 
 }
 
@@ -29,6 +29,26 @@ const listOfWeapons = {
 const listOfCommonReforges = {
     "Gentle" : new SwordReforge(3,0,0,0,8,0,0,"Common",null),
     "Odd" : new SwordReforge(0,0,12,10,0,0,-5,"Common",null),
+}
+
+const listOfUncommonReforges = {
+
+}
+
+const listOfRareReforges = {
+
+}
+
+const listOfEpicReforges = {
+
+}
+
+const listOfLegendaryReforges = {
+
+}
+
+const listOfMythicReforges = {
+
 }
 
 const listOfRarities = [
@@ -104,23 +124,39 @@ class SwordSelect extends React.Component {
         {
             // Increase rarity of item by one.
             let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
-            if (listOfRarities.indexOf(currentSwordRarity) === -1) {
+            if (listOfRarities.indexOf(currentSwordRarity) < 0 || listOfRarities.indexOf(currentSwordRarity) > 5) {
                 console.error(`Couldn't find rarity. Something went wrong.`);
+                break;
             }
             let newIndex = listOfRarities.indexOf(currentSwordRarity) + 1;
             let oldSword = Object.values(this.state.currentSword)[0];
             let newRarity = listOfRarities[newIndex];
 
-            newReforge = listOfCommonReforges[Object.keys(this.state.swordReforge)[0]]
-            console.log(newReforge);
+            
 
             // Get correct rarity of reforge.
             let newReforge;
+            newReforge = listOfCommonReforges[Object.keys(this.state.swordReforge)[0]]
+            console.log(newReforge);
             switch (newRarity) {
                 case "Common":
                     newReforge = listOfCommonReforges[Object.keys(this.state.swordReforge)[0]]
                     break;
-            
+                case "Uncommon":
+                    newReforge = listOfUncommonReforges[Object.keys(this.state.swordReforge)[0]]
+                    break;
+                case "Rare":
+                    newReforge = listOfRareReforges[Object.keys(this.state.swordReforge)[0]]
+                    break;
+                case "Epic":
+                    newReforge = listOfEpicReforges[Object.keys(this.state.swordReforge)[0]]
+                    break;
+                case "Legendary":
+                    newReforge = listOfLegendaryReforges[Object.keys(this.state.swordReforge)[0]]
+                    break;
+                case "Mythic":
+                    newReforge = listOfMythicReforges[Object.keys(this.state.swordReforge)[0]]
+                    break;
                 default:
                     break;
             }
@@ -141,7 +177,7 @@ class SwordSelect extends React.Component {
         else {
             // Decrease rarity of item by one.
             let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
-            if (listOfRarities.indexOf(currentSwordRarity) === -1) {
+            if (listOfRarities.indexOf(currentSwordRarity) < 0 || listOfRarities.indexOf(currentSwordRarity) > 5) {
                 console.error(`Couldn't find rarity. Something went wrong.`);
             }
             let newIndex = listOfRarities.indexOf(currentSwordRarity) - 1;
@@ -150,12 +186,29 @@ class SwordSelect extends React.Component {
 
             // Get correct rarity of reforge.
             let newReforge;
+            newReforge = listOfCommonReforges[Object.keys(this.state.swordReforge)[0]]
+            console.log(newReforge);
             switch (newRarity) {
                 case "Common":
                     newReforge = listOfCommonReforges[Object.keys(this.state.swordReforge)[0]]
                     break;
-            
+                case "Uncommon":
+                    newReforge = listOfUncommonReforges[Object.keys(this.state.swordReforge)[0]]
+                    break;
+                case "Rare":
+                    newReforge = listOfRareReforges[Object.keys(this.state.swordReforge)[0]]
+                    break;
+                case "Epic":
+                    newReforge = listOfEpicReforges[Object.keys(this.state.swordReforge)[0]]
+                    break;
+                case "Legendary":
+                    newReforge = listOfLegendaryReforges[Object.keys(this.state.swordReforge)[0]]
+                    break;
+                case "Mythic":
+                    newReforge = listOfMythicReforges[Object.keys(this.state.swordReforge)[0]]
+                    break;
                 default:
+                    console.error("Rarity not found.");
                     break;
             }
 

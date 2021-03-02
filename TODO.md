@@ -2,6 +2,7 @@ Currently working on:
     sword-select.js - problems with two children and same key for swapping reforge and swords. need to test recombob options more. 
 
 NEED LIST: 
+    Add more reforges
     add another folder for layout and nav components.
     change between highest dps and highest dmg per attack.
     damage limiter. eg keep dmg at 13000 but maximise rest in speed/intel etc.
