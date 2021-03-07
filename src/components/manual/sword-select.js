@@ -26,29 +26,34 @@ const listOfWeapons = {
     "Rogue Sword" : new Sword(20,0,0,0,0,listOfSwordAbilities["Rogue Sword Ability"],"Common"),
 }
 
-const listOfCommonReforges = {
-    "Gentle" : new SwordReforge(3,0,0,0,8,0,0,"Common",null),
-    "Odd" : new SwordReforge(0,0,12,10,0,0,-5,"Common",null),
+const listOfCommonReforges = {                                // Total Offensive Stats (estimate, just a total of all the stats given)
+    "Gentle" : new SwordReforge(3,0,0,0,8,0,0,"Common",null), // 11
+    "Odd" : new SwordReforge(0,0,12,10,0,0,-5,"Common",null), // 22
 }
 
 const listOfUncommonReforges = {
-
+    "Gentle" : new SwordReforge(5,0,0,0,10,0,0,"Uncommon",null), // 15
+    "Odd" : new SwordReforge(0,0,15,15,0,0,-10,"Uncommon",null), // 30
 }
 
 const listOfRareReforges = {
-
+    "Gentle" : new SwordReforge(7,0,0,0,15,0,0,"Rare",null), // 22
+    "Odd" : new SwordReforge(0,0,15,15,0,0,-18,"Rare",null), // 30
 }
 
 const listOfEpicReforges = {
-
+    "Gentle" : new SwordReforge(10,0,0,0,20,0,0,"Epic",null), // 30
+    "Odd" : new SwordReforge(0,0,20,22,0,0,-32,"Epic",null), // 42
 }
 
 const listOfLegendaryReforges = {
-
+    "Gentle" : new SwordReforge(15,0,0,0,25,0,0,"Legendary",null), // 40
+    "Odd" : new SwordReforge(0,0,25,30,0,0,-50,"Legendary",null), // 55
 }
 
 const listOfMythicReforges = {
-
+    "Gentle" : new SwordReforge(20,0,0,0,30,0,0,"Mythic",null), // 50
+    "Odd" : new SwordReforge(0,0,30,40,0,0,-75,"Mythic",null), // 70
 }
 
 const listOfRarities = [
@@ -79,15 +84,15 @@ class SwordSelect extends React.Component {
             "Recombobulated" : false
         }
 
-        this.handleSelectChange = this.handleSelectChange.bind(this);
+        this.handleReforgeChange = this.handleReforgeChange.bind(this);
         this.handleWeaponChange = this.handleWeaponChange.bind(this);
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
     }
 
-    handleSelectChange(e) {
+    handleReforgeChange(e) {
         this.setState({
             swordReforge: {
-                [e.target.key] : e.target.value
+                [e.target.value.split("\\")[1]] : e.target.value.split("\\")[0]
             }
         });
         setTimeout(() => {
@@ -98,7 +103,7 @@ class SwordSelect extends React.Component {
     handleWeaponChange(e) {
         this.setState({
             currentSword: {    
-                [e.target.value.split("-")[1]] : e.target.value.split("-")[0]
+                [e.target.value.split("\\")[1]] : e.target.value.split("\\")[0]
             }
         });
 
@@ -126,7 +131,6 @@ class SwordSelect extends React.Component {
             let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
             if (listOfRarities.indexOf(currentSwordRarity) < 0 || listOfRarities.indexOf(currentSwordRarity) > 5) {
                 console.error(`Couldn't find rarity. Something went wrong.`);
-                break;
             }
             let newIndex = listOfRarities.indexOf(currentSwordRarity) + 1;
             let oldSword = Object.values(this.state.currentSword)[0];
@@ -208,7 +212,6 @@ class SwordSelect extends React.Component {
                     newReforge = listOfMythicReforges[Object.keys(this.state.swordReforge)[0]]
                     break;
                 default:
-                    console.error("Rarity not found.");
                     break;
             }
 
@@ -230,10 +233,10 @@ class SwordSelect extends React.Component {
     render() {
         return (
             <div>
-                <select onBlur={this.handleSelectChange}>
+                <select onBlur={this.handleReforgeChange}>
                     {Object.entries(listOfCommonReforges)
                         .map(([key, value]) =>
-                            <option value={`${value}-${key}`} key={key}>{key}</option>
+                            <option value={`${value}\\${key}`} key={key}>{key}</option>
                         )
                     }
                 </select>
@@ -241,7 +244,7 @@ class SwordSelect extends React.Component {
                 <select onBlur={this.handleWeaponChange}>
                     {Object.entries(listOfWeapons)
                         .map(([key, value]) =>
-                            <option value={`${value}-${key}`} key={key}>{key}</option>
+                            <option value={`${value}\\${key}`} key={key}>{key}</option>
                         )
                     }
                 </select>
