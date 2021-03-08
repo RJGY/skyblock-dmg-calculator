@@ -229,7 +229,7 @@ class Enchants extends React.Component {
                         <select onBlur={this.handleSelectChange} defaultValue={'First Strike-5-strikeEnchantment'}>
                         {Object.entries(maxStrikeEnchantment)
                             .map(([key, value]) => 
-                                <option value={`${key}-${value}--strikeEnchantment`} key={key}>{key}</option>
+                                <option value={`${key}-${value}-strikeEnchantment`} key={key}>{key}</option>
                             )
                         }
                         </select>

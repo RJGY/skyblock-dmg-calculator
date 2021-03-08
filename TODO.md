@@ -1,5 +1,5 @@
 Currently working on:
-    sword-select.js - problems with two children and same key for swapping reforge and swords. need to test recombob options more. 
+    sword-select.js - problems with inability to find rarity when switching sword then recombobulating. probs because value is no longer an object and just a string now...
 
 NEED LIST: 
     Add more reforges

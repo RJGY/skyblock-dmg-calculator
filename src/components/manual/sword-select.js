@@ -10,7 +10,6 @@ import SwordReforge from "../objects/sword-reforge";
 const listOfSwordAbilities = {
     "Aspect of the Jerry Ability" : new SwordAbility("Parley", "Channel your inner Jerry", 5, 0),
     "Rogue Sword Ability" : new SwordAbility("Speed Boost","Increases your movement Speed by +20% for 30 seconds - only +10 if ability already active.", 0, 50),
-
 }
 
 const listOfWeapons = {
@@ -90,38 +89,69 @@ class SwordSelect extends React.Component {
     }
 
     handleReforgeChange(e) {
+        let newReforge = e.target.value.split("\\")[0];
+
+        // increase rarity if recombobulated.
+        if (this.state.Recombobulated === true) {
+            let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
+            let newIndex = listOfRarities.indexOf(currentSwordRarity) + 1;
+            let newRarity = listOfRarities[newIndex];
+            let oldReforgeKey = Object.keys(this.state.swordReforge)[0];
+            switch (newRarity) {
+                case "Uncommon":
+                    newReforge = listOfUncommonReforges[oldReforgeKey];
+                    break;
+                case "Rare":
+                    newReforge = listOfRareReforges[oldReforgeKey];
+                    break;
+                case "Epic":
+                    newReforge = listOfEpicReforges[oldReforgeKey];
+                    break;
+                case "Legendary":
+                    newReforge = listOfLegendaryReforges[oldReforgeKey];
+                    break;
+                case "Mythic":
+                    newReforge = listOfMythicReforges[oldReforgeKey];
+                    break;
+                default:
+                    break;
+            }
+        }
+
         this.setState({
             swordReforge: {
-                [e.target.value.split("\\")[1]] : e.target.value.split("\\")[0]
+                [e.target.value.split("\\")[1]] : newReforge
             }
         });
+
+        this.forceUpdate();
         setTimeout(() => {
             this.props.onInputChange(this.state);
         }, 50);
     }
 
     handleWeaponChange(e) {
+        let newSword = e.target.value.split("\\")[0];
+        // increase rarity if recombobulated.
+        if (this.state.Recombobulated === true) {
+            let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
+            let newIndex = listOfRarities.indexOf(currentSwordRarity) + 1;
+            let newRarity = listOfRarities[newIndex];
+            let oldSword = newSword;
+            newSword = new Sword(oldSword.damage, oldSword.strength, oldSword.critChance,
+                oldSword.critDamage, oldSword.intelligence, oldSword.ability, newRarity)
+        }
+
         this.setState({
             currentSword: {    
-                [e.target.value.split("\\")[1]] : e.target.value.split("\\")[0]
+                [e.target.value.split("\\")[1]] : newSword
             }
         });
 
-        // increase rarity if recombobulated.
-        if (this.state.Recombobulated === true) {
-            
-        }
-
+        this.forceUpdate();
         setTimeout(() => {
             this.props.onInputChange(this.state);
-                // increase rarity if recombobulated.
-            if (this.state.Recombobulated === true) {
-                let currentSwordRarity = Object.keys(this.state.currentSword)[0].rarity;
-                console.log(currentSwordRarity);
-            }
         }, 50);
-
-        
     }
 
     handleCheckboxChange(e) {
@@ -131,35 +161,31 @@ class SwordSelect extends React.Component {
             let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
             if (listOfRarities.indexOf(currentSwordRarity) < 0 || listOfRarities.indexOf(currentSwordRarity) > 5) {
                 console.error(`Couldn't find rarity. Something went wrong.`);
+                return;
             }
             let newIndex = listOfRarities.indexOf(currentSwordRarity) + 1;
             let oldSword = Object.values(this.state.currentSword)[0];
             let newRarity = listOfRarities[newIndex];
 
-            
-
             // Get correct rarity of reforge.
             let newReforge;
             newReforge = listOfCommonReforges[Object.keys(this.state.swordReforge)[0]]
-            console.log(newReforge);
+            let oldReforgeKey = Object.keys(this.state.swordReforge)[0];
             switch (newRarity) {
-                case "Common":
-                    newReforge = listOfCommonReforges[Object.keys(this.state.swordReforge)[0]]
-                    break;
                 case "Uncommon":
-                    newReforge = listOfUncommonReforges[Object.keys(this.state.swordReforge)[0]]
+                    newReforge = listOfUncommonReforges[oldReforgeKey];
                     break;
                 case "Rare":
-                    newReforge = listOfRareReforges[Object.keys(this.state.swordReforge)[0]]
+                    newReforge = listOfRareReforges[oldReforgeKey];
                     break;
                 case "Epic":
-                    newReforge = listOfEpicReforges[Object.keys(this.state.swordReforge)[0]]
+                    newReforge = listOfEpicReforges[oldReforgeKey];
                     break;
                 case "Legendary":
-                    newReforge = listOfLegendaryReforges[Object.keys(this.state.swordReforge)[0]]
+                    newReforge = listOfLegendaryReforges[oldReforgeKey];
                     break;
                 case "Mythic":
-                    newReforge = listOfMythicReforges[Object.keys(this.state.swordReforge)[0]]
+                    newReforge = listOfMythicReforges[oldReforgeKey];
                     break;
                 default:
                     break;
@@ -183,6 +209,7 @@ class SwordSelect extends React.Component {
             let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
             if (listOfRarities.indexOf(currentSwordRarity) < 0 || listOfRarities.indexOf(currentSwordRarity) > 5) {
                 console.error(`Couldn't find rarity. Something went wrong.`);
+                return;
             }
             let newIndex = listOfRarities.indexOf(currentSwordRarity) - 1;
             let oldSword = Object.values(this.state.currentSword)[0];
@@ -191,25 +218,25 @@ class SwordSelect extends React.Component {
             // Get correct rarity of reforge.
             let newReforge;
             newReforge = listOfCommonReforges[Object.keys(this.state.swordReforge)[0]]
-            console.log(newReforge);
+            let oldReforgeKey = Object.keys(this.state.swordReforge)[0];
             switch (newRarity) {
                 case "Common":
-                    newReforge = listOfCommonReforges[Object.keys(this.state.swordReforge)[0]]
+                    newReforge = listOfCommonReforges[oldReforgeKey];
                     break;
                 case "Uncommon":
-                    newReforge = listOfUncommonReforges[Object.keys(this.state.swordReforge)[0]]
+                    newReforge = listOfUncommonReforges[oldReforgeKey];
                     break;
                 case "Rare":
-                    newReforge = listOfRareReforges[Object.keys(this.state.swordReforge)[0]]
+                    newReforge = listOfRareReforges[oldReforgeKey];
                     break;
                 case "Epic":
-                    newReforge = listOfEpicReforges[Object.keys(this.state.swordReforge)[0]]
+                    newReforge = listOfEpicReforges[oldReforgeKey];
                     break;
                 case "Legendary":
-                    newReforge = listOfLegendaryReforges[Object.keys(this.state.swordReforge)[0]]
+                    newReforge = listOfLegendaryReforges[oldReforgeKey];
                     break;
                 case "Mythic":
-                    newReforge = listOfMythicReforges[Object.keys(this.state.swordReforge)[0]]
+                    newReforge = listOfMythicReforges[oldReforgeKey];
                     break;
                 default:
                     break;
@@ -228,6 +255,11 @@ class SwordSelect extends React.Component {
                 "Recombobulated" : e.target.checked
             })
         }
+        
+        this.forceUpdate();
+        setTimeout(() => {
+            this.props.onInputChange(this.state);
+        }, 50);
     }
 
     render() {
