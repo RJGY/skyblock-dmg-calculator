@@ -2,6 +2,7 @@ Currently working on:
     sword-select.js - problems with inability to find rarity when switching sword then recombobulating. probs because value is no longer an object and just a string now...
 
 NEED LIST: 
+    Pass all objects to json.
     Add more reforges
     add another folder for layout and nav components.
     change between highest dps and highest dmg per attack.

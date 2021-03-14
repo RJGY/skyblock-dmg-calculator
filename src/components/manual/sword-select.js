@@ -131,15 +131,19 @@ class SwordSelect extends React.Component {
     }
 
     handleWeaponChange(e) {
-        let newSword = e.target.value.split("\\")[0];
+        let newSwordString = e.target.value.split("\\")[0];
+        let newSword = JSON.parse(newSwordString); 
         // increase rarity if recombobulated.
         if (this.state.Recombobulated === true) {
             let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
             let newIndex = listOfRarities.indexOf(currentSwordRarity) + 1;
             let newRarity = listOfRarities[newIndex];
-            let oldSword = newSword;
-            newSword = new Sword(oldSword.damage, oldSword.strength, oldSword.critChance,
-                oldSword.critDamage, oldSword.intelligence, oldSword.ability, newRarity)
+            newSword = new Sword(newSword.damage, newSword.strength, newSword.critChance,
+                newSword.critDamage, newSword.intelligence, newSword.ability, newRarity);
+        }
+        else {
+            newSword = new Sword(newSword.damage, newSword.strength, newSword.critChance,
+                newSword.critDamage, newSword.intelligence, newSword.ability, newSword.rarity);
         }
 
         this.setState({
@@ -151,6 +155,7 @@ class SwordSelect extends React.Component {
         this.forceUpdate();
         setTimeout(() => {
             this.props.onInputChange(this.state);
+            console.log(`155 ${Object.values(this.state.currentSword)[0].toString()}`);
         }, 50);
     }
 

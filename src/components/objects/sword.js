@@ -12,13 +12,9 @@ class Sword extends React.Component {
         this.rarity = rarity
     }
 
-    setRarity(rarity) {
-        this.rarity = rarity;
-    }
-
     toString() {
-        let abilityString = this.ability === null ? `` : this.ability.toString();
-        return `Sword:\n\tDamage: ${this.damage}\n\tStrength: ${this.strength}\n\tCritical Chance: ${this.critChance}\n\tCritical Damage: ${this.critDamage}\n\tIntelligence: ${this.intelligence}\n\tAbility: ${abilityString}\n\tRarity: ${this.rarity}`;
+        let abilityString = this.ability == null ? `` : this.ability.toString();
+        return `{ "damage" : "${this.damage}", "strength" : "${this.strength}", "critChance" : "${this.critChance}", "critDamage" : "${this.critDamage}", "intelligence" : "${this.intelligence}", "ability" : "${abilityString}", "rarity" : "${this.rarity}"}`;
     }
 }
 
