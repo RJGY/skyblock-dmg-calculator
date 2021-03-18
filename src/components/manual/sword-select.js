@@ -15,7 +15,9 @@ const listOfSwordAbilities = {
 }
 
 const listOfReforgeAbilities = {
-    "Fabled Ability" : new ReforgeAbility(0,0,"Your critical hits have a chance to deal up to +20% extra damage.")
+    "Fabled Reforge Ability" : new ReforgeAbility("Your critical hits have a chance to deal up to +20% extra damage."),
+    "Byron's Compassion" : new ReforgeAbility("Upon killing an enemy, you have a rare chance to grant coins to a more destitute player around you."),
+    "Withered Reforge Ability" : new ReforgeAbility("Withered Bonus: Grants +1 Strength icon.png Strength per The Catacombs.png Catacombs level."),
 }
 
 const listOfWeapons = {
@@ -38,7 +40,15 @@ const listOfCommonReforges = {                                  // Total Offensi
     "Fair" : new SwordReforge(2,0,2,2,2,0,2,"Common",null),     // 8
     "Epic" : new SwordReforge(15,0,0,10,1,0,0,"Common",null),   // 26
     "Sharp" : new SwordReforge(0,0,10,20,0,0,0,"Common",null),  // 30
+    "Heroic" : new SwordReforge(15,0,0,0,1,0,40,"Common",null), // 15
+    "Spicy" : new SwordReforge(2,0,1,25,1,0,0,"Common",null),   // 29
+    "Legendary" : new SwordReforge(3,0,5,5,2,0,5,"Common",null),// 15
+    "Dirty" : new SwordReforge(2,0,0,0,2,2,0,"Common",null),    // 6
     "Fabled" : new SwordReforge(30,0,0,15,0,0,0,"Common",listOfReforgeAbilities["Fabled Ability"]), // 45
+    "Suspicious" : new SwordReforge(0,15,1,30,0,0,0,"Common",null), // 46
+    "Gilded" : new SwordReforge(0,0,0,0,0,0,0,"Common",listOfReforgeAbilities["Byron's Compassion"]), // 0
+    "Warped" : new SwordReforge(0,0,0,0,0,0,0,"Common",null), // 0
+    "Withered" : new SwordReforge(0,0,0,0,0,0,0,"Common",listOfReforgeAbilities["Withered Reforge Ability"]),
 }
 
 const listOfUncommonReforges = {
@@ -48,6 +58,15 @@ const listOfUncommonReforges = {
     "Fair" : new SwordReforge(3,0,3,3,3,0,3,"Uncommon",null),     // 12
     "Epic" : new SwordReforge(20,0,0,15,2,0,0,"Uncommon",null),   // 37
     "Sharp" : new SwordReforge(0,0,12,30,0,0,0,"Uncommon",null),  // 42
+    "Heroic" : new SwordReforge(20,0,0,0,2,0,50,"Uncommon",null), // 20
+    "Spicy" : new SwordReforge(3,0,1,35,2,0,0,"Uncommon",null),   // 41
+    "Legendary" : new SwordReforge(7,0,7,10,3,0,8,"Uncommon",null),// 27
+    "Dirty" : new SwordReforge(4,0,0,0,3,3,0,"Uncommon",null), // 10
+    "Fabled" : new SwordReforge(35,0,0,20,0,0,0,"Uncommon",listOfReforgeAbilities["Fabled Ability"]), // 55
+    "Suspicious" : new SwordReforge(0,15,2,40,0,0,0,"Uncommon",null), // 57
+    "Gilded" : new SwordReforge(0,0,0,0,0,0,0,"Uncommon",listOfReforgeAbilities["Byron's Compassion"]), // 0
+    "Warped" : new SwordReforge(0,0,0,0,0,0,0,"Uncommon",null), // 0
+    "Withered" : new SwordReforge(0,0,0,0,0,0,0,"Uncommon",listOfReforgeAbilities["Withered Reforge Ability"]), // 0
 }
 
 const listOfRareReforges = {
@@ -57,6 +76,15 @@ const listOfRareReforges = {
     "Fair" : new SwordReforge(4,0,4,4,4,0,4,"Rare",null),    // 16
     "Epic" : new SwordReforge(25,0,0,20,4,0,0,"Rare",null),   // 49
     "Sharp" : new SwordReforge(0,0,14,40,0,0,0,"Rare",null),  // 54
+    "Heroic" : new SwordReforge(25,0,0,0,2,0,65,"Rare",null), // 25
+    "Spicy" : new SwordReforge(4,0,1,45,4,0,0,"Rare",null),   // 54
+    "Legendary" : new SwordReforge(12,0,9,15,5,0,12,"Rare",null),// 15
+    "Dirty" : new SwordReforge(6,0,0,0,5,6,0,"Rare",null), // 17
+    "Fabled" : new SwordReforge(40,0,0,25,0,0,0,"Rare",listOfReforgeAbilities["Fabled Ability"]), // 65
+    "Suspicious" : new SwordReforge(0,15,3,50,0,0,0,"Rare",null), // 68
+    "Gilded" : new SwordReforge(0,0,0,0,0,0,0,"Rare",listOfReforgeAbilities["Byron's Compassion"]), // 0
+    "Warped" : new SwordReforge(165,165,0,0,0,0,0,"Rare",null), // 330
+    "Withered" : new SwordReforge(0,0,0,0,0,0,0,"Rare",listOfReforgeAbilities["Withered Reforge Ability"]),
 }
 
 const listOfEpicReforges = {
@@ -66,6 +94,15 @@ const listOfEpicReforges = {
     "Fair" : new SwordReforge(7,0,7,7,7,0,7,"Epic",null),     // 28
     "Epic" : new SwordReforge(32,0,0,27,7,0,0,"Epic",null),   // 66
     "Sharp" : new SwordReforge(0,0,17,55,0,0,0,"Epic",null),  // 72
+    "Heroic" : new SwordReforge(32,0,0,0,3,0,80,"Epic",null), // 32
+    "Spicy" : new SwordReforge(7,0,1,60,7,0,0,"Epic",null),   // 75
+    "Legendary" : new SwordReforge(18,0,12,22,7,0,18,"Epic",null),// 15
+    "Dirty" : new SwordReforge(10,0,0,0,10,9,0,"Epic",null), // 29
+    "Fabled" : new SwordReforge(50,0,0,32,0,0,0,"Epic",listOfReforgeAbilities["Fabled Ability"]), // 82
+    "Suspicious" : new SwordReforge(0,15,5,65,0,0,0,"Epic",null), // 85
+    "Gilded" : new SwordReforge(0,0,0,0,0,0,0,"Epic",listOfReforgeAbilities["Byron's Compassion"]), // 0
+    "Warped" : new SwordReforge(165,165,0,0,0,0,0,"Epic",null), // 330
+    "Withered" : new SwordReforge(0,0,0,0,0,0,0,"Epic",listOfReforgeAbilities["Withered Reforge Ability"]),
 }
 
 const listOfLegendaryReforges = {
@@ -75,6 +112,15 @@ const listOfLegendaryReforges = {
     "Fair" : new SwordReforge(10,0,10,10,10,0,10,"Legendary",null),     // 40
     "Epic" : new SwordReforge(40,0,0,35,10,0,0,"Legendary",null),   // 85
     "Sharp" : new SwordReforge(0,0,20,75,0,0,0,"Legendary",null),  // 95
+    "Heroic" : new SwordReforge(40,0,0,0,5,0,100,"Legendary",null), // 40
+    "Spicy" : new SwordReforge(10,0,1,80,10,0,0,"Legendary",null),   // 101
+    "Legendary" : new SwordReforge(25,0,15,28,10,0,25,"Legendary",null),    // 15
+    "Dirty" : new SwordReforge(12,0,0,0,15,12,0,"Legendary",null), // 39
+    "Fabled" : new SwordReforge(60,0,0,40,0,0,0,"Legendary",listOfReforgeAbilities["Fabled Ability"]), // 100
+    "Suspicious" : new SwordReforge(0,15,7,85,0,0,0,"Legendary",null), // 107
+    "Gilded" : new SwordReforge(75,75,0,0,0,0,0,"Legendary",listOfReforgeAbilities["Byron's Compassion"]), // 150
+    "Warped" : new SwordReforge(0,0,0,0,0,0,0,"Legendary",null), // 0
+    "Withered" : new SwordReforge(135,0,0,0,0,0,0,"Legendary",listOfReforgeAbilities["Withered Reforge Ability"]), // 135
 }
 
 const listOfMythicReforges = {
@@ -84,6 +130,15 @@ const listOfMythicReforges = {
     "Fair" : new SwordReforge(12,0,12,12,12,0,12,"Mythic",null),  // 48
     "Epic" : new SwordReforge(50,0,0,45,12,0,0,"Mythic",null),   // 107
     "Sharp" : new SwordReforge(0,0,25,90,0,0,0,"Mythic",null),  // 30
+    "Heroic" : new SwordReforge(50,0,0,0,7,125,"Mythic",null), // 50
+    "Spicy" : new SwordReforge(12,0,1,100,12,0,0,"Mythic",null),   // 125
+    "Legendary" : new SwordReforge(32,0,18,36,15,0,15,"Mythic",null), // 15
+    "Dirty" : new SwordReforge(15,0,0,0,20,15,0,"Mythic",null), // 50
+    "Fabled" : new SwordReforge(75,0,0,50,0,0,0,"Mythic",listOfReforgeAbilities["Fabled Ability"]), // 125
+    "Suspicious" : new SwordReforge(0,15,10,110,0,0,0,"Mythic",null), // 135
+    "Gilded" : new SwordReforge(90,90,0,0,0,0,0,"Mythic",listOfReforgeAbilities["Byron's Compassion"]), // 180
+    "Warped" : new SwordReforge(0,0,0,0,0,0,0,"Mythic",null), // 0
+    "Withered" : new SwordReforge(170,0,0,0,0,0,0,"Mythic",listOfReforgeAbilities["Withered Reforge Ability"]), // 170
 }
 
 const listOfRarities = [

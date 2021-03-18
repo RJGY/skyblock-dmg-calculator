@@ -4,10 +4,8 @@ import React from "react"
 
 // ReforgeAbility -> Strength, DamageBonus, CriticalDamageBonus, Description
 class ReforgeAbility extends React.Component {
-    constructor(strength, damageBonus, description) {
+    constructor(description) {
         super();
-        this.strength = strength;
-        this.damageBonus = damageBonus;
         this.description = description;
     }
 
