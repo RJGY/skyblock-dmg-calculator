@@ -12,6 +12,14 @@ import ReforgeAbility from "../objects/reforge-ability";
 const listOfSwordAbilities = {
     "Aspect of the Jerry Ability" : new SwordAbility("Parley", "Channel your inner Jerry", 5, 0),
     "Rogue Sword Ability" : new SwordAbility("Speed Boost","Increases your movement Speed by +20% for 30 seconds - only +10 if ability already active.", 0, 50),
+    "Spider Sword Ability" : new SwordAbility("", "Deals +100% damage to Spiders, Cave Spiders, and Silverfish.", -1, -1),
+    "Undead Sword Ability" :new SwordAbility("", "Deals +100% damage to Skeletons, Withers, Zombies, and Zombie Pigmen.", -1, -1),
+    "End Sword Ability" : new SwordAbility("", "Deals +100% damage to Endermites, Endermen, Etc.", -1, -1),
+    "Cleaver Ability" : new SwordAbility("Cleave", "When hitting an entity, monsters in a 3 block range will be hit for a portion of that damage too.", -1, -1),
+    "Flaming Sword Ability" : new SwordAbility("", "Ignites enemies for 3s.", -1, -1),
+    "Prismarine Sword Ability" : new SwordAbility("", "Deals +200% damage while in water.", -1, -1),
+    "Tactician's Sword Ability" : new SwordAbility("", "Gains +15 Damage for each Combat colletion of Tier VII and over of its wearer (10 collections, hence a max of +150).", -1, -1),
+    
 }
 
 const listOfReforgeAbilities = {
@@ -20,17 +28,29 @@ const listOfReforgeAbilities = {
     "Withered Reforge Ability" : new ReforgeAbility("Withered Bonus: Grants +1 Strength icon.png Strength per The Catacombs.png Catacombs level."),
 }
 
+// Sword -> (damage, strength, critChance, critDamage, intelligence, speed, defense, attackSpeed, ferocity, ability, rarity)
 const listOfWeapons = {
-    "Wooden Sword" : new Sword(20,0,0,0,0,null,"Common"),
-    "Thick Wooden Sword" : new Sword(20,100,0,0,0,null,"Uncommon"),
-    "Golden Sword" : new Sword(20,0,0,0,0,null,"Common"),
-    "Stone Sword" : new Sword(25,0,0,0,0,null,"Common"),
-    "Iron Sword" : new Sword(30,0,0,0,0,null,"Common"),
-    "Diamond Sword" : new Sword(20,0,0,0,0,null,"Common"),
-    "Aspect of the Jerry" : new Sword(1,0,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"],"Common"),
-    "Thick Aspect of the Jerry" : new Sword(1,100,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"],"Uncommon"),
-    "Fancy Sword" : new Sword(20,0,0,0,0,null,"Common"),
-    "Rogue Sword" : new Sword(20,0,0,0,0,listOfSwordAbilities["Rogue Sword Ability"],"Common"),
+    // Vanilla Swords
+    "Wooden Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,"Common"),
+    "Thick Wooden Sword" : new Sword(20,100,0,0,0,0,0,0,0,null,"Uncommon"),
+    "Golden Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,"Common"),
+    "Stone Sword" : new Sword(25,0,0,0,0,0,0,0,0,null,"Common"),
+    "Iron Sword" : new Sword(30,0,0,0,0,0,0,0,0,null,"Common"),
+    "Diamond Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,"Common"),
+    // Vanilla Skyblock Swords
+    "Aspect of the Jerry" : new Sword(1,0,0,0,0,0,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"],"Common"),
+    "Thick Aspect of the Jerry" : new Sword(1,100,0,0,0,0,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"],"Uncommon"),
+    "Fancy Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,"Common"),
+    "Rogue Sword" : new Sword(20,0,0,0,0,0,0,0,0,listOfSwordAbilities["Rogue Sword Ability"],"Common"),
+    "Spider Sword" : new Sword(30,0,0,0,0,0,0,0,0,listOfSwordAbilities["Spider Sword Ability"],"Common"),
+    "Undead Sword" : new Sword(30,0,0,0,0,0,0,0,0,listOfSwordAbilities["Undead Sword Ability"],"Common"),
+    "End Sword" : new Sword(35,0,0,0,0,0,0,0,0,listOfSwordAbilities["End Sword Ability"],"Uncommon"),
+    "Cleaver" : new Sword(40,10,0,0,0,0,0,0,0,listOfSwordAbilities["Cleaver Ability"],"Uncommon"),
+    "Flaming Sword" : new Sword(50,20,0,0,0,0,0,0,0,listOfSwordAbilities["Flaming Sword Ability"], "Uncommon"),
+    "Prismarine Blade" : new Sword(50,25,0,0,0,0,0,0,0,listOfSwordAbilities["Prismarine Blade Ability"], "Uncommon"),
+    "Hunter Knife" : new Sword(50,0,0,0,0,40,0,0,0,null,"Uncommon"),
+    "Tactician's Sword" : new Sword(50,0,0,0,0,0,0,0,0,listOfSwordAbilities["Tactician's Sword Ability"], "Rare"),
+    "Thick Tactician's Sword" : new Sword(50,100,0,0,0,0,0,0,0,listOfSwordAbilities["Tactician's Sword Ability"], "Epic"),
 }
 
 const listOfCommonReforges = {                                  // Total Offensive Stats (estimate, just a total of all the stats given)
