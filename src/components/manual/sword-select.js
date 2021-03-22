@@ -9,17 +9,22 @@ import ReforgeAbility from "../objects/reforge-ability";
 // SwordAbility -> name, description, cooldown, manacost
 // Reforge -> Strength, Damage, Crit Chance, Crit Damage, Attack Speed, Ferocity, Intelligence, rarity, Reforge Ability
 // ReforgeAbility -> strength, damageBonus, criticalDamageBonus, description
+
+
 const listOfSwordAbilities = {
-    "Aspect of the Jerry Ability" : new SwordAbility("Parley", "Channel your inner Jerry", 5, 0),
-    "Rogue Sword Ability" : new SwordAbility("Speed Boost","Increases your movement Speed by +20% for 30 seconds - only +10 if ability already active.", 0, 50),
-    "Spider Sword Ability" : new SwordAbility("", "Deals +100% damage to Spiders, Cave Spiders, and Silverfish.", -1, -1),
-    "Undead Sword Ability" :new SwordAbility("", "Deals +100% damage to Skeletons, Withers, Zombies, and Zombie Pigmen.", -1, -1),
-    "End Sword Ability" : new SwordAbility("", "Deals +100% damage to Endermites, Endermen, Etc.", -1, -1),
-    "Cleaver Ability" : new SwordAbility("Cleave", "When hitting an entity, monsters in a 3 block range will be hit for a portion of that damage too.", -1, -1),
-    "Flaming Sword Ability" : new SwordAbility("", "Ignites enemies for 3s.", -1, -1),
-    "Prismarine Sword Ability" : new SwordAbility("", "Deals +200% damage while in water.", -1, -1),
-    "Tactician's Sword Ability" : new SwordAbility("", "Gains +15 Damage for each Combat colletion of Tier VII and over of its wearer (10 collections, hence a max of +150).", -1, -1),
-    
+    "Aspect of the Jerry Ability" : new SwordAbility("Parley", "Channel your inner Jerry", 5, 0, 0),
+    "Rogue Sword Ability" : new SwordAbility("Speed Boost","Increases your movement Speed by +20% for 30 seconds - only +10 if ability already active.", 0, 50, 0),
+    "Spider Sword Ability" : new SwordAbility("", "Deals +100% damage to Spiders, Cave Spiders, and Silverfish.", -1, -1, 0),
+    "Undead Sword Ability" :new SwordAbility("", "Deals +100% damage to Skeletons, Withers, Zombies, and Zombie Pigmen.", -1, -1, 0),
+    "End Sword Ability" : new SwordAbility("", "Deals +100% damage to Endermites, Endermen, Etc.", -1, -1, 0),
+    "Cleaver Ability" : new SwordAbility("Cleave", "When hitting an entity, monsters in a 3 block range will be hit for a portion of that damage too.", -1, -1, 0),
+    "Flaming Sword Ability" : new SwordAbility("", "Ignites enemies for 3s.", -1, -1, 0),
+    "Prismarine Sword Ability" : new SwordAbility("", "Deals +200% damage while in water.", -1, -1, 0),
+    "Tactician's Sword Ability" : new SwordAbility("", "Gains +15 Damage for each Combat colletion of Tier VII and over of its wearer (10 collections, hence a max of +150).", -1, -1, 0),
+    "Jerry-chine Gun Ability" : new SwordAbility("Rapid-fire", "Fires off multiple jerry bombs that create an explosion on impact, dealing up to <varies> damage.", 0, 10, 0.2),
+    "Ember Rod Ability" : new SwordAbility("Fire Blast", "Shoot 3 Fireballs in rapid succession in front of you!", 30, 150, 1),
+    "Frozen Scythe Ability" : new SwordAbility("Ice Bolt", "Shoots 1 Ice Bolt that deals 1000 Ability Damage and slows enemies hit for 5 seconds!", 0, 50, 0.3),
+
 }
 
 const listOfReforgeAbilities = {
@@ -37,6 +42,7 @@ const listOfWeapons = {
     "Stone Sword" : new Sword(25,0,0,0,0,0,0,0,0,null,"Common"),
     "Iron Sword" : new Sword(30,0,0,0,0,0,0,0,0,null,"Common"),
     "Diamond Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,"Common"),
+
     // Vanilla Skyblock Swords
     "Aspect of the Jerry" : new Sword(1,0,0,0,0,0,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"],"Common"),
     "Thick Aspect of the Jerry" : new Sword(1,100,0,0,0,0,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"],"Uncommon"),
@@ -51,6 +57,19 @@ const listOfWeapons = {
     "Hunter Knife" : new Sword(50,0,0,0,0,40,0,0,0,null,"Uncommon"),
     "Tactician's Sword" : new Sword(50,0,0,0,0,0,0,0,0,listOfSwordAbilities["Tactician's Sword Ability"], "Rare"),
     "Thick Tactician's Sword" : new Sword(50,100,0,0,0,0,0,0,0,listOfSwordAbilities["Tactician's Sword Ability"], "Epic"),
+    "Jerry-chine Gun" : new Sword(80,0,0,0,200,0,0,0,0,listOfSwordAbilities["Jerry-chine Gun Ability"],"Epic"),
+    "Ember Rod" : new Sword(80,35,0,0,200,0,0,0,0,listOfSwordAbilities["Ember Rod Ability"],"Epic"),
+    "Frozen Scythe" : new Sword(80,0,0,0,0,0,0,0,0,listOfSwordAbilities["Frozen Scythe Ability"],"Rare"),
+    "Golem Sword" : new Sword(80,125,0,0,0,0,25,0,0,listOfSwordAbilities["Golem Sword Ability"],"Rare"), // Make abilities from here.
+    "Raider Axe" : new Sword(80, 50,0,0,0,0,0,0,0,listOfSwordAbilities["Raider Axe Ability"],"Rare"),
+    "Revenant Falchion" : new Sword(90,50,0,0,100,0,0,0,0,listOfSwordAbilities["Reaper Falcion Ability"],"Rare"),
+    "Silver Fang" : new Sword(100,0,0,0,0,0,0,0,0,null,"","Uncommon"),
+    "Shaman Sword" : new Sword(100,20,0,0,0,5,0,0,0,null,"Deal +1 Damage per 50 max HP. Recieve -20% damage from wolves.", "Epic"),
+    "Aspect of the End" : new Sword(100,100,0,0,0,0,0,0,0,listOfSwordAbilities["Aspect of the End Ability"],"","Rare"),
+    "Scorpion Foil" : new Sword(100,100,0,0,0,0,0,0,0,listOfSwordAbilities["Scorpion Foil Ability"],"Deal +250% damage against Spiders.","Epic"),
+    "Thick Scorpion Foil" : new Sword(100,200,0,0,0,0,0,0,0,listOfSwordAbilities["Scorpion Foil Ability"],"Deal +250% damage against Spiders.","Legendary"),
+    "Zombie Sword" : new Sword(100,50,0,0,50,0,0,0,0,listOfSwordAbilities["Zombie Sword Ability"],"","Rare"),
+    "Ornate Zombie Sword" : new Sword(110,60,0,0,50,0,0,0,0,listOfSwordAbilities["Ornate Zombie Sword Ability"],"","Epic"),
 }
 
 const listOfCommonReforges = {                                  // Total Offensive Stats (estimate, just a total of all the stats given)
@@ -238,6 +257,7 @@ class SwordSelect extends React.Component {
 
     handleWeaponChange(e) {
         let newSwordString = e.target.value.split("\\")[0];
+        // FIX THIS< NO LONGER WORKS
         let newSword = JSON.parse(newSwordString); 
         // increase rarity if recombobulated.
         if (this.state.Recombobulated === true) {
@@ -303,6 +323,7 @@ class SwordSelect extends React.Component {
             }
             
             this.setState({
+                // THIS NO LONGER WORKS
                 currentSword: {    
                     [Object.keys(this.state.currentSword)[0]] : new Sword(oldSword.damage, oldSword.strength,
                         oldSword.critChance, oldSword.critDamage, oldSword.intelligence, oldSword.ability, newRarity)
@@ -354,6 +375,7 @@ class SwordSelect extends React.Component {
             }
 
             this.setState({
+                // THIS NO LONGER WORKS
                 currentSword: {    
                     [Object.keys(this.state.currentSword)[0]] : new Sword(oldSword.damage, oldSword.strength,
                         oldSword.critChance, oldSword.critDamage, oldSword.intelligence, oldSword.ability, newRarity)

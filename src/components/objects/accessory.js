@@ -1,10 +1,10 @@
-// Sword Reforge.
+// Accessory
 
 import React from "react"
 
 // Accessory -> Strength, Crit Chance, Crit Damage, Attack Speed, Ferocity, Intelligence, moveSpeed
 class Accessory extends React.Component {
-    constructor(strength, damage, critChance, critDamage, attackSpeed, ferocity, intelligence, rarity, moveSpeed) {
+    constructor(strength, critChance, critDamage, attackSpeed, ferocity, intelligence, rarity, moveSpeed) {
         super();
         this.strength = strength;
         this.critChance = critChance;

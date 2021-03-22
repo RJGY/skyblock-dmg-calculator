@@ -2,12 +2,12 @@ Currently working on:
     sword-select.js - problems with inability to find rarity when switching sword then recombobulating. probs because value is no longer an object and just a string now...
 
 NEED LIST: 
-    Pass all objects to json.
-    Add more reforges
+    Pass all objects to be readable as json.
+    Make a sword-passive object.
+    Turn abilities into passives.
     add another folder for layout and nav components.
     change between highest dps and highest dmg per attack.
     damage limiter. eg keep dmg at 13000 but maximise rest in speed/intel etc.
-    Add recombobulator.
     Fix sword select and manual showing sword reforges and sword stats and abilities etc.
     populate sword-select.js with all swords
     swap everything from objects to props. makes it better i think, idk
