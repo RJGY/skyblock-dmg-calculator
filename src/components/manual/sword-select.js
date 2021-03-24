@@ -24,7 +24,12 @@ const listOfSwordAbilities = {
     "Jerry-chine Gun Ability" : new SwordAbility("Rapid-fire", "Fires off multiple jerry bombs that create an explosion on impact, dealing up to <varies> damage.", 0, 10, 0.2),
     "Ember Rod Ability" : new SwordAbility("Fire Blast", "Shoot 3 Fireballs in rapid succession in front of you!", 30, 150, 1),
     "Frozen Scythe Ability" : new SwordAbility("Ice Bolt", "Shoots 1 Ice Bolt that deals 1000 Ability Damage and slows enemies hit for 5 seconds!", 0, 50, 0.3),
-
+    "Golem Sword Ability" : new SwordAbility("Iron Punch","Punch the ground, damaging enemies in a hexagon around you for 250 base damage.",3,70,0.1),
+    "Aspect of the End Ability" : new SwordAbility("Instant Transmission","Teleport 8 blocks ahead of you and gain +50 Speed for 3 seconds.",0,50,0),
+    "Scorpion Foil Ability" : new SwordAbility("Heartstopper","You have 4 tickers. Blocking clears 1 of them and heals 60 HP. Once all tickers are cleared, your next attack is empowered for +250% damage. Tickers refill after 5 seconds.",5,0,0),
+    "Zombie Sword Ability" : new SwordAbility("Instant Heal","Heal yourself for 120 + 5% max HP and players within 7 blocks for 40 HP. Holds 4 charges, 15 seconds to refill a charge.",15,70,0),
+    "Ornate Zombie Sword Ability" : new SwordAbility("Instant Heal","Heal yourself for 144 + 5% max HP and players within 7 blocks for 40 HP. Holds 5 charges, 15 seconds to refill a charge.",15,70,0),
+    "End Stone Sword Ability" : new SwordAbility(""),
 }
 
 const listOfReforgeAbilities = {
