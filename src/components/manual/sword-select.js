@@ -104,6 +104,17 @@ const listOfWeapons = {
     "Hyper Cleaver" : new Sword(145,50,0,0,0,0,0,0,0,null,"Cleave - When hitting an entity, monsters in a 4 block range will be hit for a portion of that damage too.", "Epic"),
     "Spirit Sword" : new Sword(210,50,0,0,0,0,0,0,0,null,"Deals +2% more damage to Undead monsters for every 1% of your missing health. Spirit Item: When turned into a ghost, this item becomes a ghost ability. Spirit Ability: Spirit Bomb - Shoots a Spirit that deals 8000 damage on impact.", "Epic"),
     "Zombie Knight Sword" : new Sword(82,21,0,0,0,0,0,0,0,null,"Zombie Knight - Gains +30 Strength when used with Zombie Knight Armour.","Legendary"),
+    "Spirit Sceptre" : new Sword(180,0,0,0,300,0,0,0,0,listOfSwordAbilities["Spirit Sceptre Ability"],"","Legendary"),
+    "Ice Spray Wand" : new Sword(120,0,0,0,293,0,0,0,0,listOfSwordAbilities["Ice Spray Wand Ability"],"","Epic"),
+    "Livid Dagger" : new Sword(210,60,100,50,0,0,0,100,0,listOfSwordAbilities["Livid Dagger Ability"],"Your Critical Hits deal +100% more damage if you are behind your target.","Legendary"),
+    "Shadow Fury" : new Sword(300,125,0,0,0,30,0,0,0,listOfSwordAbilities["Shadow Fury Ability"],"","Legendary"),
+    "Fel Sword" : new Sword(190,135,0,0,0,0,0,0,0,null,"Every 100 kills with this weapon grants an extra +1 Weapon Damage, up to 100 extra damage. Dungeon Healer Bonuses: Increases healing for your Healing Circle by 10%. Reduces the cooldown of your Wish ultimate by 10 seconds. Right-click to use your class ability!", "Epic"),
+    "Wither Cloak Sword" : new Sword(190,135,0,0,0,0,250,0,0,listOfSwordAbilities["Wither Cloak Sword Ability"],"","Epic"),
+    "Necron's Blade" : new Sword(260,110,0,0,50,0,0,0,0,null,"Deal 50% more damage to Withers. Right-click to use your class ability!","Legendary"),
+    "Hyperion" : new Sword(260,150,0,0,400,0,0,0,30,null,"Deals +50% more damage to Withers. Grants +1 Damage and +2 Intelligence per Catacombs level.","Legendary"),
+    "Astraea" : new Sword(260,150,0,0,50,0,210,0,30,null,"Deals +50% more damage to Withers. Grants +1 Damage and +1 Defense per Catacombs level.","Legendary"),
+    "Scylla" : new Sword(260,150,12,35,50,0,0,0,30,null,"Deals +50% more damage to Withers. Grants +1 Damage and +1 Critical Damage per Catacombs level.","Legendary"),
+    "Valkyrie" : new Sword(270,120,0,0,60,0,0,0,60,null,"Deals +50% more damage to Withers. Grants +1 Damage and +1 Strength per Catacombs level.","Legendary"),
 }
 
 const listOfCommonReforges = {                                  // Total Offensive Stats (estimate, just a total of all the stats given)
