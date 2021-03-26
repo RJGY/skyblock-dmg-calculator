@@ -29,7 +29,19 @@ const listOfSwordAbilities = {
     "Scorpion Foil Ability" : new SwordAbility("Heartstopper","You have 4 tickers. Blocking clears 1 of them and heals 60 HP. Once all tickers are cleared, your next attack is empowered for +250% damage. Tickers refill after 5 seconds.",5,0,0),
     "Zombie Sword Ability" : new SwordAbility("Instant Heal","Heal yourself for 120 + 5% max HP and players within 7 blocks for 40 HP. Holds 4 charges, 15 seconds to refill a charge.",15,70,0),
     "Ornate Zombie Sword Ability" : new SwordAbility("Instant Heal","Heal yourself for 144 + 5% max HP and players within 7 blocks for 40 HP. Holds 5 charges, 15 seconds to refill a charge.",15,70,0),
-    "End Stone Sword Ability" : new SwordAbility(""),
+    "End Stone Sword Ability" : new SwordAbility("Extreme Focus", "Consumes all your remaining Mana to grant Damage Resistance for 5 seconds and extra dmage on your next hit (within 5 seonds) depending on how much Mana was consumed!", 0,-1,1),
+    "Edible Mace Ability" : new SwordAbility("ME SMASH HEAD", "Your next attack deals double dmage and weakens animals, making them deal -35% damage for 30 seconds.", 0, 100, 0),
+    "Ink Wand Ability" : new SwordAbility("Ink Bomb","Shoot and ink bomb in front of you dealing 10,000 Ability Damage and giving blindness", 30, 60, 1),
+    "Midas Staff Ability" : new SwordAbility("Molten Wave","Cast a wave of molten gold in the direction you are facing! Deals up to 16000 damage. The ability damage bonus of this item is dependent on the price paid in the Dark Auction! the maximum bonus of this item is 16000 if the bid was 100,000,00 or higher for a total of 32,000 damage.", 1,500,1),
+    "Soul Whip Ability" :  new SwordAbility("Flay","Flay your whip in an arc, dealing your melee damage to all enemies in it's path.",0.5,0,0),
+    "Leaping Sword Ability" :  new SwordAbility("Leap","Leap into the air and deal 350 Ability Damage to nearby enemies upon landing on the ground. Damaged enemies will also be frozen for 1 second.",1,50,1),
+    "Yeti Sword Ability" :  new SwordAbility("Terrain Toss","Throws a chunk of terrain in the direction you are facing! Deals up to 15,000 Ability Damage. Maximum range of 32 blocks.",1,250,0.3),
+    "Silk-Edge Sword Ability" :  new SwordAbility("Leap","Leap into the air and deal 400 Ability Damage to nearby enemies upon landing on the ground. Damaged enemies will also be frozen for 1 second.",1,50,1),
+    "Phantom Rod Ability" : new SwordAbility("Phantom Impel","Terrify hooked enemies pushing them away and dealing massive damage.",0,0,0),
+    "Pigman Sword Ability" :  new SwordAbility("Burning Souls","Gain +300 Defense for 5s and cast vortex of flames towards enemies, dealing up to 30,000 damage over 5 seconds.",5,400,0.1),
+    "Aspect of the Dragons Ability" :  new SwordAbility("Dragon Rage","All monsters in front of you take 12,000 Ability Damage. Hit monsters take large knockback.",0,100,0.1),
+    "Reaper Scythe Ability" :  new SwordAbility("Raise Souls", "Monsters you kill using this item will drop their soul. You can clock on their souls on the ground using this item to absorb them and then spawn them to fight by your side. Mana cost is based on the power of the monsters that you summon. Shift right-click to view and remove souls from this item. If your summoned monster dies, the soul will be removed.", 0, 0, 0,),
+    "Bonzo's Staff Ability" :  new SwordAbility("Showtime","Shoots ballons that create a large explosion on impact, dealing up to 855 Damage.",)
 }
 
 const listOfReforgeAbilities = {
