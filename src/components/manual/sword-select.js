@@ -41,7 +41,19 @@ const listOfSwordAbilities = {
     "Pigman Sword Ability" :  new SwordAbility("Burning Souls","Gain +300 Defense for 5s and cast vortex of flames towards enemies, dealing up to 30,000 damage over 5 seconds.",5,400,0.1),
     "Aspect of the Dragons Ability" :  new SwordAbility("Dragon Rage","All monsters in front of you take 12,000 Ability Damage. Hit monsters take large knockback.",0,100,0.1),
     "Reaper Scythe Ability" :  new SwordAbility("Raise Souls", "Monsters you kill using this item will drop their soul. You can clock on their souls on the ground using this item to absorb them and then spawn them to fight by your side. Mana cost is based on the power of the monsters that you summon. Shift right-click to view and remove souls from this item. If your summoned monster dies, the soul will be removed.", 0, 0, 0,),
-    "Bonzo's Staff Ability" :  new SwordAbility("Showtime","Shoots ballons that create a large explosion on impact, dealing up to 855 Damage.",)
+    
+    // Dungeon sword abilities.
+    "Bonzo's Staff Ability" :  new SwordAbility("Showtime","Shoots ballons that create a large explosion on impact, dealing up to 1000 Damage.",0,100,0.2),
+    "Dreadlord Sword Ability" :  new SwordAbility("Dreadlord","Shoots a Skull that does 750 damage.",0,40,0.3),
+    "Silent Death Ability" : new SwordAbility("Shadowstep","Teleport behind the enemy you are looking at, gaining +25 Strength for 10 seconds. Max range of 20 blocks. Cooldown resets on kills.",60,0,0,),
+    "Crypt Witherlord Sword" : new SwordAbility("Witherlord","Shoot 3 Skills each doing 300 damage.",3,40,1),
+    "Spirit Sceptre Ability" :  new SwordAbility("Guided Bat","Shoots a guided spirit bat, following your aim and exploding for 2,000 damage.",0,250,0.2),
+    "Ice Spray Wand Ability" : new SwordAbility("Ice Spray","Produces a cone of ice in front of the caster that deals 25,500 damage to mobs and freezes them in place for 5 seconds! Frozen mobs take 10% increased damage!",5,50,0.1),
+    "Livid Dagger Ability" : new SwordAbility("Throw","Throw your dagger at enemies!",5,150,0),
+    "Shadow Fury Ability" : new SwordAbility("Shadow Fury","Rapidly teleports you up to 5 enemies within 10 blocks, rooting each of them and allowing you to him them.",15,0,0),
+    "Wither Cloak Sword Ability" : new SwordAbility("Creepter Veil","Spawns a veil around you that grants you immunity from damage. Unable to attack wile the shield is active but your creepers deal 200 damage to nearby enemies every second. Click again to de-activate. Costs 20% max Mana when you get hit.",0,-1,0),
+    "Necromancer Sword Ability" : new SwordAbility("Raise Souls","Monsters you kill using this item will drop their soul. You can click on their souls on the ground using this item to absorb them and then spawn them to fight by your side. Mana cost is based on the power of the mosnters you summon. Shift right-click to view and remove souls from this item. If your summoned monster dies, the soul will be removed. Max Souls: 2",1,0,0),
+    "Giant's Sword Ability" : new SwordAbility("Giant's Slam","Slam your sword into the ground dealing 100,000 damage to nearby enemies.",30,100,1),
 }
 
 const listOfReforgeAbilities = {
