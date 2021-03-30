@@ -10,7 +10,7 @@ class ReforgeAbility extends React.Component {
     }
 
     toString() {
-        return `Reforge Ability: \n\tExtra Strength: ${this.strength}\n\tDamage Bonus: ${this.damageBonus}\n\tDescription ${this.description}\n`
+        return `Reforge Ability: \n\tDescription ${this.description}\n`
     }
 }
 
