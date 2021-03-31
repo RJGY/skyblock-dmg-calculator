@@ -1,11 +1,11 @@
 import React from "react"
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 // TODO: Add buttons to auto select enchant levels. One button for moderate levels, one for busted amounts of money
 //      and one for reset. 
 
 let selectedEnchantments = {
-    baseSwordDamageEnchantment: "Sharpness",
+    baseSwordDamageEnchantment : "Sharpness",
     strikeEnchantment: "First Strike",
     highHealthEnchantment: "Giant Killer",
     healingEnchantment: "Syphon",

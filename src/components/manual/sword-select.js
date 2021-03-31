@@ -113,7 +113,7 @@ const listOfWeapons = {
     "Yeti Sword" : new Sword(150,170,0,0,50,0,0,0,0,listOfSwordAbilities["Yeti Sword Ability"],"","Legendary"),
     "Silk Edge Sword" : new Sword(175,125,0,25,0,0,0,0,0,listOfSwordAbilities["Silk Edge Sword Ability"],"","Epic"),
     "Sword of Revelations" : new Sword(180,50,0,0,0,0,0,0,0,null,"Heal 15 HP per hit. Deal +200% damage to Mythological Creatures and Minos Followers. Recieve 75% more damage from them when held.","Epic"),
-    "Sword of Revelations" : new Sword(180,150,0,0,0,0,0,0,0,null,"Heal 15 HP per hit. Deal +200% damage to Mythological Creatures and Minos Followers. Recieve 75% more damage from them when held.","Legendary"),
+    "Thick Sword of Revelations" : new Sword(180,150,0,0,0,0,0,0,0,null,"Heal 15 HP per hit. Deal +200% damage to Mythological Creatures and Minos Followers. Recieve 75% more damage from them when held.","Legendary"),
     "Daedalus Axe" : new Sword(200,0,0,0,0,0,0,0,0,null,"Gains +4 Damage per Taming level. Copies the stats from your active pet. Earn 35 coins from monster kills.","Legendary"),
     "Phantom Rod" : new Sword(200,125,0,0,0,0,0,0,0,listOfSwordAbilities["Phantom Rod Ability"],"","Legendary"),
     "Pigman Sword" : new Sword(200,100,5,30,300,0,0,0,0,listOfSwordAbilities["Pigman Sword Ability"],"","Legendary"),
@@ -197,7 +197,7 @@ const listOfRareReforges = {
     "Suspicious" : new SwordReforge(0,15,3,50,0,0,0,"Rare",null), // 68
     "Gilded" : new SwordReforge(0,0,0,0,0,0,0,"Rare",listOfReforgeAbilities["Byron's Compassion"]), // 0
     "Warped" : new SwordReforge(165,165,0,0,0,0,0,"Rare",null), // 330
-    "Withered" : new SwordReforge(0,0,0,0,0,0,0,"Rare",listOfReforgeAbilities["Withered Reforge Ability"]),
+    "Withered" : new SwordReforge(0,0,0,0,0,0,0,"Rare",listOfReforgeAbilities["Withered Reforge Ability"]), // 0
 }
 
 const listOfEpicReforges = {
