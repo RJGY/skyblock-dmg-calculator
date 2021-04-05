@@ -11,7 +11,7 @@ class Ability extends React.Component {
     }
 
     toString() {
-        return `\n\t\tName: ${this.name}\n\t\tDescription: ${this.description}\n\t\tCooldown: ${this.cooldown}\n\t\tMana Cost: ${this.manaCost}\n\t\tIntelligence Scaling: ${this.scaling}`
+        return `{ "name" : "${this.name}", "description" : "${this.description}", "cooldown" : "${this.cooldown}", "manaCost" : "${this.manaCost}", "scaling" : "${this.scaling}", }`;
     }
 }
 

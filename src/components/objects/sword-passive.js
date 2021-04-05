@@ -13,7 +13,10 @@ class SwordPassive extends React.Component {
 
     constructor(objectString) {
         super();
-        
+        swordPassive = JSON.parse(objectString);
+        this.description = swordPassive.description;
+        this.damage = swordPassive.damage;
+        this.damageType = swordPassive.damageType;
     }
 
     toString() {

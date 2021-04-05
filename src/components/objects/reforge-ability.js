@@ -11,8 +11,16 @@ class ReforgeAbility extends React.Component {
         this.damageType = damageType;
     }
 
+    constructor(objectString) { 
+        super();
+        reforgeAbility = JSON.parse(objectString);
+        this.description = reforgeAbility.description;
+        this.damage = reforgeAbility.damage;
+        this.damageType = reforgeAbility.damageType;
+    }
+
     toString() {
-        return `Reforge Ability: \n\tDescription ${this.description}\n`
+        return `{ "description" : "${this.description}", "damage" : "${this.damage}", "damageType" : "${this.damageType}", }`;
     }
 }
 
