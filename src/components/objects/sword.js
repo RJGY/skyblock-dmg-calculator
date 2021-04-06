@@ -17,6 +17,12 @@ class Sword extends React.Component {
         this.rarity = rarity
     }
 
+    static convertFromString(objectString) {
+        sword = JSON.parse(objectString);
+        return new Sword(sword.damage, sword.strength, sword.critChance, sword.critDamage, sword.intelligence, sword.moveSpeed, sword.defense,
+            sword.attackSpeed, sword.ferocity, sword.ability, sword.passive, sword.rarity);
+    }
+
     toString() {
         let abilityString = this.ability == null ? `` : this.ability.toString();
         return `{ "damage" : "${this.damage}", "strength" : "${this.strength}", "critChance" : "${this.critChance}", "critDamage" : "${this.critDamage}", "intelligence" : "${this.intelligence}", "moveSpeed" : "${this.moveSpeed}", "defense" : "${this.defense}", "attackSpeed" : "${this.attackSpeed}", "ferocity" : "${this.ferocity}", "ability" : "${abilityString}", "passive" : "${this.passive}", "rarity" : "${this.rarity}"}`;

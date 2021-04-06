@@ -13,18 +13,15 @@ class SwordEnchant extends React.Component {
         this.damageType = damageType;
     }
 
-    constructor(objectString) {
-        super();
+    static convertFromString(objectString) {
         swordEnchant = JSON.parse(objectString);
-        this.name = swordEnchant.name;
-        this.currentLevel = swordEnchant.currentLevel;
-        this.maxLevel = swordEnchant.maxLevel;
-        this.damagePerLevel = swordEnchant.damagePerLevel;
-        this.damageType = swordEnchant.damageType;
+        return new SwordEnchant(swordEnchant.name, swordEnchant.currentLevel, swordEnchant.maxLevel, swordEnchant.damagePerLevel,
+            swordEnchant.damageType);
     }
 
     toString() {
-        return `{ "name" : "${this.name}", "currentLevel" : "${this.currentLevel}", "maxLevel" : "${this.maxLevel}", "damagePerLevel" : "${this.damagePerLevel}", "damageType" : "${this.damageType}",}`;
+        return `{ "name" : "${this.name}", "currentLevel" : "${this.currentLevel}", "maxLevel" : "${this.maxLevel}",
+            "damagePerLevel" : "${this.damagePerLevel}", "damageType" : "${this.damageType}",}`;
     }
 }
 

@@ -11,12 +11,9 @@ class SwordPassive extends React.Component {
         this.damageType = damageType;
     }
 
-    constructor(objectString) {
-        super();
+    static convertFromString(objectString) {
         swordPassive = JSON.parse(objectString);
-        this.description = swordPassive.description;
-        this.damage = swordPassive.damage;
-        this.damageType = swordPassive.damageType;
+        return new SwordPassive(swordPassive.description, swordPassive.damage, swordPassive.damageType);
     }
 
     toString() {

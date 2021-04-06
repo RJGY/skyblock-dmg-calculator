@@ -10,6 +10,11 @@ class Ability extends React.Component {
         this.scaling = scaling;
     }
 
+    static convertFromString(objectString) {
+        swordAbility = JSON.parse(objectString);
+        return new Ability(swordAbility.name, swordAbility.description, swordAbility.cooldown, swordAbility.manaCost, swordAbility.scaling);
+    }
+
     toString() {
         return `{ "name" : "${this.name}", "description" : "${this.description}", "cooldown" : "${this.cooldown}", "manaCost" : "${this.manaCost}", "scaling" : "${this.scaling}", }`;
     }

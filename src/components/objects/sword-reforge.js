@@ -17,22 +17,16 @@ class Reforge extends React.Component {
         this.reforgeAbility = reforgeAbility;
     }
 
-    constructor(objectString) {
-        super();
+    static convertFromString(objectString) {
         reforge = JSON.parse(objectString);
-        this.strength = reforge.strength;
-        this.damage = reforge.damage;
-        this.critChance = reforge.critChance;
-        this.critDamage = reforge.critDamage;
-        this.attackSpeed = reforge.attackSpeed;
-        this.ferocity = reforge.ferocity;
-        this.intelligence = reforge.intelligence;
-        this.rarity = reforge.rarity;
-        this.reforgeAbility = reforge.reforgeAbility;
+        return new Reforge(reforge.strength, reforge.damage, reforge.critChance, reforge.critDamage, reforge.attackSpeed,
+            reforge.ferocity, reforge.intelligence, reforge.rarity, reforge.reforgeAbility);
     }
 
     toString() {
-        return `{ "strength" : "${this.strength}", "damage" : "${this.damage}", "critChance" : "${this.critChance}", "critDamage" : "${this.critDamage}", "attackSpeed" : "${this.attackSpeed}", "ferocity" : "${this.ferocity}", "intelligence" : "${this.intelligence}", "rarity" : "${this.rarity}", "reforgeAbility" : "${this.reforgeAbility}",}`;
+        return `{ "strength" : "${this.strength}", "damage" : "${this.damage}", "critChance" : "${this.critChance}", 
+            "critDamage" : "${this.critDamage}", "attackSpeed" : "${this.attackSpeed}", "ferocity" : "${this.ferocity}", 
+            "intelligence" : "${this.intelligence}", "rarity" : "${this.rarity}", "reforgeAbility" : "${this.reforgeAbility}", }`;
     }
 }
 
