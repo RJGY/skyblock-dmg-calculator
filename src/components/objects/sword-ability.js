@@ -11,7 +11,7 @@ class Ability extends React.Component {
     }
 
     static convertFromString(objectString) {
-        swordAbility = JSON.parse(objectString);
+        let swordAbility = JSON.parse(objectString);
         return new Ability(swordAbility.name, swordAbility.description, swordAbility.cooldown, swordAbility.manaCost, swordAbility.scaling);
     }
 

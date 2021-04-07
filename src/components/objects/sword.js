@@ -14,11 +14,11 @@ class Sword extends React.Component {
         this.ferocity = ferocity;
         this.ability = ability;
         this.passive = passive;
-        this.rarity = rarity
+        this.rarity = rarity;
     }
 
     static convertFromString(objectString) {
-        sword = JSON.parse(objectString);
+        let sword = JSON.parse(objectString);
         return new Sword(sword.damage, sword.strength, sword.critChance, sword.critDamage, sword.intelligence, sword.moveSpeed, sword.defense,
             sword.attackSpeed, sword.ferocity, sword.ability, sword.passive, sword.rarity);
     }

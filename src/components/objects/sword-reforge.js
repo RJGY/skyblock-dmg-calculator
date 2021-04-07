@@ -18,7 +18,7 @@ class Reforge extends React.Component {
     }
 
     static convertFromString(objectString) {
-        reforge = JSON.parse(objectString);
+        let reforge = JSON.parse(objectString);
         return new Reforge(reforge.strength, reforge.damage, reforge.critChance, reforge.critDamage, reforge.attackSpeed,
             reforge.ferocity, reforge.intelligence, reforge.rarity, reforge.reforgeAbility);
     }

@@ -12,10 +12,7 @@ class ReforgeAbility extends React.Component {
     }
 
     static convertFromString(objectString) {
-        reforgeAbility = JSON.parse(objectString);
-        this.description = reforgeAbility.description;
-        this.damage = reforgeAbility.damage;
-        this.damageType = reforgeAbility.damageType;
+        let reforgeAbility = JSON.parse(objectString);
         return new ReforgeAbility(reforgeAbility.description, reforgeAbility.damage, reforgeAbility.damageType);
     }
 

@@ -272,11 +272,11 @@ class SwordSelect extends React.Component {
   
         this.state = {
             currentSword: {
-                "Wooden Sword" : new Sword(20,0,0,0,0,null,"Common")
+                "Wooden Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,"","Common")
             },
             
             swordReforge: {
-                "Gentle" : new SwordReforge(3,0,0,0,8,0,0,"Common",null)
+                "Gentle" : new SwordReforge(3,0,0,0,8,0,0,"Common",null),
             },
 
             "Recombobulated" : false

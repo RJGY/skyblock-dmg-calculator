@@ -14,7 +14,7 @@ class SwordEnchant extends React.Component {
     }
 
     static convertFromString(objectString) {
-        swordEnchant = JSON.parse(objectString);
+        let swordEnchant = JSON.parse(objectString);
         return new SwordEnchant(swordEnchant.name, swordEnchant.currentLevel, swordEnchant.maxLevel, swordEnchant.damagePerLevel,
             swordEnchant.damageType);
     }
