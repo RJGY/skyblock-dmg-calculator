@@ -6,7 +6,7 @@ import Sword from "../objects/sword";
 import SwordReforge from "../objects/sword-reforge";
 
 let currentSword = {
-    "Wooden Sword" : new Sword(20,0,0,0,0,null,"Common"),
+    "Wooden Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,"","Common")
 }
 
 let swordReforge = {

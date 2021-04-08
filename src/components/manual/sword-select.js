@@ -10,6 +10,7 @@ import ReforgeAbility from "../objects/reforge-ability";
 // Reforge -> Strength, Damage, Crit Chance, Crit Damage, Attack Speed, Ferocity, Intelligence, rarity, Reforge Ability
 // ReforgeAbility -> strength, damageBonus, criticalDamageBonus, description
 
+// TODO: Fix runtime error with printing sword abilties.
 
 const listOfSwordAbilities = {
     "Aspect of the Jerry Ability" : new SwordAbility("Parley", "Channel your inner Jerry", 5, 0, 0),
@@ -331,7 +332,6 @@ class SwordSelect extends React.Component {
 
     handleWeaponChange(e) {
         let newSwordString = e.target.value.split("\\")[0];
-        // FIX THIS< NO LONGER WORKS
         let newSword = JSON.parse(newSwordString); 
         // increase rarity if recombobulated.
         if (this.state.Recombobulated === true) {
@@ -339,11 +339,13 @@ class SwordSelect extends React.Component {
             let newIndex = listOfRarities.indexOf(currentSwordRarity) + 1;
             let newRarity = listOfRarities[newIndex];
             newSword = new Sword(newSword.damage, newSword.strength, newSword.critChance,
-                newSword.critDamage, newSword.intelligence, newSword.ability, newRarity);
+                newSword.critDamage, newSword.intelligence, newSword.moveSpeed, newSword.defense, 
+                newSword.attackSpeed, newSword.ferocity, newSword.ability, newSword.passive, newRarity);
         }
         else {
             newSword = new Sword(newSword.damage, newSword.strength, newSword.critChance,
-                newSword.critDamage, newSword.intelligence, newSword.ability, newSword.rarity);
+                newSword.critDamage, newSword.intelligence, newSword.moveSpeed, newSword.defense, 
+                newSword.attackSpeed, newSword.ferocity, newSword.ability, newSword.passive, newSword.rarity);
         }
 
         this.setState({
@@ -397,10 +399,10 @@ class SwordSelect extends React.Component {
             }
             
             this.setState({
-                // THIS NO LONGER WORKS
                 currentSword: {    
                     [Object.keys(this.state.currentSword)[0]] : new Sword(oldSword.damage, oldSword.strength,
-                        oldSword.critChance, oldSword.critDamage, oldSword.intelligence, oldSword.ability, newRarity)
+                        oldSword.critChance, oldSword.critDamage, oldSword.intelligence, oldSword.moveSpeed,
+                        oldSword.defense, oldSword.attackSpeed, oldSword.ferocity, oldSword.ability, oldSword.passive, newRarity)
                 },
                 swordReforge: {
                     [Object.keys(this.state.swordReforge)[0]] : new SwordReforge(newReforge.strength, newReforge.damage,
@@ -449,10 +451,11 @@ class SwordSelect extends React.Component {
             }
 
             this.setState({
-                // THIS NO LONGER WORKS
+                //damage, strength, critChance, critDamage, intelligence, speed, defense, attackSpeed, ferocity, ability, rarity
                 currentSword: {    
                     [Object.keys(this.state.currentSword)[0]] : new Sword(oldSword.damage, oldSword.strength,
-                        oldSword.critChance, oldSword.critDamage, oldSword.intelligence, oldSword.ability, newRarity)
+                        oldSword.critChance, oldSword.critDamage, oldSword.intelligence, oldSword.moveSpeed, oldSword.defense, 
+                        oldSword.attackSpeed, oldSword.ferocity, oldSword.ability, oldSword.passive, newRarity)
                 },
                 swordReforge: {
                     [Object.keys(this.state.swordReforge)[0]] : new SwordReforge(newReforge.strength, newReforge.damage,
