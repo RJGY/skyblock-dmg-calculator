@@ -26,7 +26,7 @@ class Reforge extends React.Component {
     toString() {
         return `{ "strength" : "${this.strength}", "damage" : "${this.damage}", "critChance" : "${this.critChance}", 
             "critDamage" : "${this.critDamage}", "attackSpeed" : "${this.attackSpeed}", "ferocity" : "${this.ferocity}", 
-            "intelligence" : "${this.intelligence}", "rarity" : "${this.rarity}", "reforgeAbility" : "${this.reforgeAbility}", }`;
+            "intelligence" : "${this.intelligence}", "rarity" : "${this.rarity}", "reforgeAbility" : "${this.reforgeAbility}" }`;
     }
 }
 

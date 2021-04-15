@@ -17,7 +17,7 @@ class ReforgeAbility extends React.Component {
     }
 
     toString() {
-        return `{ "description" : "${this.description}", "damage" : "${this.damage}", "damageType" : "${this.damageType}", }`;
+        return `{ "description" : "${this.description}", "damage" : "${this.damage}", "damageType" : "${this.damageType}" }`;
     }
 }
 

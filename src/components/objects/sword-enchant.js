@@ -21,7 +21,7 @@ class SwordEnchant extends React.Component {
 
     toString() {
         return `{ "name" : "${this.name}", "currentLevel" : "${this.currentLevel}", "maxLevel" : "${this.maxLevel}",
-            "damagePerLevel" : "${this.damagePerLevel}", "damageType" : "${this.damageType}",}`;
+            "damagePerLevel" : "${this.damagePerLevel}", "damageType" : "${this.damageType}"}`;
     }
 }
 

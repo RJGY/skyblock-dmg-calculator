@@ -332,7 +332,7 @@ class SwordSelect extends React.Component {
 
     handleWeaponChange(e) {
         let newSwordString = e.target.value.split("\\")[0];
-        let newSword = JSON.parse(newSwordString); 
+        let newSword = Sword.convertFromString(newSwordString);
         // increase rarity if recombobulated.
         if (this.state.Recombobulated === true) {
             let currentSwordRarity = Object.values(this.state.currentSword)[0].rarity;
