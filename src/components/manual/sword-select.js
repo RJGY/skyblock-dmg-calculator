@@ -357,7 +357,6 @@ class SwordSelect extends React.Component {
         this.forceUpdate();
         setTimeout(() => {
             this.props.onInputChange(this.state);
-            console.log(`155 ${Object.values(this.state.currentSword)[0].toString()}`);
         }, 50);
     }
 
