@@ -4,24 +4,24 @@ import Sword from "../objects/sword";
 import SwordAbility from "../objects/sword-ability";
 import SwordReforge from "../objects/sword-reforge";
 import ReforgeAbility from "../objects/reforge-ability";
+import SwordPassive from "../objects/sword-passive";
+import DamageTypes from "../objects/damage-types";
 
 // Sword -> damage, strength, critChance, critDamage, intelligence, ability
 // SwordAbility -> name, description, cooldown, manacost
 // Reforge -> Strength, Damage, Crit Chance, Crit Damage, Attack Speed, Ferocity, Intelligence, rarity, Reforge Ability
 // ReforgeAbility -> strength, damageBonus, criticalDamageBonus, description
 
-// TODO: Fix runtime error with printing sword abilties.
-
 const listOfSwordAbilities = {
     "Aspect of the Jerry Ability" : new SwordAbility("Parley", "Channel your inner Jerry", 5, 0, 0),
     "Rogue Sword Ability" : new SwordAbility("Speed Boost","Increases your movement Speed by +20% for 30 seconds - only +10 if ability already active.", 0, 50, 0),
-    "Spider Sword Ability" : new SwordAbility("", "Deals +100% damage to Spiders, Cave Spiders, and Silverfish.", -1, -1, 0),
-    "Undead Sword Ability" :new SwordAbility("", "Deals +100% damage to Skeletons, Withers, Zombies, and Zombie Pigmen.", -1, -1, 0),
-    "End Sword Ability" : new SwordAbility("", "Deals +100% damage to Endermites, Endermen, Etc.", -1, -1, 0),
-    "Cleaver Ability" : new SwordAbility("Cleave", "When hitting an entity, monsters in a 3 block range will be hit for a portion of that damage too.", -1, -1, 0),
-    "Flaming Sword Ability" : new SwordAbility("", "Ignites enemies for 3s.", -1, -1, 0),
-    "Prismarine Sword Ability" : new SwordAbility("", "Deals +200% damage while in water.", -1, -1, 0),
-    "Tactician's Sword Ability" : new SwordAbility("", "Gains +15 Damage for each Combat colletion of Tier VII and over of its wearer (10 collections, hence a max of +150).", -1, -1, 0),
+    "Spider Sword Ability" : new SwordAbility("", "Deals +100% damage to Spiders, Cave Spiders, and Silverfish.", -1, -1, 0), // Passive
+    "Undead Sword Ability" :new SwordAbility("", "Deals +100% damage to Skeletons, Withers, Zombies, and Zombie Pigmen.", -1, -1, 0), // Passive
+    "End Sword Ability" : new SwordAbility("", "Deals +100% damage to Endermites, Endermen, Etc.", -1, -1, 0), // Passive
+    "Cleaver Ability" : new SwordAbility("Cleave", "When hitting an entity, monsters in a 3 block range will be hit for a portion of that damage too.", -1, -1, 0), // Passive
+    "Flaming Sword Ability" : new SwordAbility("", "Ignites enemies for 3s.", -1, -1, 0), // Passive
+    "Prismarine Sword Ability" : new SwordAbility("", "Deals +200% damage while in water.", -1, -1, 0), // Passive
+    "Tactician's Sword Ability" : new SwordAbility("", "Gains +15 Damage for each Combat colletion of Tier VII and over of its wearer (10 collections, hence a max of +150).", -1, -1, 0), // Passive
     "Jerry-chine Gun Ability" : new SwordAbility("Rapid-fire", "Fires off multiple jerry bombs that create an explosion on impact, dealing up to <varies> damage.", 0, 10, 0.2),
     "Ember Rod Ability" : new SwordAbility("Fire Blast", "Shoot 3 Fireballs in rapid succession in front of you!", 30, 150, 1),
     "Frozen Scythe Ability" : new SwordAbility("Ice Bolt", "Shoots 1 Ice Bolt that deals 1000 Ability Damage and slows enemies hit for 5 seconds!", 0, 50, 0.3),
@@ -57,6 +57,14 @@ const listOfSwordAbilities = {
     "Giant's Sword Ability" : new SwordAbility("Giant's Slam","Slam your sword into the ground dealing 100,000 damage to nearby enemies.",30,100,1),
 }
 
+const listOfSwordPassives = {
+    "Spider Sword Passive" : new SwordPassive("Deals +100% damage to Spiders, Cave Spiders and Silverfish.", 100, DamageTypes.WEAPONBONUS),
+    "Undead Sword Passive" : new SwordPassive("Deals +100% damage to Skeletons, Withers, Zombies and Zombie Pigmen.", 100, DamageTypes.WEAPONBONUS),
+    "End Sword Passive" : new SwordPassive("Deals +100% damage to Endermites, Endermen, Etc.", 100, DamageTypes.WEAPONBONUS),
+    "Prismarine Sword Passive" : new SwordPassive("Deals +200% damage while in water.", 200, DamageTypes.WEAPONBONUS),
+    "Tactician's Sword Passive" : new SwordPassive("Gains +15 Damage for each Combat collection of Tier VII and over its wearer (10 collections, hence a max of +150).", 150, DamageTypes.WEAPONDAMAGE)
+}
+
 const listOfReforgeAbilities = {
     "Fabled Reforge Ability" : new ReforgeAbility("Your critical hits have a chance to deal up to +20% extra damage."),
     "Byron's Compassion" : new ReforgeAbility("Upon killing an enemy, you have a rare chance to grant coins to a more destitute player around you."),
@@ -66,9 +74,9 @@ const listOfReforgeAbilities = {
 // Sword -> (damage, strength, critChance, critDamage, intelligence, speed, defense, attackSpeed, ferocity, ability, rarity)
 const listOfWeapons = {
     // Vanilla Swords
-    "Wooden Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,"","Common"),
-    "Thick Wooden Sword" : new Sword(20,100,0,0,0,0,0,0,0,null,"","Uncommon"),
-    "Golden Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,"","Common"),
+    "Wooden Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,null,"Common"),
+    "Thick Wooden Sword" : new Sword(20,100,0,0,0,0,0,0,0,null,null,"Uncommon"),
+    "Golden Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,null,"Common"),
     "Stone Sword" : new Sword(25,0,0,0,0,0,0,0,0,null,"","Common"),
     "Iron Sword" : new Sword(30,0,0,0,0,0,0,0,0,null,"","Common"),
     "Diamond Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,"","Common"),
@@ -78,14 +86,14 @@ const listOfWeapons = {
     "Thick Aspect of the Jerry" : new Sword(1,100,0,0,0,0,0,0,0, listOfSwordAbilities["Aspect of the Jerry Ability"],"","Uncommon"),
     "Fancy Sword" : new Sword(20,0,0,0,0,0,0,0,0,null,"","Common"),
     "Rogue Sword" : new Sword(20,0,0,0,0,0,0,0,0,listOfSwordAbilities["Rogue Sword Ability"],"", "Common"),
-    "Spider Sword" : new Sword(30,0,0,0,0,0,0,0,0,listOfSwordAbilities["Spider Sword Ability"],"", "Common"),
-    "Undead Sword" : new Sword(30,0,0,0,0,0,0,0,0,listOfSwordAbilities["Undead Sword Ability"],"", "Common"),
-    "End Sword" : new Sword(35,0,0,0,0,0,0,0,0,listOfSwordAbilities["End Sword Ability"],"","Uncommon"),
+    "Spider Sword" : new Sword(30,0,0,0,0,0,0,0,0,null,listOfSwordPassives["Spider Sword Passive"], "Common"),
+    "Undead Sword" : new Sword(30,0,0,0,0,0,0,0,0,null,listOfSwordPassives["Undead Sword Passive"], "Common"),
+    "End Sword" : new Sword(35,0,0,0,0,0,0,0,0,null,listOfSwordPassives["End Sword Passive"],"Uncommon"),
     "Cleaver" : new Sword(40,10,0,0,0,0,0,0,0,listOfSwordAbilities["Cleaver Ability"],"","Uncommon"),
     "Flaming Sword" : new Sword(50,20,0,0,0,0,0,0,0,listOfSwordAbilities["Flaming Sword Ability"], "", "Uncommon"),
-    "Prismarine Blade" : new Sword(50,25,0,0,0,0,0,0,0,listOfSwordAbilities["Prismarine Blade Ability"], "","Uncommon"),
+    "Prismarine Blade" : new Sword(50,25,0,0,0,0,0,0,0,null, listOfSwordPassives["Prismarine Sword Passive"],"Uncommon"),
     "Hunter Knife" : new Sword(50,0,0,0,0,40,0,0,0,null,"","Uncommon"),
-    "Tactician's Sword" : new Sword(50,0,0,0,0,0,0,0,0,listOfSwordAbilities["Tactician's Sword Ability"], "", "Rare"),
+    "Tactician's Sword" : new Sword(50,0,0,0,0,0,0,0,0,listOfSwordAbilities["Tactician's Sword Ability"], listOfSwordPassives["Tactician's Sword Passive"], "Rare"),
     "Thick Tactician's Sword" : new Sword(50,100,0,0,0,0,0,0,0,listOfSwordAbilities["Tactician's Sword Ability"],"", "Epic"),
     "Jerry-chine Gun" : new Sword(80,0,0,0,200,0,0,0,0,listOfSwordAbilities["Jerry-chine Gun Ability"],"","Epic"),
     "Ember Rod" : new Sword(80,35,0,0,200,0,0,0,0,listOfSwordAbilities["Ember Rod Ability"],"","Epic"),

@@ -1,5 +1,4 @@
 import React from "react";
-import SwordAbility from "./sword-ability";
 
 class Sword extends React.Component {
     constructor(damage, strength, critChance, critDamage, intelligence, moveSpeed, defense, attackSpeed, ferocity, ability, passive, rarity) {
@@ -20,13 +19,13 @@ class Sword extends React.Component {
 
     static convertFromString(objectString) {
         let sword = JSON.parse(objectString);
-        console.log(sword);
         return new Sword(sword.damage, sword.strength, sword.critChance, sword.critDamage, sword.intelligence, sword.moveSpeed, sword.defense,
             sword.attackSpeed, sword.ferocity, sword.ability, sword.passive, sword.rarity);
     }
 
     toString() {
-        let abilityString = this.ability == null ? `""` : `${this.ability.toString()}`;
+        let abilityString = this.ability == null ? `{}` : `${this.ability.toString()}`;
+        let passiveString = this.passive == null ? `{}` : `${this.passive.toString()}`;
         return `{ "damage" : "${this.damage}", "strength" : "${this.strength}", "critChance" : "${this.critChance}", "critDamage" : "${this.critDamage}", "intelligence" : "${this.intelligence}", "moveSpeed" : "${this.moveSpeed}", "defense" : "${this.defense}", "attackSpeed" : "${this.attackSpeed}", "ferocity" : "${this.ferocity}", "ability" : ${abilityString.toString()}, "passive" : "${this.passive}", "rarity" : "${this.rarity}"}`;
     }
 }

@@ -2,7 +2,7 @@
 
 import React from "react"
 
-// Passive -> Description
+// Passive -> Description, Damage, DamageType
 class SwordPassive extends React.Component {
     constructor(description, damage, damageType) {
         super();

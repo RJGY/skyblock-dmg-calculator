@@ -1,8 +1,7 @@
 Currently working on:
-    sword-select.js - problems with inability to find rarity when switching sword then recombobulating. probs because value is no longer an object and just a string now...
+    sword-select.js
 
 NEED LIST: 
-    NEED TO FIX ALOT OF RUNTIME ERRORS. AHHHHHHHHHHHH
     seperate sword select from reforges and swords.
     Pass all objects to be readable as json.
     Add a constructor method to make objects from toString.
