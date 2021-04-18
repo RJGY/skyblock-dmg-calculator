@@ -26,7 +26,7 @@ class Sword extends React.Component {
     toString() {
         let abilityString = this.ability == null ? `{}` : `${this.ability.toString()}`;
         let passiveString = this.passive == null ? `{}` : `${this.passive.toString()}`;
-        return `{ "damage" : "${this.damage}", "strength" : "${this.strength}", "critChance" : "${this.critChance}", "critDamage" : "${this.critDamage}", "intelligence" : "${this.intelligence}", "moveSpeed" : "${this.moveSpeed}", "defense" : "${this.defense}", "attackSpeed" : "${this.attackSpeed}", "ferocity" : "${this.ferocity}", "ability" : ${abilityString.toString()}, "passive" : "${this.passive}", "rarity" : "${this.rarity}"}`;
+        return `{ "damage" : "${this.damage}", "strength" : "${this.strength}", "critChance" : "${this.critChance}", "critDamage" : "${this.critDamage}", "intelligence" : "${this.intelligence}", "moveSpeed" : "${this.moveSpeed}", "defense" : "${this.defense}", "attackSpeed" : "${this.attackSpeed}", "ferocity" : "${this.ferocity}", "ability" : ${abilityString.toString()}, "passive" : "${passiveString.toString()}", "rarity" : "${this.rarity}"}`;
     }
 }
 
