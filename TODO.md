@@ -2,6 +2,7 @@ Currently working on:
     sword-select.js -   turning abilties into passives.
                         Adding new passives.
                         Adding new swords.
+TODO: needs to be a better way to store multiple passives on one sword.
 
 NEED LIST: 
     seperate sword select from reforges and swords.

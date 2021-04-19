@@ -57,7 +57,18 @@ const listOfSwordPassives = {
     "Prismarine Sword Passive" : new SwordPassive("Deals +200% damage while in water.", 200, DamageTypes.WEAPONBONUS),
     "Tactician's Sword Passive" : new SwordPassive("Gains +15 Damage for each Combat collection of Tier VII and over its wearer (10 collections, hence a max of +150).", 150, DamageTypes.WEAPONDAMAGE),
     "Revenant Falchion Passive" : new SwordPassive("Deals +150% damage to Zombies.", 150, DamageTypes.WEAPONBONUS),
-    
+    "Raider Axe Passives" : { 1 : new SwordPassive("Earn 20+ Coins from monster kills, +1 Damage per 500 kills Mobs level 10+ (max +35), +1 Strength per 500 wood in collections (max +100).", { "Strength" : 100 }, DamageTypes.STATBONUS),
+        2 : new SwordPassive("Earn 20+ Coins from monster kills, +1 Damage per 500 kills Mobs level 10+ (max +35), +1 Strength per 500 wood in collections (max +100).", 35, DamageTypes.WEAPONDAMAGE) },
+    "Shaman Sword Passive" : new SwordPassive("Deal +1 Damage per 50 max HP. Recieve -20% damage from wolves", 1, DamageTypes.WEAPONDAMAGE),
+    "Scorpion Foil Passive" : new SwordPassive("Deal +250% damage against Spiders.", 250, DamageTypes.WEAPONBONUS),
+    "Recluse Fang Passive" : new SwordPassive("Squash 'em - Squash Spiders to accumulate strength against them. +1 Strength per 40 squashed. Max +270 Strength.", {"Strength" : 370}, DamageTypes.STATBONUS),
+    "Reaper Falchion Passive" : new SwordPassive("Heal 10HP per hit. Deal +200% damage to Zombies. Recieve 20% less damage from Zombies when held.", 200, DamageTypes.WEAPONBONUS),
+    "Pooch Sword Passives" : { 1 : new SwordPassive("Deal +1 Damage per 50 max HP. Recieve -20% damage from wolves. Gain +150 Strength against wolves.", { "Strength" : 150 }, DamageTypes.STATBONUS),
+        2 : new SwordPassive("Deal +1 Damage per 50 max HP. Recieve -20% damage from wolves. Gain +150 Strength against wolves.", 1, DamageTypes.WEAPONDAMAGE) },
+    "Emerald Blade Passive" : new SwordPassive("A powerful blade made from pure emeralds. This blade becomes stronger as you carry more coins in your purse.", 1, DamageTypes.WEAPONDAMAGE),
+    "Axe of the Shredded Passive" : new SwordPassive("Heal 50HP per hit. Deal 250% damage to Zombies. Recieve 25% less damage from Zombies when held.", 250, DamageTypes.WEAPONBONUS),
+    "Midas Sword Passive" : new SwordPassive("The Strength and Damage bonus of this item is dependent on the price paid for it in the Dark Auction. Max bonus at 50,000,000 coins for +120 Damage and Strength.", {"Strength" : 120}, DamageTypes.STATBONUS),
+
 }
 
 const listOfReforgeAbilities = {
@@ -94,7 +105,7 @@ const listOfWeapons = {
     "Ember Rod" : new Sword(80,35,0,0,200,0,0,0,0,listOfSwordAbilities["Ember Rod Ability"],null,"Epic"),
     "Frozen Scythe" : new Sword(80,0,0,0,0,0,0,0,0,listOfSwordAbilities["Frozen Scythe Ability"],null,"Rare"),
     "Golem Sword" : new Sword(80,125,0,0,0,0,25,0,0,listOfSwordAbilities["Golem Sword Ability"],null,"Rare"), // Make abilities from here.
-    "Raider Axe" : new Sword(80, 50,0,0,0,0,0,0,0,listOfSwordAbilities["Raider Axe Ability"],null,"Rare"),
+    "Raider Axe" : new Sword(80, 50,0,0,0,0,0,0,0,null,null,"Rare"),
     "Revenant Falchion" : new Sword(90,50,0,0,100,0,0,0,0,null,null,"Rare"),
     "Silver Fang" : new Sword(100,0,0,0,0,0,0,0,0,null,null,"Uncommon"),
     "Shaman Sword" : new Sword(100,20,0,0,0,5,0,0,0,null,"Deal +1 Damage per 50 max HP. Recieve -20% damage from wolves.", "Epic"),
