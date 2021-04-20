@@ -37,6 +37,7 @@ const listOfSwordAbilities = {
     "Reaper Scythe Ability" :  new SwordAbility("Raise Souls", "Monsters you kill using this item will drop their soul. You can clock on their souls on the ground using this item to absorb them and then spawn them to fight by your side. Mana cost is based on the power of the monsters that you summon. Shift right-click to view and remove souls from this item. If your summoned monster dies, the soul will be removed.", 0, 0, 0,),
     
     // Dungeon sword abilities.
+    
     "Bonzo's Staff Ability" :  new SwordAbility("Showtime","Shoots ballons that create a large explosion on impact, dealing up to 1000 Damage.",0,100,0.2),
     "Dreadlord Sword Ability" :  new SwordAbility("Dreadlord","Shoots a Skull that does 750 damage.",0,40,0.3),
     "Silent Death Ability" : new SwordAbility("Shadowstep","Teleport behind the enemy you are looking at, gaining +25 Strength for 10 seconds. Max range of 20 blocks. Cooldown resets on kills.",60,0,0,),
@@ -51,24 +52,30 @@ const listOfSwordAbilities = {
 }
 
 const listOfSwordPassives = {
-    "Spider Sword Passive" : new SwordPassive("Deals +100% damage to Spiders, Cave Spiders and Silverfish.", 100, DamageTypes.WEAPONBONUS),
-    "Undead Sword Passive" : new SwordPassive("Deals +100% damage to Skeletons, Withers, Zombies and Zombie Pigmen.", 100, DamageTypes.WEAPONBONUS),
-    "End Sword Passive" : new SwordPassive("Deals +100% damage to Endermites, Endermen, Etc.", 100, DamageTypes.WEAPONBONUS),
-    "Prismarine Sword Passive" : new SwordPassive("Deals +200% damage while in water.", 200, DamageTypes.WEAPONBONUS),
-    "Tactician's Sword Passive" : new SwordPassive("Gains +15 Damage for each Combat collection of Tier VII and over its wearer (10 collections, hence a max of +150).", 150, DamageTypes.WEAPONDAMAGE),
-    "Revenant Falchion Passive" : new SwordPassive("Deals +150% damage to Zombies.", 150, DamageTypes.WEAPONBONUS),
-    "Raider Axe Passives" : { 1 : new SwordPassive("Earn 20+ Coins from monster kills, +1 Damage per 500 kills Mobs level 10+ (max +35), +1 Strength per 500 wood in collections (max +100).", { "Strength" : 100 }, DamageTypes.STATBONUS),
-        2 : new SwordPassive("Earn 20+ Coins from monster kills, +1 Damage per 500 kills Mobs level 10+ (max +35), +1 Strength per 500 wood in collections (max +100).", 35, DamageTypes.WEAPONDAMAGE) },
-    "Shaman Sword Passive" : new SwordPassive("Deal +1 Damage per 50 max HP. Recieve -20% damage from wolves", 1, DamageTypes.WEAPONDAMAGE),
-    "Scorpion Foil Passive" : new SwordPassive("Deal +250% damage against Spiders.", 250, DamageTypes.WEAPONBONUS),
-    "Recluse Fang Passive" : new SwordPassive("Squash 'em - Squash Spiders to accumulate strength against them. +1 Strength per 40 squashed. Max +270 Strength.", {"Strength" : 370}, DamageTypes.STATBONUS),
-    "Reaper Falchion Passive" : new SwordPassive("Heal 10HP per hit. Deal +200% damage to Zombies. Recieve 20% less damage from Zombies when held.", 200, DamageTypes.WEAPONBONUS),
-    "Pooch Sword Passives" : { 1 : new SwordPassive("Deal +1 Damage per 50 max HP. Recieve -20% damage from wolves. Gain +150 Strength against wolves.", { "Strength" : 150 }, DamageTypes.STATBONUS),
-        2 : new SwordPassive("Deal +1 Damage per 50 max HP. Recieve -20% damage from wolves. Gain +150 Strength against wolves.", 1, DamageTypes.WEAPONDAMAGE) },
-    "Emerald Blade Passive" : new SwordPassive("A powerful blade made from pure emeralds. This blade becomes stronger as you carry more coins in your purse.", 1, DamageTypes.WEAPONDAMAGE),
-    "Axe of the Shredded Passive" : new SwordPassive("Heal 50HP per hit. Deal 250% damage to Zombies. Recieve 25% less damage from Zombies when held.", 250, DamageTypes.WEAPONBONUS),
-    "Midas Sword Passive" : new SwordPassive("The Strength and Damage bonus of this item is dependent on the price paid for it in the Dark Auction. Max bonus at 50,000,000 coins for +120 Damage and Strength.", {"Strength" : 120}, DamageTypes.STATBONUS),
-
+    // Vanilla Skyblock
+    "Cleaver Passive" : new SwordPassive("Cleave - When hitting an entity, monsters in a 3 block range will be hit for a portion of that damage too.", null),
+    "Spider Sword Passive" : new SwordPassive("Deals +100% damage to Spiders, Cave Spiders and Silverfish.", { [DamageTypes.WEAPONBONUS] : 100 }),
+    "Undead Sword Passive" : new SwordPassive("Deals +100% damage to Skeletons, Withers, Zombies and Zombie Pigmen.", { [DamageTypes.WEAPONBONUS] : 100 }),
+    "End Sword Passive" : new SwordPassive("Deals +100% damage to Endermites, Endermen, Etc.", { [DamageTypes.WEAPONBONUS] : 100 }),
+    "Prismarine Sword Passive" : new SwordPassive("Deals +200% damage while in water.", { [DamageTypes.WEAPONBONUS] : 200 }),
+    "Tactician's Sword Passive" : new SwordPassive("Gains +15 Damage for each Combat collection of Tier VII and over its wearer (10 collections, hence a max of +150).", { [DamageTypes.WEAPONDAMAGE] : 150 }),
+    "Revenant Falchion Passive" : new SwordPassive("Deals +150% damage to Zombies.", { [DamageTypes.WEAPONBONUS] : 150 }),
+    "Raider Axe Passive" : new SwordPassive("Earn 20+ Coins from monster kills, +1 Damage per 500 kills Mobs level 10+ (max +35), +1 Strength per 500 wood in collections (max +100).", { [DamageTypes.STRENGTHBONUS] : 150, [DamageTypes.WEAPONDAMAGE] : 35 }),
+    "Shaman Sword Passive" : new SwordPassive("Deal +1 Damage per 50 max HP. Recieve -20% damage from wolves", { [DamageTypes.WEAPONDAMAGE] : 1 }),
+    "Scorpion Foil Passive" : new SwordPassive("Deal +250% damage against Spiders.", { [DamageTypes.WEAPONBONUS] : 250 }),
+    "Recluse Fang Passive" : new SwordPassive("Squash 'em - Squash Spiders to accumulate strength against them. +1 Strength per 40 squashed. Max +370 Strength.", { [DamageTypes.STRENGTHBONUS] : 370 }),
+    "Reaper Falchion Passive" : new SwordPassive("Heal 10HP per hit. Deal +200% damage to Zombies. Recieve 20% less damage from Zombies when held.", { [DamageTypes.WEAPONBONUS] : 200 }),
+    "Pooch Sword Passive" : new SwordPassive("Deal +1 Damage per 50 max HP. Recieve -20% damage from wolves. Gain +150 Strength against wolves.", { [DamageTypes.STRENGTHBONUS] : 150,  [DamageTypes.WEAPONDAMAGE] : 1 }),
+    "Emerald Blade Passive" : new SwordPassive("A powerful blade made from pure emeralds. This blade becomes stronger as you carry more coins in your purse.", { [DamageTypes.WEAPONDAMAGE] : 1 }),
+    "Axe of the Shredded Passive" : new SwordPassive("Heal 50HP per hit. Deal 250% damage to Zombies. Recieve 25% less damage from Zombies when held.", { [DamageTypes.WEAPONBONUS] : 250 }),
+    "Midas Sword Passive" : new SwordPassive("The Strength and Damage bonus of this item is dependent on the price paid for it in the Dark Auction. Max bonus at 50,000,000 coins for +120 Damage and Strength.", { [DamageTypes.WEAPONDAMAGE] : 120, [DamageTypes.STRENGTHBONUS] : 120 }),
+    "Sword of Revelations Passive" : new SwordPassive("Heal 15HP per hit. Deal +200% damage to Mythological Creatures and Minos Followers. Recieve 75% more damage from them when held.", { [DamageTypes.WEAPONBONUS] : 200 }),
+    "Daedalus Axe Passive" : new SwordPassive("Gains +4 Damage per Taming level. Copies the stats from your active pet. Earn 35 coins from monster kills.", { [DamageTypes.WEAPONDAMAGE] : 4 }),
+    
+    // Dungeon Swords
+    "Hyper Cleaver Passive" : new SwordPassive("Cleave - When hitting an entity, monsters in a 4 block range will be hit for a portion of that damage too.", null),
+    "Zombie Soldier Cutlass Passive" : new SwordPassive("Love Tap - Heals you for +10 HP when you hit an entity!", null),
+    "Adaptive Blade Passive" : new SwordPassive("Weapon created by Scarf, it automatically adapts to its user inside Dungeons. Berserk: +35 Strength and +5 Speed. Healer: +20% regeneration and Restore +5 health/s to nearby allies. Mage: +200 Intelligence. Tank: +100 Defense and +5 True Defense. Archer: +100 Crit Damage.", {}),
 }
 
 const listOfReforgeAbilities = {

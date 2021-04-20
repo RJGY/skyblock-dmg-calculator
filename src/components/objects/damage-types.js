@@ -3,7 +3,10 @@ const damageTypes = {
     ARMOURBONUS : "armourBonus",
     ENCHANTMENTS : "enchantments",
     WEAPONDAMAGE : "weaponDamage",
-    STATBONUS : "statBonus"
+    STRENGTHBONUS : "strengthBonus",
+    CRITDAMAGEBONUS : "critDamageBonus",
+    CRITCHANCEBONUS : "critChanceBonus",
+    INTELBONUS : "intelligenceBonus"
 }
 
 export default damageTypes;

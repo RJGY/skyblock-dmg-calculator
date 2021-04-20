@@ -4,20 +4,20 @@ import React from "react"
 
 // Passive -> Description, Damage, DamageType
 class SwordPassive extends React.Component {
-    constructor(description, damage, damageType) {
+    constructor(description, damageObject) {
         super();
         this.description = description;
-        this.damage = damage;
-        this.damageType = damageType;
+        this.damageObject = damageObject;
     }
 
     static convertFromString(objectString) {
         let swordPassive = JSON.parse(objectString);
-        return new SwordPassive(swordPassive.description, swordPassive.damage, swordPassive.damageType);
+        return new SwordPassive(swordPassive.description, swordPassive.damageObject);
     }
 
     toString() {
-        return `{ "description" : "${this.description}", "damage" : "${this.damage}", "damageType" : "${this.damageType}"}`;
+        let damageObjectString = this.damageObject == null ? "{}" : `${this.damageObject.toString()}`;
+        return `{ "description" : "${this.description}", "damageObject" : "${damageObjectString}" }`;
     }
 }
 
