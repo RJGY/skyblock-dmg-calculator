@@ -1,8 +1,6 @@
 Currently working on:
-    sword-select.js -   turning abilties into passives.
-                        Adding new passives.
+    sword-select.js -   Adding new passives.
                         Adding new swords.
-TODO: test {} instead of null for passives and swords and abilities.
 
 NEED LIST: 
     seperate sword select from reforges and swords.

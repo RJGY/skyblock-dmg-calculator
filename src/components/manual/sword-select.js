@@ -76,6 +76,8 @@ const listOfSwordPassives = {
     "Hyper Cleaver Passive" : new SwordPassive("Cleave - When hitting an entity, monsters in a 4 block range will be hit for a portion of that damage too.", {}),
     "Zombie Soldier Cutlass Passive" : new SwordPassive("Love Tap - Heals you for +10 HP when you hit an entity!", {}),
     "Adaptive Blade Passive" : new SwordPassive("Weapon created by Scarf, it automatically adapts to its user inside Dungeons. Berserk: +35 Strength and +5 Speed. Healer: +20% regeneration and Restore +5 health/s to nearby allies. Mage: +200 Intelligence. Tank: +100 Defense and +5 True Defense. Archer: +100 Crit Damage.", {}),
+    "Zombie Commander Whip Passive" : new SwordPassive("Commander Whip -  Every 1 Zombie killed during a dungeon run by this weapon gives the user +1 Strength.", {[DamageTypes.STRENGTHBONUS] : 1}),
+    
 }
 
 const listOfReforgeAbilities = {
