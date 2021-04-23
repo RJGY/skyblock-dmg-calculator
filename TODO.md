@@ -3,6 +3,7 @@ Currently working on:
                         Adding new swords.
 
 NEED LIST: 
+    calculate damage for dungeons.
     seperate sword select from reforges and swords.
     Pass all objects to be readable as json.
     Add a constructor method to make objects from toString.

@@ -77,6 +77,12 @@ const listOfSwordPassives = {
     "Zombie Soldier Cutlass Passive" : new SwordPassive("Love Tap - Heals you for +10 HP when you hit an entity!", {}),
     "Adaptive Blade Passive" : new SwordPassive("Weapon created by Scarf, it automatically adapts to its user inside Dungeons. Berserk: +35 Strength and +5 Speed. Healer: +20% regeneration and Restore +5 health/s to nearby allies. Mage: +200 Intelligence. Tank: +100 Defense and +5 True Defense. Archer: +100 Crit Damage.", {}),
     "Zombie Commander Whip Passive" : new SwordPassive("Commander Whip -  Every 1 Zombie killed during a dungeon run by this weapon gives the user +1 Strength.", {[DamageTypes.STRENGTHBONUS] : 1}),
+    "Spirit Sword Passive" : new SwordPassive("Deal +2% more damage to Undead monsters for every 1% of your missing health.", {[DamageTypes.WEAPONBONUS] : 2}),
+    "Zombie Knight Sword Passive" : new SwordPassive("Zombie Knight - Gains +30 Strength when used with Zombie Knight Armor.", {[DamageTypes.STRENGTHBONUS] : 30}),
+    "Livid Dagger Passive" : new SwordPassive("Your Critical Hits deal 100% more damage if you are behind your target.", {[DamageTypes.WEAPONBONUS] : 100}),
+    "Fel Sword Passive" : new SwordPassive("Every 100 kills with this weapon grants +1 Weapon Damage, up to 100 extra.", {[DamageTypes.WEAPONBONUS] : 100}),
+    "Necron's Blade Passive" : new SwordPassive("Deal 50% more damage to Withers.", {[DamageTypes.WEAPONBONUS] : 50}),
+    "Hyperion Passive" : new SwordPassive("Deal 50% more damage to Withers. Grant +1 damage and +2 Intelligence per level.", {[DamageTypes.WEAPONBONUS] : 50, [DamageTypes.INTELBONUS] : 100, [DamageTypes.WEAPONDAMAGE] : 50}),
     
 }
 
