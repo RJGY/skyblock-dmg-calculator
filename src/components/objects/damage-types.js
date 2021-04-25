@@ -6,7 +6,9 @@ const damageTypes = {
     STRENGTHBONUS : "strengthBonus",
     CRITDAMAGEBONUS : "critDamageBonus",
     CRITCHANCEBONUS : "critChanceBonus",
-    INTELBONUS : "intelligenceBonus"
+    INTELBONUS : "intelligenceBonus",
+    DEFENSEBONUS : "defenseBonus"
+
 }
 
 export default damageTypes;

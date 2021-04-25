@@ -83,7 +83,9 @@ const listOfSwordPassives = {
     "Fel Sword Passive" : new SwordPassive("Every 100 kills with this weapon grants +1 Weapon Damage, up to 100 extra.", {[DamageTypes.WEAPONBONUS] : 100}),
     "Necron's Blade Passive" : new SwordPassive("Deal 50% more damage to Withers.", {[DamageTypes.WEAPONBONUS] : 50}),
     "Hyperion Passive" : new SwordPassive("Deal 50% more damage to Withers. Grant +1 damage and +2 Intelligence per level.", {[DamageTypes.WEAPONBONUS] : 50, [DamageTypes.INTELBONUS] : 100, [DamageTypes.WEAPONDAMAGE] : 50}),
-    
+    "Astrea Passive" : new SwordPassive("Deals 50% more damage to Withers. Grant +1 Damage and +1 Defense per Catacombs level.", {[DamageTypes.WEAPONBONUS] : 50, [DamageTypes.WEAPONDAMAGE] : 50, [DamageTypes.DEFENSEBONUS] : 50}),
+    "Scylla Passive" : new SwordPassive("Deals 50% more damage to Withers. Grant +1 Damage and +1 Critical Damage per Catacombs level.", {[DamageTypes.WEAPONBONUS] : 50, [DamageTypes.WEAPONDAMAGE] : 50, [DamageTypes.CRITDAMAGEBONUS] : 50}),
+    "Valkyrie Passive" : new SwordPassive("Deals 50% more damage to Withers. Grant +1 Damage and +1 Strength per Catacombs level.", {[DamageTypes.WEAPONDAMAGE] : 50, [DamageTypes.WEAPONBONUS] : 50, [DamageTypes.STRENGTHBONUS] : 50})
 }
 
 const listOfReforgeAbilities = {
