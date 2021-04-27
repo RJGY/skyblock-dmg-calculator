@@ -2,8 +2,6 @@ import React from "react"
 import PropTypes from 'prop-types';
 import Sword from "../objects/sword";
 import SwordAbility from "../objects/sword-ability";
-import SwordReforge from "../objects/sword-reforge";
-import ReforgeAbility from "../objects/reforge-ability";
 import SwordPassive from "../objects/sword-passive";
 import DamageTypes from "../objects/damage-types";
 
